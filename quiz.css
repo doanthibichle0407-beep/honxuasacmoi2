@@ -1,0 +1,210 @@
+
+:root{   margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
+    background: url('img/nen6.jpg') center/cover no-repeat;
+    color: #fff;
+    position: relative;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.5); 
+    z-index: 0;
+}
+
+
+body::after {
+    content: "";
+    position: fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    pointer-events: none;
+    background: radial-gradient(circle at center, rgba(255,255,255,0.08) 0%, rgba(0,0,0,0.6) 70%);
+}
+
+.container {
+    margin-top: 70px;
+    text-align: center;
+    padding: 120px 60px;     
+    background: rgba(0,0,0,0.6); 
+    border-radius: 25px;     
+    max-width: 700px;          
+    width: 95%;               
+    margin-bottom: 50px;
+    color: #fff;
+    box-shadow: 0 0 30px rgba(255,0,0,0.6), 0 20px 60px rgba(0,0,0,0.4);
+    border: 2px solid rgba(255,0,0,0.6);
+    position: relative;
+}
+
+
+h2 {
+    font-family: 'Arial Black', sans-serif;
+    color: #ffb347;
+    margin-bottom: 30px;
+    font-size: 2.2rem;          /* to hơn */
+    text-shadow: 0 0 12px #ff4500, 0 0 25px #ff6347;
+}
+
+
+#question {
+    font-size: 22px;            
+    margin-bottom: 35px;
+}
+
+
+#answers button {
+    display: block;
+    width: 95%;                
+    margin: 12px auto;
+    padding: 18px 0;           
+    font-size: 18px;          
+    border-radius: 20px;       
+}
+#answers button:hover { 
+    transform: translateY(-3px); 
+    box-shadow: 0 0 20px rgba(255,78,80,0.9), 0 10px 20px rgba(0,0,0,0.15);
+ } 
+  #answers button.correct { 
+    background: linear-gradient(45deg, #ffb347, #ffd700); 
+    color: #000; box-shadow: 0 0 15px rgba(255,180,71,0.7); } 
+#answers button.wrong { 
+    background: linear-gradient(45deg, #800000, #c70039);  
+    color: #fff; 
+    box-shadow: 0 0 15px rgba(199,0,57,0.7); 
+}
+
+/* Nút quay lại */
+.back {
+      display: inline-block;
+    margin: 20px;
+    padding: 10px 20px;
+    background: #ffef9c;
+    color: #333;
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 1.2rem; 
+    box-shadow: 0 6px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+
+}
+
+.back:hover {
+    text-shadow: 0 0 10px #f1a02e, 0 0 15px #ff4500;
+}
+
+.progress-container {
+    width: 90%;
+    height: 12px;
+    background: #3b0000;
+    border-radius: 12px;
+    margin: 20px auto;
+    overflow: hidden;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
+}
+
+#progress {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #e60000, #ff4500);
+    transition: width 0.4s ease;
+    border-radius: 12px;
+}
+
+
+.score-display {
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffb347;
+    margin-top: 10px;
+    text-shadow: 0 0 6px #ffb347;
+}
+
+#quiz-end-popup {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+}
+
+#quiz-end-popup .popup-box {
+    background: linear-gradient(180deg, #1a0000, #3b0000);
+    border-radius: 28px;
+    padding: 45px 50px;
+    max-width: 520px;
+    width: 90%;
+    text-align: center;
+    border: 2px solid rgba(255, 183, 77, 0.8);
+    box-shadow:
+        0 0 25px rgba(255, 180, 71, 0.6),
+        0 30px 80px rgba(0,0,0,0.6);
+    animation: popupIn 0.5s ease;
+}
+
+/* Title */
+#quiz-end-popup h2 {
+    font-size: 2.2rem;
+    color: #ffd700;
+    margin-bottom: 15px;
+    text-shadow: 0 0 12px rgba(255,215,0,0.9);
+}
+
+/* Score text */
+#quiz-end-popup p {
+    font-size: 1.25rem;
+    color: #fff3c4;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+/* Button */
+#quiz-end-popup button {
+    padding: 14px 32px;
+    border-radius: 18px;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1rem;
+    font-weight: 600;
+    background: linear-gradient(45deg, #ffb347, #ffd700);
+    color: #3b0000;
+    box-shadow: 0 0 18px rgba(255,180,71,0.7);
+    transition: all 0.25s ease;
+}
+
+#quiz-end-popup button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 28px rgba(255,200,90,0.95);
+}
+
+@keyframes popupIn {
+    from {
+        opacity: 0;
+        transform: scale(0.85) translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}

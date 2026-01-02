@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phòng Trò Chơi</title>
+
+    <link rel="stylesheet" href="trochoi.css">
+    <link rel="stylesheet" href="mobile.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="fade" onload="changeMusic('game')">
+
+  <nav class="navbar">
+    <ul>
+      <li><a href="index.html">TRANG CHỦ</a></li>
+      <li><a href="bieudien.html">PHÒNG BIỂU DIỄN</a></li>
+      <li><a href="trungbay.html">PHÒNG TRƯNG BÀY</a></li>
+      <li><a href="trienlam.html">TRIỂN LÃM</a></li>
+      <li><a class="active" href="trochoi.html">TRÒ CHƠI</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <h1>PHÒNG TRÒ CHƠI CẢI LƯƠNG</h1>
+    <p>Chọn trò chơi để bắt đầu!</p>
+
+    <div class="menu">
+      <a href="quiz.html" class="game-btn">
+        <span class="icon">🥁</span> Quiz ABC
+      </a>
+      <a href="ghepam.html" class="game-btn">
+        <span class="icon">🎻</span> Ghép Âm Nhạc Cụ
+      </a>
+    </div>
+  </div>
+
+  <audio id="game" loop></audio>
+
+  <script src="music.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,175 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+@font-face {
+  font-family: "MyCustomFont";
+  src: url("font/font1.ttf") format("truetype");
+}
+
+:root {
+  --bg: #0b0806;
+  --accent: #C5BF65;      
+  --accent-dark: #b21e1e; 
+  --muted: #e6d9b0;
+  --glass: rgba(255,255,255,0.03);
+  --radius: 12px;
+  --gap: 24px;
+  --font-main: "Be Vietnam Pro", sans-serif;
+}
+
+body {
+  font-family: var(--font-main);
+  background:
+    linear-gradient(180deg, rgba(0,0,0,0.5), rgba(0,0,0,0.7)),
+    url("img/nen3.jpg") center/cover no-repeat fixed;
+  color: var(--muted);
+  line-height: 1.5;
+  min-height: 100vh;
+  text-align: center;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* ===== NAVBAR WRAPPER ===== */
+.navbar {
+  position: fixed;
+  top: 18px;
+  left: 0;
+  width: 100%;
+  z-index: 200;
+  display: flex;
+  justify-content: center;
+  padding: 8px 0;
+}
+
+/* ===== NAVBAR LIST (GIỮ TRONG SUỐT) ===== */
+.navbar ul {
+  display: flex;
+  gap: 28px;
+  padding: 10px 20px;
+  list-style: none;
+
+  background: transparent; /* GIỮ ĐÚNG YÊU CẦU */
+}
+
+/* ===== LINK ===== */
+.navbar a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 20px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: 0.25s ease;
+}
+
+/* ===== HOVER / ACTIVE ===== */
+.navbar a:hover,
+.navbar a.active {
+  background: rgba(197,191,101,0.1);
+  color: #fff;
+}
+
+@media(max-width:600px){
+  .navbar ul { flex-direction: column; gap: 12px; }
+  .navbar a { font-size: 16px; padding: 8px 12px; }
+}
+
+h1.title {
+  font-family: "MyCustomFont";
+  margin: 120px 0 30px;
+  font-size: 100px;
+  font-weight: 800;
+  color: var(--accent);
+  letter-spacing: 1px;
+  text-shadow: 
+    2px 2px 8px rgba(0,0,0,0.8),
+    0 0 18px rgba(255,215,0,0.6);
+  line-height: 1.1;
+  z-index: 5;
+  position: relative;
+}
+
+.rooms {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--gap);
+  padding: 40px 6%;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.room-card {
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+  cursor: pointer;
+  background: #1b1915;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  min-height: 320px;
+}
+.room-card:hover {
+  transform: translateY(-5px) scale(1.06);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.6);
+}
+.room-card img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  transition: transform 0.3s ease;
+}
+.room-card:hover img {
+  transform: scale(1.08);
+}
+.room-card h3 {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 16px 0;
+  background: rgba(0,0,0,0.65);
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 1.5rem;
+  text-shadow: 1px 1px 6px rgba(0,0,0,0.7);
+  transition: background 0.3s, font-size 0.3s;
+}
+.room-card:hover h3 {
+  background: rgba(0,0,0,0.85);
+}
+
+.fadeOut {
+  animation: fadeOut 0.3s forwards;
+}
+@keyframes fadeOut { to { opacity: 0; } }
+
+.back-btn {
+    position: fixed;   
+    bottom: 20px;      
+    left: 20px;        
+    padding: 10px 20px;
+    background: #ffef9c;
+    color: #333;
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: 600;
+    box-shadow: 0 6px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    z-index: 300;      
+}
+
+.back-btn:hover {
+    background: #ffe36c;
+    transform: translateY(-2px);
+}
+
+
+@media(max-width:960px){
+  h1.title { font-size: 2.8rem; }
+  .room-card img { height: 220px; }
+  .room-card h3 { font-size: 1.3rem; }
+}
+@media(max-width:600px){
+  h1.title { font-size: 2.2rem; }
+  .room-card img { height: 180px; }
+  .room-card h3 { font-size: 1.1rem; }
+}

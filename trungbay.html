@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Phòng Trưng bày — Hồn Xưa</title>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700;800&display=swap&subset=vietnamese"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="trungbay.css">
+  <link rel="stylesheet" href="mobile.css">
+</head>
+
+
+<body onload="changeMusic('bonus')">
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <ul>
+      <li><a href="index.html">TRANG CHỦ</a></li>
+      <li><a href="bieudien.html">PHÒNG BIỂU DIỄN</a></li>
+      <li><a class="active" href="trungbay.html">PHÒNG TRƯNG BÀY</a></li>
+      <li><a href="trienlam.html">TRIỂN LÃM</a></li>
+      <li><a href="trochoi.html">TRÒ CHƠI</a></li>
+    </ul>
+  </nav>
+
+  <h1 class="title">PHÒNG TRƯNG BÀY</h1>
+
+<div class="rooms"> 
+  <div class="room-card" onclick="goTo('nhaccu.html')"> 
+    <img src="img/nhaccu.jpg" alt=""> 
+    <h3>Nhạc Cụ</h3> 
+  </div>
+
+    <div class="room-card" onclick="changeMusic('costume'); goTo('trangphuc.html')">
+      <img src="img/thumbtt.jpg" alt="Trang phục">
+      <h3>Trang Phục</h3>
+    </div>
+</div>
+
+  <script src="music.js"></script>
+  <script src="trungbay.js"></script>
+
+</body>
+</html>

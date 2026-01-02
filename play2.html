@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tiếng Trống Mê Linh</title>
+<link rel="stylesheet" href="play.css">
+<link rel="stylesheet" href="mobile.css">
+</head>
+<body>
+
+<!-- BACK -->
+<a href="bieudien.html" class="back">← Quay lại</a>
+
+<!-- ================= VIDEO ================= -->
+<div class="video-box">
+  <video src="assets/tiengtrongmelinh.mp4" controls></video>
+
+  <p class="video-note">
+    ⏱ Vở diễn mang màu sắc lịch sử – phần tóm tắt bên dưới giúp bạn nắm rõ diễn biến cuộc khởi nghĩa.
+  </p>
+</div>
+
+<!-- ================= SUMMARY ROOM ================= -->
+<section class="summary-room">
+
+  <!-- INTRO -->
+  <div class="summary-intro">
+    <span>🏛️ Sử thi cải lương</span>
+    <h1>TIẾNG TRỐNG MÊ LINH</h1>
+    <p>
+      Khúc tráng ca về lòng yêu nước và ý chí quật cường  
+      của người phụ nữ Việt Nam trong buổi đầu chống ách đô hộ phương Bắc.
+    </p>
+  </div>
+
+  <!-- GRID -->
+  <div class="summary-grid">
+
+    <div class="summary-box">
+      <h3>I. Đêm dài Bắc thuộc</h3>
+      <p>
+        Đất nước chìm trong ách đô hộ tàn bạo của thái thú Tô Định.
+        Nhân dân lầm than, quyền sống bị chà đạp,
+        ngay cả lễ Giỗ Tổ Hùng Vương cũng bị cấm đoán.
+      </p>
+    </div>
+
+    <div class="summary-box highlight">
+      <h3>II. Chí lớn âm thầm</h3>
+      <p>
+        Trưng Trắc và chồng là Thi Sách nuôi chí lớn cứu nước,
+        bí mật chiêu mộ hào kiệt,
+        khơi dậy tinh thần phản kháng trong nhân dân.
+      </p>
+    </div>
+
+    <div class="summary-box">
+      <h3>III. Bi kịch mất chồng</h3>
+      <p>
+        Khi âm mưu bị bại lộ, Thi Sách bị Tô Định sát hại.
+        Trưng Trắc chịu nỗi đau mất chồng,
+        nỗi đau riêng hòa làm một với nỗi nhục non sông.
+      </p>
+    </div>
+
+    <div class="summary-box highlight">
+      <h3>IV. Tiếng trống Mê Linh</h3>
+      <p>
+        Trưng Trắc lập đàn tế sống Thi Sách,
+        biến đau thương thành lời thề sắt đá.
+        Tiếng trống Mê Linh vang lên,
+        hiệu lệnh phất cờ khởi nghĩa chống quân xâm lược.
+      </p>
+    </div>
+
+    <div class="summary-box">
+      <h3>V. Hào khí non sông</h3>
+      <p>
+        Trưng Trắc cùng Trưng Nhị thống lĩnh nghĩa quân bốn phương,
+        đánh đuổi quân Hán, giành lại giang sơn.
+        Cuộc khởi nghĩa trở thành biểu tượng bất khuất của dân tộc.
+      </p>
+    </div>
+
+    <div class="summary-box highlight">
+      <h3>VI. Vinh quang & cô đơn</h3>
+      <p>
+        Trưng Trắc lên ngôi vua, mở ra thời kỳ tự chủ.
+        Vở diễn khép lại bằng hình ảnh người nữ anh hùng
+        gánh trên vai vận mệnh đất nước và nỗi cô đơn của bậc quân vương.
+      </p>
+    </div>
+
+  </div>
+
+  <!-- MESSAGE -->
+  <div class="summary-message">
+    <p>
+      “Tiếng trống Mê Linh không chỉ gọi nghĩa quân,  
+      mà còn đánh thức lòng yêu nước muôn đời của dân tộc Việt.”
+    </p>
+  </div>
+
+</section>
+
+<!-- ================= TRANSITION ================= -->
+<div class="transition-line">
+  <span>⬇︎ Từ lịch sử đến cảm nhận của bạn ⬇︎</span>
+</div>
+
+<!-- ================= QUIZ ================= -->
+<div class="quiz-container">
+  <h2>🎯 Bạn cảm nhận được gì sau Tiếng Trống Mê Linh?</h2>
+
+  <p id="question">...</p>
+
+  <div class="answers">
+    <button class="btn" onclick="checkAnswer('A')" id="A"></button>
+    <button class="btn" onclick="checkAnswer('B')" id="B"></button>
+    <button class="btn" onclick="checkAnswer('C')" id="C"></button>
+  </div>
+
+  <div class="progress-bar">
+    <div id="progress"></div>
+  </div>
+
+  <div id="result"></div>
+</div>
+
+<script src="play.js"></script>
+<script src="play2.js"></script>
+
+</body>
+</html>

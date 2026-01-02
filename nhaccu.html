@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Phòng Trưng bày — Hồn Xưa</title>
+  <link rel="stylesheet" href="nhaccu.css">
+  <link rel="stylesheet" href="mobile.css">
+</head>
+<body>
+<a href="trungbay.html" class="back-btn">← Quay về</a>
+  <header class="section-hero small">
+    <h1>PHÒNG TRƯNG BÀY NHẠC CỤ</h1>
+    <p>Di chuyển và ấn vào mỗi nhạc cụ để tìm hiểu và nghe âm thanh nhạc cụ.</p>
+  </header>
+
+  <div class="gallery-grid">
+
+    <div class="card instrument" data-id="dantranh" data-audio="assets/dantranh.mp3">
+      <img src="img/dantranh.png" alt="Đàn Tranh">
+      <h4>Đàn Tranh</h4>
+    </div>
+
+    <div class="card instrument" data-id="saotruc" data-audio="assets/saotruc.mp3">
+      <img src="img/saotruc.png" alt="Sáo Trúc">
+      <h4>Sáo Trúc</h4>
+    </div>
+
+    <div class="card instrument" data-id="dankim" data-audio="assets/dankim.mp3">
+      <img src="img/dankim.png" alt="Đàn Kìm">
+      <h4>Đàn Kìm</h4>
+    </div>
+
+    <div class="card instrument" data-id="danco" data-audio="assets/danco.mp3">
+      <img src="img/danco.png" alt="Đàn Cò">
+      <h4>Đàn Cò</h4>
+    </div>
+    <div class="card instrument" data-id="songlang" data-audio="assets/songloan.mp3">
+    <img src="img/songloan.png" alt="Song Lang">
+      <h4>Song Lang</h4>
+     </div>
+
+  </div>
+
+  <div id="info-popup" class="info-popup hidden">
+    <h3 id="popup-name"></h3>
+    <p id="popup-desc"></p>
+  </div>
+
+  
+  <audio id="sample-player" style="display:none;"></audio>
+
+
+    <script src="nhaccu.js"></script>

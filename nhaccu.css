@@ -1,0 +1,198 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+:root{
+  --bg-dark:#1c0d0d; 
+  --bg-light:#3a1f1f;
+  --accent:#C5BF65; 
+  --accent-dark:#b21e1e; 
+  --muted:#e6d9b0; 
+  --radius:12px; 
+  --gap:28px; 
+  font-family: "Be Vietnam Pro", sans-serif;
+}
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background:
+    linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.55)),  
+    url("img/nen5.jpg") no-repeat center center fixed;
+  background-size: cover;
+  color: var(--accent);
+}
+@font-face {
+  font-family: "font2";
+  src: url("font/loai2.ttf") format("truetype");
+}
+@font-face {
+  font-family: "MyCustomFont";
+  src: url("font/khongchan2.ttf") format("truetype");
+}
+
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: url('img/nen5.jpg') repeat;
+  opacity: 0.03;
+  z-index: -1;
+}
+.section-hero.small{
+  padding: 84px 8% 40px;
+  background: transparent;
+  text-align: center;
+}
+.section-hero.small h1{
+  font-family : "font2";
+  font-size: 100px;
+  font-weight: 800;
+  color: var(--accent);
+  letter-spacing: 1px;
+  text-shadow: 
+    2px 2px 8px rgba(0,0,0,0.8),
+    0 0 18px rgba(255,215,0,0.6);
+  line-height: 1.1;
+  z-index: 5;
+  position: relative;
+   text-align: center;
+}
+.section-hero.small p{
+  font-family: "MyCustomFont";
+  font-size: 30px;
+  color: var(--muted);
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+}
+
+.gallery-grid{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: var(--gap);
+  padding: var(--gap) 6%;
+}
+
+
+.card.instrument, .card.costume {
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: linear-gradient(135deg, #2b1a1a, #4d1e1e);
+  padding: 12px;
+  box-shadow: 0 4px 12px rgba(255, 0, 0, 0.2), 0 2px 6px rgba(0,0,0,0.4);
+  position: relative;
+}
+.card.instrument:hover, .card.costume:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 12px 25px rgba(197,191,101,0.45), 0 8px 18px rgba(0,0,0,0.6);
+}
+.card.instrument img, .card.costume img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 8px;
+  transition: transform 0.3s;
+}
+.card.instrument:hover img, .card.costume:hover img {
+  transform: scale(1.05);
+}
+.card.instrument h4, .card.costume h4 {
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-shadow: 1px 1px 4px rgba(197,191,101,0.5);
+}
+
+
+#info-popup {
+  position: absolute;
+  z-index: 1000;
+  width: 360px;             
+  max-height: 500px;       
+  padding: 20px 24px;
+  background: rgba(40, 20, 20, 0.95);
+  color: #ffe08c;
+  border-radius: 20px;
+  border: 2px solid rgba(255, 215, 0, 0.35);
+  box-shadow: 0 20px 45px rgba(0,0,0,0.65), 0 8px 25px rgba(255,215,0,0.25);
+  overflow-y: auto;         
+  overflow-x: hidden;
+  font-family: "Be Vietnam Pro", sans-serif;
+  backdrop-filter: blur(12px);
+  transition: transform 0.25s ease, opacity 0.25s ease, box-shadow 0.25s ease;
+  opacity: 0;
+  transform: translateY(16px) scale(0.98);
+}
+
+#info-popup.show {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+
+#info-popup::-webkit-scrollbar {
+  width: 6px;
+}
+#info-popup::-webkit-scrollbar-thumb {
+  background: rgba(255,215,0,0.55);
+  border-radius: 4px;
+}
+
+
+#info-popup h3 {
+  margin-bottom: 14px;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #ffd966;
+  text-shadow: 1px 1px 6px rgba(0,0,0,0.7);
+}
+
+
+#info-popup p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #f4e08c;
+  text-shadow: 0 1px 2px rgba(0,0,0,0.4);
+}
+
+#info-popup:hover {
+  border-color: #ffd966;
+  box-shadow: 0 25px 50px rgba(0,0,0,0.7), 0 10px 28px rgba(255,215,0,0.3);
+}
+
+@media(max-width:900px){
+  #info-popup {
+    width: 90%;
+    max-height: 60vh;
+    font-size: 0.95rem;
+  }
+}
+
+
+@media(max-width:900px){
+  .layout{
+    flex-direction:column;
+  }
+  
+  .info-panel{
+    width:100%;
+  }
+}
+.back-btn {
+    position: fixed;   
+    bottom: 20px;      
+    left: 20px;        
+    padding: 10px 20px;
+    background: #ffef9c;
+    color: #333;
+    text-decoration: none;
+    border-radius: 12px;
+    font-weight: 600;
+    box-shadow: 0 6px 10px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    z-index: 300;      
+}
+
+.back-btn:hover {
+    background: #ffe36c;
+    transform: translateY(-2px);
+}

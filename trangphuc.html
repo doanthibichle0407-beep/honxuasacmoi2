@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Phòng Trang Phục Cải Lương</title>
+  <link rel="stylesheet" href="trangphuc.css">
+  <link rel="stylesheet" href="mobile.css">
+</head>
+<body class="fade" onload="changeMusic('costume')">
+
+<header class="hero">
+  <h1>PHÒNG TRANG PHỤC CẢI LƯƠNG</h1>
+  <p>Khám phá tinh hoa phục trang qua từng loại vai diễn và hệ thống tuồng.</p>
+</header>
+
+<div class="filter-bar">
+  <button class="filter-btn active" data-filter="all">Tất cả</button>
+  <button class="filter-btn" data-filter="xa-hoi">Tuồng xã hội</button>
+  <button class="filter-btn" data-filter="su-viet">Sử Việt</button>
+  <button class="filter-btn" data-filter="tuong-tau">Tuồng Trung Hoa</button>
+</div>
+
+
+<div class="gallery">
+
+
+  <div class="card xa-hoi" data-name="Trí thức" data-img="img/ongdo.png">
+      <img src="img/ongdo.png" alt="Trí thức">
+      <h4>Trí thức</h4>
+  </div>
+
+  <div class="card xa-hoi" data-name="Dân gian" data-img="img/dangian.png">
+      <img src="img/dangian.png" alt="Dân gian">
+      <h4>Dân gian</h4>
+  </div>
+
+  <div class="card xa-hoi" data-name="Tầng lớp Nông Sản" data-img="img/nongsan.png">
+      <img src="img/nongsan.png" alt="Tầng lớp Nông Sản">
+      <h4>Tầng lớp Nông Sản</h4>
+  </div>
+
+  <div class="card xa-hoi" data-name="Tầng lớp Tư Sản" data-img="img/tusan.png">
+      <img src="img/tusan.png" alt="Tầng lớp Tư Sản">
+      <h4>Tầng lớp Tư Sản</h4>
+  </div>
+
+
+
+  
+  <div class="card su-viet" data-name="Trang phục Kép Võ (Sử Việt)" data-img="img/kepvost.png">
+      <img src="img/kepvost.png" alt="Trang phục Kép Võ (Sử Việt)">
+      <h4>Trang phục Kép Võ (Sử Việt)</h4>
+  </div>
+
+  <div class="card su-viet" data-name="Trang phục Kép Văn(Sử Việt)" data-img="img/kepvanst.png">
+      <img src="img/kepvanst.png" alt="Trang phục Kép Văn (Sử Việt)">
+      <h4>Trang phục Kép Văn (Sử Việt) </h4>
+  </div>
+
+  <div class="card su-viet" data-name="Trang phục Đào Võ(Sử Việt)" data-img="img/daovost.png">
+      <img src="img/daovost.png" alt="Trang phục Đào Võ (Sử Việt)">
+      <h4>Trang phục Đào Võ (Sử Việt) </h4>
+  </div>
+  <div class="card su-viet" data-name="Trang phục Đào Văn (Sử Việt)" data-img="img/daovanst.png">
+      <img src="img/daovanst.png" alt="Trang phục Đào Văn (Sử Việt)">
+      <h4>Trang phục Đào Văn (Sử Việt) </h4>
+  </div>
+
+
+  <div class="card tuong-tau" data-name="Kép văn (Tuồng Trung Hoa)" data-img="img/kepvan.png">
+    <img src="img/kepvan.png" alt="Kép văn (Tuồng Trung Hoa)">
+    <h4>Kép văn</h4>
+  </div>
+
+  <div class="card tuong-tau" data-name="Kép võ (Tuồng Trung Hoa)" data-img="img/kepvo.png">
+    <img src="img/kepvo.png" alt="Kép võ (Tuồng Trung Hoa)">
+    <h4>Kép võ</h4>
+  </div>
+
+  <div class="card tuong-tau" data-name="Đào văn (Tuồng Trung Hoa)" data-img="img/daovan.png">
+    <img src="img/daovan.png" alt="Đào văn (Tuồng Trung Hoa)">
+    <h4>Đào văn</h4>
+  </div>
+
+  <div class="card tuong-tau" data-name="Đào võ (Tuồng Trung Hoa)" data-img="img/daovo.png">
+    <img src="img/daovo.png" alt="Đào võ (tuồng Trung Hoa)">
+    <h4>Đào võ</h4>
+  </div>
+
+</div>
+<a href="trungbay.html" class="back-btn">← Quay về</a>
+
+
+<div id="modal" class="modal hidden">
+  <div class="modal-content">
+      <span id="closeModal">&times;</span>
+      <img id="modal-img">
+      <h2 id="modal-title"></h2>
+  </div>
+</div>
+
+<script src="trangphuc.js"></script>
+<script src="music.js"></script>
+
+</body>
+</html>

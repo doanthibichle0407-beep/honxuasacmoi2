@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz ABC - Gen Z Style</title>
+<link rel="stylesheet" href="quiz.css">
+<link rel="stylesheet" href="mobile.css">
+</head>
+<body>
+
+<div class="container">
+    <a href="trochoi.html" class="back">← Quay lại</a>
+    <h2>Quiz ABC</h2>
+    <p id="question"></p>
+    <div id="answers"></div>
+    <div class="progress-container">
+        <div id="progress"></div>
+    </div>
+    <p class="score-display">Điểm: <span id="score">0</span></p>
+</div>
+<div id="quiz-end-popup">
+  <div class="popup-box">
+    <h2>🎉 Hoan hô!</h2>
+    <p id="final-score"></p>
+    <button id="close-popup">Đóng</button>
+  </div>
+</div>
+
+
+<script src="quiz.js"></script>
+  <audio id="game" loop></audio>
+
+  <script src="music.js"></script>
+
+</body>
+</html>
