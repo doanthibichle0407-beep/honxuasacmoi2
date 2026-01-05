@@ -1,0 +1,172 @@
+/* =========================
+   PHÒNG BIỂU DIỄN – MOBILE RESPONSIVE
+   ========================= */
+
+/* ===== MOBILE ≤ 768px ===== */
+@media (max-width: 768px) {
+
+  /* ===== HAMBURGER TOGGLE ===== */
+  .nav-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 12px;
+    top: 0;
+    height: var(--nav-h);
+    font-size: 26px;
+    color: var(--accent);
+    cursor: pointer;
+    z-index: 600;
+  }
+
+ /* ===== NAVBAR ===== */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    padding: 0 12px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 500;
+    background: rgb(11 8 6 / 0%);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid rgba(197,191,101,0.3);
+  }
+
+  .nav-toggle {
+    font-size: 28px;
+    color: var(--accent);
+    cursor: pointer;
+    z-index: 600;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    width: 220px;
+    height: calc(100vh - 60px);
+    background: rgba(11,8,6,0.95);
+    padding-top: 20px;
+    gap: 0;
+    border-right: 1px solid rgba(197,191,101,0.3);
+    overflow-y: auto;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 550;
+  }
+
+  .navbar ul.show { transform: translateX(0); }
+
+  .navbar a {
+    display: block;
+    font-size: 16px;
+    padding: 12px 20px;
+    color: var(--accent);
+    border-bottom: 1px solid rgba(197,191,101,0.15);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .navbar a:hover,
+  .navbar a.active {
+    background: rgba(197,191,101,0.15);
+    color: #fff;
+  }
+
+
+  /* ===== TITLE ===== */
+  h1.title {
+    font-size: 48px;
+    margin: 80px 10px 20px;
+    line-height: 1.2;
+    text-align: center;
+  }
+
+  /* ===== ROOMS GRID ===== */
+  .rooms {
+    display: grid;
+    grid-template-columns: 1fr; /* mobile 1 cột */
+    gap: 16px;
+    padding: 20px 5%;
+  }
+
+  /* ===== ROOM CARD ===== */
+  .room-card {
+    cursor: pointer;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    background: rgba(11,8,6,0.2);
+    transition: transform 0.2s;
+  }
+
+  .room-card:hover {
+    transform: translateY(-3px);
+  }
+
+  /* Ảnh chiếm toàn bộ card, giữ tỉ lệ */
+  .room-card img {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    display: block;
+  }
+
+  /* Tiêu đề dưới ảnh */
+  .room-card h3 {
+    margin: 10px 0;
+    padding: 0 10px 12px 10px;
+    font-size: 1.2rem;
+    text-align: center;
+    color: #fff;
+  }
+
+  /* BACK BUTTON */
+  .back-btn {
+    position: fixed;
+    bottom: 16px;
+    left: 16px;
+    font-size: 14px;
+    padding: 8px 16px;
+    z-index: 600;
+  }
+}
+
+/* ===== SMALL MOBILE ≤ 420px ===== */
+@media (max-width: 420px) {
+
+  h1.title {
+    font-size: 36px;
+    margin: 60px 10px 16px;
+  }
+
+  .navbar ul {
+    width: 160px;
+  }
+
+  .navbar a {
+    font-size: 14px;
+    padding: 6px 8px;
+  }
+
+  .rooms {
+    gap: 12px;
+    padding: 15px 5%;
+  }
+
+  .room-card h3 {
+    font-size: 1rem;
+  }
+
+  .back-btn {
+    font-size: 13px;
+    padding: 6px 12px;
+  }
+}
