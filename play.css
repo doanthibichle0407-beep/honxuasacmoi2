@@ -24,7 +24,6 @@ body::after {
   50%{transform:translateY(-5px);}
 }
 
-/* BACK BUTTON */
 .back {
   position: fixed;
   bottom: 20px;
@@ -44,12 +43,10 @@ body::after {
   box-shadow: 0 8px 26px rgba(0,0,0,0.7);
 }
 
-/* VIDEO */
 .video-box { max-width: 950px; margin: 40px auto 20px; }
 video { width: 100%; border-radius: 24px; box-shadow: 0 12px 40px rgba(0,0,0,0.7); }
 .video-note { margin-top: 10px; font-size: 0.95rem; opacity:0.8; font-style: italic; }
 
-/* SUMMARY ROOM */
 .summary-room {
   max-width: 1000px;
   margin: 60px auto;
@@ -97,7 +94,6 @@ video { width: 100%; border-radius: 24px; box-shadow: 0 12px 40px rgba(0,0,0,0.7
 .summary-box.highlight { background: rgba(128,0,0,0.3); border-left:6px solid #ffd966; }
 .summary-message { margin-top:50px; padding-top:30px; border-top:1px solid rgba(255,255,255,0.2); text-align:center; font-style:italic; color:#ffd966; font-size:1.05rem; }
 
-/* QUIZ */
 .quiz-container {
   max-width: 850px;
   margin: 50px auto 80px;

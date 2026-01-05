@@ -1,4 +1,3 @@
-// DATABASE THÔNG TIN
 const instrumentInfo = {
  dantranh: {
   name: "Đàn Tranh",
@@ -191,4 +190,29 @@ popup.addEventListener("mouseleave", () => {
   hideTimeout = setTimeout(() => {
     if (!isHoveringCard) popup.classList.remove("show");
   }, 250);
+});
+
+  card.addEventListener('click', () => {
+    const name = card.querySelector('h4').textContent;
+    const audioSrc = card.dataset.audio;
+
+    popupName.textContent = name;
+    popupDesc.textContent = `Bạn đang nghe nhạc cụ: ${name}. Nhấn play để nghe thử.`
+
+    // Bật audio
+    const player = document.getElementById('sample-player');
+    player.src = audioSrc;
+    player.play();
+
+    popup.classList.add('show');
+  });
+
+
+// Close popup khi click ra ngoài
+popup.addEventListener('click', (e) => {
+  if(e.target === popup) {
+    popup.classList.remove('show');
+    const player = document.getElementById('sample-player');
+    player.pause();
+  }
 });

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Game Nam Ai & Phụng Hoàng</title>
+<link rel="stylesheet" href="gamenamai.css">
+</head>
+<body>
+
+<header>
+<h1>🎭 Thử vai người làm cải lương</h1>
+</header>
+
+<main class="container">
+  <section class="room">
+    <h2 id="scene-title"></h2>
+    <p id="scene-text"></p>
+
+    <button onclick="choose('namai')">Nam Ai</button>
+    <button onclick="choose('phunghoang')">Phụng Hoàng</button>
+
+    <p id="result"></p>
+    <button id="nextBtn" onclick="nextScene()" disabled>Cảnh tiếp →</button>
+  </section>
+</main>
+
+<script src="gamenamai.js"></script>
+</body>
+</html>

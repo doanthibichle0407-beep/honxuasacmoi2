@@ -92,7 +92,6 @@ h2 {
     box-shadow: 0 0 15px rgba(199,0,57,0.7); 
 }
 
-/* Nút quay lại */
 .back {
       display: inline-block;
     margin: 20px;
@@ -163,7 +162,6 @@ h2 {
     animation: popupIn 0.5s ease;
 }
 
-/* Title */
 #quiz-end-popup h2 {
     font-size: 2.2rem;
     color: #ffd700;
@@ -171,7 +169,6 @@ h2 {
     text-shadow: 0 0 12px rgba(255,215,0,0.9);
 }
 
-/* Score text */
 #quiz-end-popup p {
     font-size: 1.25rem;
     color: #fff3c4;
@@ -179,7 +176,6 @@ h2 {
     line-height: 1.6;
 }
 
-/* Button */
 #quiz-end-popup button {
     padding: 14px 32px;
     border-radius: 18px;

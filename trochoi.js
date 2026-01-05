@@ -166,3 +166,12 @@ function dropItem(e) {
         e.target.classList.remove("correct");
     }
 }
+window.addEventListener("DOMContentLoaded", () => {
+  const btn = document.getElementById("namaiGameBtn");
+  const unlocked = localStorage.getItem("namaiPhunghoangUnlocked");
+  if (unlocked === "true") {
+    btn.classList.remove("locked");
+    btn.style.pointerEvents = "auto";
+    btn.style.opacity = "1";
+  }
+});

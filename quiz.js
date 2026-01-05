@@ -1,6 +1,4 @@
-/* ===============================
-   NGÂN HÀNG CÂU HỎI (THÊM TỚI 100+ CÂU)
-================================ */
+
 const questionBank = [
   {
     question: "Vai đào thương trong cải lương thường mang tính cách nào?",
@@ -260,29 +258,21 @@ const questionBank = [
   correct: 0
 },
 
-// … tiếp tục theo mẫu 51 → 100
 
-  /* 👉 M THÊM TIẾP CÂU 11 → 100 Ở ĐÂY */
 ];
 
-/* ===============================
-   CẤU HÌNH
-================================ */
+
 const QUESTIONS_PER_GAME = 10;
 let currentQuestion = 0;
 let score = 0;
 
-/* ===============================
-   DOM
-================================ */
+
 const questionEl = document.getElementById("question");
 const answersEl = document.getElementById("answers");
 const scoreEl = document.getElementById("score");
 const progressEl = document.getElementById("progress");
 
-/* ===============================
-   TRỘN CÂU HỎI
-================================ */
+
 function shuffle(array) {
   for (let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
@@ -291,14 +281,10 @@ function shuffle(array) {
   return array;
 }
 
-/* ===============================
-   TẠO 10 CÂU CHO MỖI LƯỢT CHƠI
-================================ */
+
 let questions = shuffle([...questionBank]).slice(0, QUESTIONS_PER_GAME);
 
-/* ===============================
-   LOAD CÂU HỎI
-================================ */
+
 function loadQuestion() {
   const q = questions[currentQuestion];
   questionEl.textContent = `Câu ${currentQuestion + 1}: ${q.question}`;
@@ -315,9 +301,7 @@ function loadQuestion() {
     ((currentQuestion + 1) / QUESTIONS_PER_GAME) * 100 + "%";
 }
 
-/* ===============================
-   KIỂM TRA ĐÚNG / SAI
-================================ */
+
 function checkAnswer(index) {
   const buttons = answersEl.querySelectorAll("button");
   const correctIndex = questions[currentQuestion].correct;
@@ -343,9 +327,7 @@ function checkAnswer(index) {
   }, 800);
 }
 
-/* ===============================
-   KẾT THÚC QUIZ
-================================ */
+
 function endQuiz() {
   document.getElementById("quiz-end-popup").style.display = "flex";
 
@@ -362,14 +344,10 @@ function endQuiz() {
     `Bạn đạt <b>${score}</b>/100 điểm<br>${message}`;
 }
 
-/* ===============================
-   CHƠI LẠI
-================================ */
+
 document.getElementById("close-popup").onclick = () => {
-  location.reload(); // reload = 10 câu mới
+  location.reload(); 
 };
 
-/* ===============================
-   KHỞI ĐỘNG
-================================ */
+
 loadQuestion();

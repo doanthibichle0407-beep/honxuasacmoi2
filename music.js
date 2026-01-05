@@ -1,6 +1,4 @@
-// =========================
-// 🎶 DANH SÁCH NHẠC NỀN
-// =========================
+
 const musicList = {
   main: "music/nen1.mp3",
   instruments: "music/nhaccu.mp3",
@@ -9,36 +7,29 @@ const musicList = {
   bonus: "music/nen2.mp3"
 };
 
-// =========================
-// 🎵 BACKGROUND MUSIC
-// =========================
+
 const bgMusic = new Audio();
 bgMusic.loop = true;
 bgMusic.volume = 0.3;
 
-// =========================
-// 🔔 CLICK SOUND
-// =========================
+
 const clickSound = new Audio("music/ting.mp3");
 clickSound.volume = 0.4;
 
 let audioUnlocked = false;
 
-// =========================
-// 🔓 UNLOCK AUDIO (CLICK ĐẦU TIÊN)
-// =========================
+
 document.addEventListener("click", () => {
   if (audioUnlocked) return;
 
   audioUnlocked = true;
 
-  // unlock click
   clickSound.play().then(() => {
     clickSound.pause();
     clickSound.currentTime = 0;
   }).catch(()=>{});
 
-  // unlock bg music
+  
   if (bgMusic.src) {
     bgMusic.play().catch(()=>{});
   }
@@ -46,9 +37,6 @@ document.addEventListener("click", () => {
   console.log("🔓 Audio unlocked");
 }, { once: true });
 
-// =========================
-// 🎵 ĐỔI NHẠC THEO TRANG
-// =========================
 function changeMusic(type) {
   if (!musicList[type]) return;
 
@@ -60,15 +48,11 @@ function changeMusic(type) {
   }
 }
 
-// =========================
-// 🔁 LOAD LẠI NHẠC KHI REFRESH
-// =========================
+
 const saved = localStorage.getItem("musicType");
 bgMusic.src = musicList[saved] || musicList.main;
 
-// =========================
-// 🔊 TING CHO TẤT CẢ CLICK
-// =========================
+
 document.addEventListener("pointerdown", (e) => {
   if (!audioUnlocked) return;
 
@@ -89,5 +73,5 @@ function goTo(url) {
 
   setTimeout(() => {
     window.location.href = url;
-  }, 120); // đủ để nghe "ting"
+  }, 120); 
 }

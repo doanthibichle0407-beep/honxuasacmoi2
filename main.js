@@ -1,4 +1,3 @@
-/* ===== SMOOTH SCROLL NAV ===== */
 document.querySelectorAll('.navbar a[href^="#"]').forEach(a => {
   a.addEventListener('click', (e) => {
     e.preventDefault();
@@ -9,7 +8,6 @@ document.querySelectorAll('.navbar a[href^="#"]').forEach(a => {
   });
 });
 
-/* ===== UNLOCK AUDIO (CHROME POLICY) ===== */
 document.addEventListener('click', function unlock() {
   document.querySelectorAll('audio').forEach(a =>
     a.play().then(() => a.pause()).catch(() => {})
@@ -18,11 +16,8 @@ document.addEventListener('click', function unlock() {
 });
 
 
-
-/* ===== VISIT COUNTER ===== */
 async function updateVisitCount() {
   try {
-    // +1 lượt truy cập (atomic, không reset)
     await fetch(`${SUPABASE_URL}/rest/v1/rpc/increment_visit`, {
       method: "POST",
       headers: {
@@ -31,7 +26,6 @@ async function updateVisitCount() {
       }
     });
 
-    // Lấy số mới để hiển thị
     const res = await fetch(
       `${SUPABASE_URL}/rest/v1/visits?id=eq.1&select=count`,
       { headers: { apikey: SUPABASE_KEY } }
@@ -47,7 +41,6 @@ async function updateVisitCount() {
   }
 }
 
-/* ===== SEND COMMENT ===== */
 async function sendComment() {
   const name = document.getElementById("cmtName").value.trim();
   const content = document.getElementById("cmtText").value.trim();
@@ -72,10 +65,9 @@ async function sendComment() {
   document.getElementById("cmtName").value = "";
   document.getElementById("cmtText").value = "";
 
-  loadComments(); // load lại comment
+  loadComments(); 
 }
 
-/* ===== LOAD COMMENTS ===== */
 async function loadComments() {
   const res = await fetch(
     `${SUPABASE_URL}/rest/v1/comments?select=*&order=created_at.desc`,
@@ -107,16 +99,29 @@ async function loadComments() {
   });
 }
 
-/* ===== INIT ===== */
+// Khi DOM đã load
 document.addEventListener("DOMContentLoaded", () => {
   updateVisitCount();
   loadComments();
 });
-document.querySelector(".menu-toggle")
-  .addEventListener("click", () => {
-    document.querySelector(".menu")
-      .classList.toggle("active");
+
+document.addEventListener("DOMContentLoaded", () => {
+  const toggle = document.querySelector('.nav-toggle');
+  const menu = document.querySelector('.navbar ul');
+
+  if (toggle && menu) {
+    // Toggle menu khi click nút hamburger
+    toggle.addEventListener('click', (e) => {
+      e.stopPropagation(); // ngăn click bubble ra document
+      menu.classList.toggle('show');
+    });
+
+    // Click ngoài menu sẽ đóng menu
+    document.addEventListener('click', (e) => {
+      if (!menu.contains(e.target) && !toggle.contains(e.target)) {
+        menu.classList.remove('show');
+      }
+    });
+  }
 });
-
-
 

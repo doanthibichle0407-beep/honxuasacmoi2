@@ -1,132 +1,70 @@
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700&display=swap" rel="stylesheet">
-  <title>Triển Lãm Cải Lương</title>
-  <link rel="stylesheet" href="trienlam.css">
-  <link rel="stylesheet" href="mobile.css">
+<!DOCTYPE html> 
+<html lang="vi"> 
+<head> 
+  <meta charset="UTF-8"> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <title>Triển lãm Cải Lương</title> 
+  <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700&display=swap" rel="stylesheet"> 
+  <link rel="stylesheet" href="trienlam.css"> 
 </head>
-<body>
 
-  <!-- NAVBAR -->
+<body>
   <nav class="navbar">
     <ul>
       <li><a href="index.html">TRANG CHỦ</a></li>
-      <li><a href="bieudien.html">PHÒNG BIỂU DIỄN</a></li>
-      <li><a href="trungbay.html">PHÒNG TRƯNG BÀY</a></li>
+      <li><a href="bieudien.html">BIỂU DIỄN</a></li>
+      <li><a href="trungbay.html">TRƯNG BÀY</a></li>
       <li><a class="active" href="trienlam.html">TRIỂN LÃM</a></li>
+      <li><a href="namaiphunghoang.html">NAM AI - PHỤNG HOÀNG</a></li>
       <li><a href="trochoi.html">TRÒ CHƠI</a></li>
     </ul>
   </nav>
 
-  <!-- VIDEO BANNER -->
-  <div class="video-banner">
-    <video class="video-frame" autoplay muted playsinline loop>
-      <source src="assets/banner.mp4" type="video/mp4">
+  <!-- HERO VIDEO -->
+  <div class="video-wrap">
+    <video id="introVideo" autoplay muted loop playsinline>
+      <source src="assets/banner1.mp4" type="video/mp4">
     </video>
-    <div class="overlay"></div>
-    <h1 class="title">Triển Lãm Cải Lương</h1>
-    <button class="sound-btn">🔇</button>
+    <div class="video-overlay" id="videoOverlay">
+      <button id="playSoundBtn">BẬT ÂM THANH</button>
+    </div>
+    <div class="hero-content">
+      <h1>TA LÀ CẢI LƯƠNG</h1>
+      <p>Ta từng rực rỡ. Ta cũng từng im lặng.<br>Nhưng ta chưa bao giờ biến mất.</p>
+    </div>
+    <div class="note">Xem video để hiểu rõ hơn về cải lương</div>
   </div>
 
-<!-- TIMELINE -->
-<h2 class="timeline-main-title">Lịch Sử Hình Thành Cải Lương</h2>
-<section class="timeline">
-
-  <!-- MỐC 1 -->
-  <div class="timeline-item left">
-    <div class="card"
-         data-title="Cuối thế kỷ XIX – đầu XX"
-         data-img="img/hinhthanh.jpg"
-         data-more="
-         Cải lương khởi nguồn từ nhu cầu đổi mới nghệ thuật sân khấu truyền thống trong bối cảnh giao lưu văn hóa mạnh mẽ ở Nam Bộ cuối thế kỷ XIX. Buổi đầu, cải lương được biểu diễn trên những sân khấu đơn sơ, mang đậm tính dân gian, phản ánh sinh hoạt văn hoá của cộng đồng địa phương. Nhiều nghệ sĩ xuất thân từ chèo, tuồng và hát bội đã góp phần định hình phong cách diễn xuất, kỹ thuật ca hát và ngôn ngữ trình diễn cho loại hình nghệ thuật mới này. Chính sự giao thoa giữa yếu tố dân gian và sân khấu truyền thống đã tạo nền móng quan trọng cho sự ra đời của cải lương.">
-      <img src="img/hinhthanh.jpg" class="tl-img" alt="">
-      <h3>Cuối thế kỷ XIX – đầu XX</h3>
-      <p>Cải lương hình thành từ nhu cầu đổi mới sân khấu Nam Bộ...</p>
-      <div class="caption">🌾 Thời kỳ đặt nền móng</div>
+  <!-- STORY CARDS -->
+  <div class="story-container">
+    <div class="story-card">
+      <h2>2.1. Thời kỳ hình thành</h2>
+      <p>Cải lương ban đầu được biểu diễn trên sân khấu giản đơn, mang đậm tính giao lưu dân gian. Các nghệ sĩ xuất thân từ chèo, tuồng, hát bội đã góp phần định hình phong cách diễn xuất và âm nhạc của loại hình nghệ thuật mới.</p>
+    </div>
+    <div class="story-card">
+      <h2>2.2. Thời kỳ phát triển rực rỡ</h2>
+      <p>Giai đoạn bùng nổ các gánh hát như Phước Cương, Trần Đắc, với ba dòng tuồng chính: tích Trung Quốc, tuồng xã hội và tuồng phóng tác. Cải lương lan rộng ra miền Bắc, tạo nên đội ngũ nghệ sĩ, soạn giả tài năng và một đời sống sân khấu sôi động.</p>
+    </div>
+    <div class="story-card">
+      <h2>2.3. Thời kỳ thịnh hành</h2>
+      <p>Cải lương bước vào giai đoạn hoàng kim, trở thành loại hình giải trí hàng đầu ở miền Nam, với hệ thống rạp hát phát triển và khán giả đông đảo. Nghệ thuật biểu diễn, nội dung kịch bản ngày càng đổi mới, phản ánh các vấn đề xã hội và tâm lý con người.</p>
+    </div>
+    <div class="story-card">
+      <h2>2.4. Thời kỳ khủng hoảng</h2>
+      <p>Đất nước thống nhất, các gánh hát tư nhân bị giải thể và sân khấu chuyển sang mô hình đoàn nghệ thuật nhà nước. Nguồn lực hạn chế, hoạt động sân khấu suy giảm, nhưng nền tảng đào tạo tối thiểu vẫn được duy trì.</p>
+    </div>
+    <div class="story-card">
+      <h2>2.5. Thời kỳ đổi mới và thích nghi</h2>
+      <p>Từ 1980 đến nay, cải lương nỗ lực kết hợp yếu tố hiện đại với giá trị truyền thống. Dù không còn ở thời kỳ hoàng kim, cải lương vẫn là di sản văn hóa quan trọng, mang bản sắc riêng của sân khấu Nam Bộ.</p>
     </div>
   </div>
-
-  <!-- MỐC 2 -->
-  <div class="timeline-item right">
-    <div class="card"
-         data-title="1920s – 1930s"
-         data-img="img/rucro.jpg"
-         data-more="Giai đoạn này đánh dấu bước phát triển mạnh mẽ và ổn định của cải lương. Các gánh hát lớn như Phước Cương, Trần Đắc ra đời, tạo nên đời sống sân khấu sôi nổi và chuyên nghiệp. Ba dòng tuồng đặc trưng hình thành gồm:
-1. Tuồng tích Trung Quốc
-2. Tuồng xã hội
-3. Tuồng phóng tác (từ văn chương phương Tây hoặc truyện dân gian)
-Cải lương lan rộng ra nhiều vùng, đặc biệt là lan ra miền Bắc, thu hút đông đảo công chúng. Đây cũng là giai đoạn hình thành đội ngũ nghệ sĩ, nhạc công và soạn giả tài năng, góp phần nâng tầm cải lương thành một loại hình sân khấu được yêu thích trên phạm vi toàn quốc.">
-      <img src="img/rucro.jpg" class="tl-img" alt="">
-      <h3>1920s – 1930s</h3>
-      <p>Giai đoạn bùng nổ với các gánh hát lớn, hình thành lớp nghệ sĩ chuyên nghiệp đầu tiên.</p>
-      <div class="caption">🎭 Giai đoạn vàng son</div>
-    </div>
-  </div>
-
-  <!-- MỐC 3 -->
-  <div class="timeline-item left">
-    <div class="card"
-         data-title="1950s – 1960s"
-         data-img="img/thinhhanh.jpg"
-         data-more="Cải lương bước vào thời kỳ hoàng kim, trở thành hình thức giải trí phổ biến nhất ở miền Nam, thậm chí được xem là đỉnh cao nghệ thuật sân khấu Việt Nam thời điểm đó. Hệ thống rạp hát phát triển dày đặc, thu hút khán giả đến xem mỗi ngày.
-Về nghệ thuật, cải lương đạt trình độ hoàn thiện:
-- Nội dung kịch bản đa dạng, phản ánh từ lịch sử, đạo lý đến các vấn đề xã hội đương thời.
-- Diễn xuất tinh tế, chú trọng tâm lý nhân vật.
-- Âm nhạc phong phú với sự hoàn thiện của vọng cổ.
-Đây là giai đoạn tạo ra nhiều tác phẩm kinh điển và tên tuổi nghệ sĩ lớn, đóng vai trò định hình bản sắc cải lương Nam Bộ."> 
-      <img src="img/thinhhanh.jpg" class="tl-img" alt="">
-      <h3>1950s – 1960s</h3>
-      <p>Cải lương thời hoàng kim: rạp đông nghịt, vọng cổ tinh luyện.</p>
-      <div class="caption">✨ Đỉnh cao nghệ thuật miền Nam</div>
-    </div>
-  </div>
-
-    <!-- MỐC 1975 – KHỦNG HOẢNG -->
-  <div class="timeline-item right">
-    <div class="card"
-         data-title="Năm 1975 – Thời kỳ khủng hoảng"
-         data-img="img/1975.jpg"
-         data-more="
-Sau năm 1975, cải lương bước vào giai đoạn khó khăn kéo dài. 
-Nhiều đoàn hát tư nhân giải thể hoặc bị sáp nhập, mô hình hoạt động đổi mới khiến sân khấu mất đi sự sôi động thương mại vốn có. 
-Khán giả giảm mạnh do sự xuất hiện của các loại hình giải trí mới, đặc biệt là điện ảnh và truyền hình.
-
-Hệ thống rạp hát xuống cấp, kịch bản thiếu tính hấp dẫn, nhiều nghệ sĩ kỳ cựu giải nghệ hoặc chuyển nghề. 
-Cải lương không còn giữ vị trí độc tôn như trước, dẫn đến tình trạng suy giảm trầm trọng về cả số lượng đoàn diễn lẫn chất lượng tác phẩm.
-
-Giai đoạn 1975 được xem là bước ngoặt đầy biến động – mở đầu cho thời kỳ khủng hoảng mà cải lương phải nỗ lực vượt qua trong thập niên 1980.">
-      <img src="img/1975.jpg" class="tl-img" alt="">
-      <h3>Năm 1975 – Thời kỳ khủng hoảng</h3>
-      <p>Thay đổi lớn sau thống nhất khiến cải lương suy giảm mạnh.</p>
-      <div class="caption">⚠️ Giai đoạn khó khăn</div>
-    </div>
-  </div>
-
-  <!-- MỐC 4 -->
-  <div class="timeline-item left">
-    <div class="card"
-         data-title="Từ 1980s đến nay"
-         data-img="img/1980.jpg"
-         data-more="
-Sau năm 1975, cải lương còn duy trì sức sống mạnh mẽ trong khoảng một thập kỷ trước khi dần suy giảm do nhiều nguyên nhân: thiếu kịch bản mới chất lượng, rạp hát xuống cấp, đội ngũ nghệ sĩ gạo cội ít dần, và đặc biệt là sự cạnh tranh của các phương tiện giải trí hiện đại.
-Tuy nhiên, từ thời kỳ đổi mới, cải lương đã chủ động thích nghi bằng nhiều cách:
-- Kết hợp yếu tố sân khấu hiện đại và công nghệ trình diễn.
-- Phản ánh hơi thở cuộc sống đương đại trong nội dung kịch bản.
-- Cải biên, dàn dựng lại các tác phẩm kinh điển dưới hình thức mới.
-- Đưa cải lương lên truyền hình, nền tảng số và các loại hình truyền thông đa phương tiện.
-Mặc dù không còn đạt độ phổ biến như thời hoàng kim, cải lương vẫn giữ vai trò quan trọng với tư cách là di sản văn hoá đặc sắc của Nam Bộ và là bộ phận không thể thiếu trong kho tàng sân khấu truyền thống Việt Nam. Việc bảo tồn và phát huy cải lương ngày nay được xem là nhiệm vụ quan trọng nhằm gìn giữ bản sắc văn hóa dân tộc trong bối cảnh toàn cầu hóa và hội nhập.">
-      <img src="img/1980.jpg" class="tl-img" alt="">
-      <h3>Từ 1980s đến nay</h3>
-      <p>Dù đối mặt thách thức, cải lương thích nghi với công nghệ và truyền hình.</p>
-      <div class="caption">📺 Thời kì phục hưng của cải lương</div>
-    </div>
-  </div>
-
+<!-- CHUYỂN -->
+<section class="transition">
+  <p>
+    Ta không thể tồn tại nếu thiếu những con người<br>
+    đã sống trọn đời mình trên sân khấu.
+  </p>
 </section>
-
   <!-- ARTIST GALLERY -->
   <section class="artists-section">
     <h2 class="artists-title">Nghệ Sĩ Gạo Cội</h2>
@@ -555,16 +493,13 @@ Di sản – Đóng góp :
   </section>
 
 
-<!-- POPUP NGHỆ SĨ MỚI -->
 <div class="artist-popup" id="artistPopup">
   <div class="popup-content">
     <span class="close-popup">×</span>
     <div class="popup-body">
-      <!-- Ảnh nghệ sĩ -->
       <div class="popup-img">
         <img id="popupImg" src="" alt="Nghệ sĩ">
       </div>
-      <!-- Thông tin nghệ sĩ -->
       <div class="popup-info">
         <h3 id="popupName"></h3>
         <p id="popupInfo"></p>
@@ -572,17 +507,14 @@ Di sản – Đóng góp :
     </div>
   </div>
 </div>
-<div id="timelinePopup" class="popup">
-  <div class="popup-content">
-    <span class="tp-close">&times;</span>
-    <img id="tpImg" src="" alt="">
-    <h3 id="tpTitle"></h3>
-    <p id="tpText"></p>
-  </div>
-</div>
+<section class="end">
+  <p>
+    Ta không chỉ là quá khứ.<br>
+    Ta là ký ức vẫn đang thở.
+  </p>
+</section>
 
   <script src="trienlam.js"></script>
-  <script src="music.js"></script>
 
 </body>
 </html>

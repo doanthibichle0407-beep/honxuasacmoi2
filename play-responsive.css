@@ -1,0 +1,150 @@
+/* =========================
+   MOBILE RESPONSIVE – GEN Z STYLE
+   ========================= */
+@media (max-width: 768px) {
+
+  body {
+    font-size: 14px; /* nhỏ hơn trên desktop nhưng vẫn readable */
+  }
+
+  /* ===== BACK BUTTON ===== */
+  .back {
+    bottom: 16px;
+    left: 16px;
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+
+  /* ===== VIDEO BOX ===== */
+  .video-box {
+    max-width: 95%;
+    margin: 30px auto 20px;
+  }
+
+  video {
+    width: 100%;
+    border-radius: 20px;
+  }
+
+  .video-note {
+    font-size: 0.85rem;
+  }
+
+  /* ===== SUMMARY ROOM ===== */
+  .summary-room {
+    padding: 40px 20px;
+    margin: 40px 10px;
+    border-radius: 20px;
+  }
+
+  .summary-intro h1 {
+    font-size: 48px;
+    line-height: 1.1;
+  }
+
+  .summary-intro span {
+    font-size: 16px;
+  }
+
+  .summary-intro p {
+    font-size: 1rem;
+    line-height: 1.5;
+    max-width: 100%;
+    margin: 0 auto 20px auto;
+  }
+
+  /* ===== SUMMARY GRID ===== */
+  .summary-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .summary-box {
+    padding: 20px;
+    border-radius: 16px;
+    border-left: 6px solid #ffd966;
+    box-shadow:0 10px 30px rgba(255,215,102,0.15);
+  }
+
+  .summary-box h3 { font-size: 1rem; }
+  .summary-box p { font-size: 0.9rem; line-height: 1.6; }
+
+  .summary-message {
+    font-size: 1rem;
+    padding-top: 20px;
+  }
+
+  /* ===== TRANSITION LINE ===== */
+  .transition-line {
+    margin: 40px auto 30px;
+    font-size: 0.9rem;
+  }
+
+  .transition-line span {
+    padding: 6px 14px;
+  }
+
+  /* ===== QUIZ ===== */
+  .quiz-container {
+    max-width: 95%;
+    padding: 30px 20px;
+    border-radius: 20px;
+  }
+
+  #question {
+    font-size: 1.3rem;
+  }
+
+  .answers {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .btn {
+    flex: unset;
+    width: 100%;
+    font-size: 1rem;
+    padding: 14px 20px;
+  }
+
+  #progress {
+    height: 12px;
+    border-radius: 12px;
+  }
+
+  #result {
+    font-size: 1.3rem;
+  }
+
+}
+/* Chỉ áp dụng cho mobile */
+@media (max-width: 768px) {
+
+  .summary-box .content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  .summary-box.collapsible h3 {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  /* icon + style modern */
+  .summary-box.collapsible h3::after {
+    content: '+';
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #ffd966;
+    transition: transform 0.3s;
+  }
+
+  .summary-box.collapsible.active h3::after {
+    content: '–';
+  }
+
+}

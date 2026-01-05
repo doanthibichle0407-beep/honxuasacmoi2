@@ -2,51 +2,40 @@
 <html lang="vi">
 <head>
   <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Hồn Xưa — Sắc Mới</title>
 
   <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="mobile.css">
-  <link
-    href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;600&family=Be+Vietnam+Pro:wght@300;500;700&display=swap"
-    rel="stylesheet"
-  >
+  <link rel="stylesheet" href="responsive.css">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;600&family=Be+Vietnam+Pro:wght@300;500;700&display=swap" rel="stylesheet">
 </head>
 
 <body onload="changeMusic('main')">
 
+  <!-- ===== NAVBAR ===== -->
   <nav class="navbar">
+    <div class="nav-toggle">☰</div>
     <ul>
       <li><a href="index.html">TRANG CHỦ</a></li>
       <li><a href="bieudien.html">PHÒNG BIỂU DIỄN</a></li>
       <li><a href="trungbay.html">PHÒNG TRƯNG BÀY</a></li>
+      <li><a href="namaiphunghoang.html">NAM AI- PHỤNG HOÀNG</a></li>
       <li><a href="trienlam.html">TRIỂN LÃM</a></li>
       <li><a href="trochoi.html">TRÒ CHƠI</a></li>
     </ul>
-
-</nav>
-
   </nav>
-<div class="visit-box">
-   Lượt trải nghiệm
-  <span id="visitCount">0</span>
-</div>
 
-  <header class="hero">
-    <div class="hero-overlay"></div>
-
+  <!-- ===== HERO ===== -->
+  <header class="hero container">
     <div class="hero-left">
       <h1 class="title-2line">
         Hồn Xưa
         <span>Sắc Mới</span>
       </h1>
-
       <p>
         Không gian số kết nối nghệ thuật dân gian với thế hệ trẻ —
         nghe, xem, chơi và khám phá.
       </p>
-
       <a class="cta" href="bieudien.html">Bắt đầu khám phá</a>
     </div>
 
@@ -55,8 +44,13 @@
     </div>
   </header>
 
-  <!-- MAIN -->
-  <main>
+  <!-- ===== VISIT BOX ===== -->
+  <div class="visit-box">
+    Lượt trải nghiệm <span id="visitCount">0</span>
+  </div>
+
+  <!-- ===== MAIN CONTENT ===== -->
+ <main class="container">
     <section class="intro-cards">
 
       <a class="card" href="bieudien.html">
@@ -74,6 +68,12 @@
         <p>Hành trình lịch sử cải lương.</p>
       </a>
 
+      <!-- Mới: Link dẫn tới phòng Nam Ai – Phụng Hoàng -->
+      <a class="card" href="namaiphunghoang.html">
+        <h3>Nam Ai & Phụng Hoàng</h3>
+        <p>Hiểu bài bản trước khi bước vào trò chơi.</p>
+      </a>
+
       <a class="card" href="trochoi.html">
         <h3>Trò Chơi</h3>
         <p>Vừa chơi, vừa học, vừa hiểu.</p>
@@ -81,19 +81,14 @@
 
     </section>
   </main>
-
-  <!-- FOOTER -->
+  <!-- ===== FOOTER ===== -->
   <footer class="foot">
-    <div class="foot-content">
+    <div class="foot-content container">
 
       <div class="foot-section">
         <h4>Liên hệ</h4>
         <p>Email: doanc3thpthoangdieu@gmail.com</p>
         <p>Hotline: 0989 328 404</p>
-
-        <div class="socials">
-          <!-- icons giữ nguyên -->
-        </div>
       </div>
 
       <div class="foot-section">
@@ -110,33 +105,25 @@
       </div>
 
     </div>
-
     <div class="copyright">
       © 2025 — Hồn Xưa • Sắc Mới
     </div>
   </footer>
-  <hr>
 
-<section class="comment-box">
-  <h3>💬 Góp ý trải nghiệm</h3>
+  <!-- ===== COMMENT BOX ===== -->
+  <section class="comment-box">
+    <h3>💬 Góp ý trải nghiệm</h3>
+    <input id="cmtName" placeholder="Tên của bạn" />
+    <textarea id="cmtText" placeholder="Nội dung góp ý..." rows="4"></textarea>
+    <button onclick="sendComment()">Gửi góp ý</button>
+    <p id="cmtStatus"></p>
+    <div class="comment-list" id="commentList"></div>
+  </section>
 
-  <input id="cmtName" placeholder="Tên của bạn" />
-
-  <textarea id="cmtText" placeholder="Nội dung góp ý..." rows="4"></textarea>
-
-  <button onclick="sendComment()">Gửi góp ý</button>
-
-  <p id="cmtStatus"></p>
-
-  <div class="comment-list" id="commentList"></div>
-</section>
-
-
-
-<script src="supabase.js"></script>
-<script src="main.js"></script>
+  <!-- ===== SCRIPTS ===== -->
+  <script src="supabase.js"></script>
+  <script src="main.js"></script>
   <script src="music.js"></script>
 
 </body>
 </html>
-

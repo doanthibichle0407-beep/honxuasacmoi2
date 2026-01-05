@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <title>Phòng Nhạc Lý Cải Lương</title>
+  <link rel="stylesheet" href="nhacly.css" />
+</head>
+
+<body>
+
+<nav class="navbar">
+  <div class="nav-toggle">☰</div>
+  <ul>
+    <li><a href="index.html">TRANG CHỦ</a></li>
+    <li><a href="bieudien.html">PHÒNG BIỂU DIỄN</a></li>
+    <li><a href="trungbay.html">PHÒNG TRƯNG BÀY</a></li>
+    <li><a href="trienlam.html">TRIỂN LÃM</a></li>
+    <li><a class="active" href="nhacly.html">PHÒNG NHẠC LÝ</a></li>
+    <li><a href="trochoi.html">TRÒ CHƠI</a></li>
+  </ul>
+</nav>
+
+<header class="hero">
+  <h1>Phòng Nhạc Lý Cải Lương</h1>
+  <p>Nghe cho đúng – rồi mới hiểu vì sao đau</p>
+</header>
+
+<main class="learning">
+
+  <!-- PROGRESS -->
+  <div class="progress">
+    <div class="progress-bar" id="progressBar"></div>
+  </div>
+
+  <!-- INTRO SLIDES -->
+  <section class="slides">
+    <div class="slide active">
+      <h2>Cải lương là gì?</h2>
+      <p>Không phải sân khấu sinh ra cải lương.</p>
+    </div>
+    <div class="slide">
+      <h2>Nó bắt đầu từ đâu?</h2>
+      <p>Nhạc cung đình → Ca Huế → Tài tử → Cải lương</p>
+    </div>
+    <div class="slide">
+      <h2>Vì sao nghe buồn?</h2>
+      <p>Vì nhạc lý Việt Nam không đi thẳng – nó đi vòng.</p>
+    </div>
+    <button id="nextSlide">Chạm để tiếp</button>
+  </section>
+
+  <!-- TAB NHẠC LÝ -->
+  <section class="tabs hidden">
+    <div class="tab-buttons">
+      <button data-tab="ngu-cung">Ngũ cung</button>
+      <button data-tab="hoi-xu">Hò – Xự – Xàng</button>
+      <button data-tab="cam-xuc">Cảm xúc</button>
+    </div>
+
+    <div class="tab-content active" id="ngu-cung">
+      <p>
+        Cải lương không dùng Do Re Mi.  
+        Nó dùng hệ ngũ cung của người Việt.
+      </p>
+    </div>
+
+    <div class="tab-content" id="hoi-xu">
+      <p>
+        Xàng là kể.  
+        Xê là đẩy.  
+        Cống là rơi.
+      </p>
+    </div>
+
+    <div class="tab-content" id="cam-xuc">
+      <p>
+        Mỗi nghệ nhân đờn cùng một chữ,  
+        nhưng không ai buồn giống ai.
+      </p>
+    </div>
+  </section>
+
+  <!-- CARD SO SÁNH -->
+  <section class="compare hidden">
+    <h2>Ba bản Nam – cùng gốc, khác cảm</h2>
+
+    <div class="compare-grid">
+      <div class="flip-card">
+        <div class="front">Nam Xuân</div>
+        <div class="back">Buồn nhẹ – còn hy vọng</div>
+      </div>
+      <div class="flip-card">
+        <div class="front">Nam Ai</div>
+        <div class="back">Buồn sâu – không lối thoát</div>
+      </div>
+      <div class="flip-card">
+        <div class="front">Nam Đảo</div>
+        <div class="back">Dồn – nghẹt – căng</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- UNLOCK -->
+  <section class="unlock hidden" id="unlockRoom">
+    <h2>🚪 Đã hiểu nhạc – mới nghe được Nam Ai</h2>
+    <a href="namaiphunghoang.html" class="cta">Vào phòng Nam Ai – Phụng Hoàng</a>
+  </section>
+
+</main>
+
+<script src="nhacly.js"></script>
+</body>
+</html>

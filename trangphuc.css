@@ -1,24 +1,22 @@
 *{margin:0;padding:0;box-sizing:border-box;}
 :root{
-  --accent:#ffeebc;       /* vàng sáng hơn */
-  --card-dark:#1c1010;    /* card tối để nổi */
+  --accent:#ffeebc;     
+  --card-dark:#1c1010;    
   --card-top:#2c1818;
   --gold:#f8e6a4;
   font-family:"Be Vietnam Pro",sans-serif;
 }
 
-/* ███ NỀN — overlay mạnh hơn để chữ nổi rõ ███ */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
   background:
-    linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.55)),  /* mạnh hơn */
+    linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.55)),  
     url("img/nen5.jpg") no-repeat center center fixed;
   background-size: cover;
   color: var(--accent);
 }
 
-/* ███ HEADER ███ */
 .hero{
   text-align:center;
   padding:80px 8% 40px;
@@ -41,7 +39,6 @@ body {
   text-shadow:0 0 10px rgba(0,0,0,0.9);
 }
 
-/* ███ FILTER BAR ███ */
 .filter-bar{
   text-align:center;
   margin-bottom:28px;
@@ -68,7 +65,7 @@ body {
   box-shadow:0 0 12px rgba(255,230,180,0.8);
 }
 
-/* ███ GALLERY ███ */
+
 .gallery{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
@@ -76,7 +73,6 @@ body {
   padding:0 6% 60px;
 }
 
-/* card tối – có viền vàng – bóng sân khấu */
 .card{
   background:linear-gradient(145deg,var(--card-dark),var(--card-top));
   padding:14px;
@@ -113,7 +109,6 @@ body {
   text-shadow:0 0 8px rgba(0,0,0,1);
 }
 
-/* ███ MODAL ███ */
 .modal{
   position:fixed;
   inset:0;
@@ -166,7 +161,6 @@ body {
   to{opacity:1; transform:scale(1);}
 }
 
-/* ███ BACK BUTTON ███ */
 .back-btn {
   display:inline-block;
   margin:20px;

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nam Ai - Phụng Hoàng</title>
+  <link rel="stylesheet" href="namaiphunghoang.css" />
+</head>
+<body>
+
+<header>
+  <h1>Hồn Xưa – Sắc Mới</h1>
+  <p>Hiểu bài bản – rồi mới bước vào cuộc chơi</p>
+</header>
+
+<main>
+
+  <!-- PHÒNG NAM AI -->
+  <section class="room" id="nam-ai">
+    <h2>🎻 Nam Ai – Từ nhạc cung đình đến cải lương</h2>
+
+    <p class="highlight">
+      Bộ Ba bài Nam: <strong>Nam Ai – Nam Xuân – Nam Đảo</strong>
+    </p>
+
+    <ul class="list-simple">
+      <li>🌀 <strong>Nam Xuân</strong>: vui tươi, mở đầu</li>
+      <li>🍂 <strong>Nam Đảo</strong>: nhẹ buồn, chuyển cảm xúc</li>
+      <li>💔 <strong>Nam Ai</strong>: buồn sâu, ai oán, cảnh chia ly</li>
+    </ul>
+
+    <p class="interactive">
+      Xuất phát từ cung đình Huế, đi qua Ca Huế và đờn ca tài tử vào Nam.  
+      Nam Ai là tiếng khóc âm nhạc cho những bi kịch lớn nhất.
+    </p>
+
+    <audio controls data-audio>
+      <source src="music/lanvadiep.mp3" type="audio/mpeg">
+    </audio>
+  </section>
+
+  <!-- PHÒNG PHỤNG HOÀNG -->
+  <section class="room" id="phung-hoang">
+    <h2>🔥 Phụng Hoàng – Một bản, hai cách đờn</h2>
+
+    <p class="highlight">
+      Một bản duy nhất, nhưng 2 cách đờn:
+    </p>
+
+    <ul class="list-simple">
+      <li>🎼 <strong>Phụng Hoàng Tài Tử</strong>: chậm, nhịp giãn, luyến láy</li>
+      <li>🎬 <strong>Phụng Hoàng Cải Lương</strong>: nhanh hơn, sân khấu hơn</li>
+    </ul>
+
+    <p class="interactive">
+      Đờn nhanh = cải lương, đờn chậm = tài tử.  
+      Cùng một bản nhưng cảm xúc khác hẳn!
+    </p>
+
+    <audio controls data-audio>
+      <source src="music/nuadoihuongphan.mp3" type="audio/mpeg">
+    </audio>
+
+  </section>
+
+  <!-- PHÒNG GAME – LOCKED -->
+  <section class="room locked" id="game">
+    <h2>🎮 Phòng Thử Vai Người Làm Nghề</h2>
+    <p id="lock-text">Bạn cần hoàn thành 2 phòng trên để mở khóa.</p>
+    <button id="play-btn" disabled>Bắt đầu chơi</button>
+  </section>
+
+</main>
+
+<script src="namaiphunghoang.js"></script>
+</body>
+</html>

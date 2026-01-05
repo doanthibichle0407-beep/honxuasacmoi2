@@ -57,3 +57,18 @@ function checkAnswer(ans) {
     }
   }, 900);
 }
+if(window.innerWidth <= 768){
+  const collapsibles = document.querySelectorAll('.summary-box.collapsible');
+  collapsibles.forEach(box => {
+    const header = box.querySelector('h3');
+    const content = box.querySelector('.content');
+    header.addEventListener('click', () => {
+      box.classList.toggle('active');
+      if(box.classList.contains('active')){
+        content.style.maxHeight = content.scrollHeight + 'px';
+      }else{
+        content.style.maxHeight = 0;
+      }
+    });
+  });
+}
