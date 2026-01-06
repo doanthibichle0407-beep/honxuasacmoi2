@@ -1,230 +1,292 @@
-body {
-  background: #0b0806;
-  color: #e6d9b0;
-  font-family: 'Be Vietnam Pro', sans-serif;
-  margin: 0;
+/* =====================================================
+   ROOT – ĐỎ VÀNG SÂN KHẤU (GEN Z, KHÔNG SẾN)
+   ===================================================== */
+:root {
+  --bg-main: #1a0e0e;
+  --bg-deep: #0f0707;
+
+  --red-main: #6e1f1f;
+  --red-deep: #4a1414;
+
+  --gold-main: #c7a24c;
+  --gold-soft: #e6d7a3;
+
+  --text-main: #f1eadf;
+  --text-muted: #c9bfb3;
+
+  --border-soft: rgba(199,162,76,0.28);
 }
 
+/* =====================================================
+   RESET + BODY
+   ===================================================== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Be Vietnam Pro', sans-serif;
+  color: var(--text-main);
+
+  background:
+    linear-gradient(rgba(26,14,14,0.92), rgba(15,7,7,0.96)),
+    url("img/nen13.jpg") center top / cover no-repeat;
+
+  background-attachment: fixed;
+  overflow-x: hidden;
+  letter-spacing: 0.2px;
+}
+
+/* =====================================================
+   NAVBAR
+   ===================================================== */
 .navbar {
   position: fixed;
   top: 18px;
   left: 0;
   width: 100%;
-  z-index: 200;
+  z-index: 300;
   display: flex;
   justify-content: center;
-  padding: 8px 0;
 }
 
 .navbar ul {
   display: flex;
-  gap: 28px;
-  padding: 10px 20px;
+  gap: 26px;
+  padding: 10px 22px;
   list-style: none;
-
-  background: transparent; 
+  background: rgba(15,7,7,0.7);
+  border: 1px solid var(--border-soft);
+  border-radius: 999px;
 }
 
 .navbar a {
-  color: var(--accent);
+  color: var(--gold-main);
   text-decoration: none;
   font-weight: 600;
-  font-size: 20px;
-  padding: 8px 12px;
-  border-radius: 8px;
+  font-size: 18px;
+  padding: 6px 10px;
+  border-radius: 999px;
   transition: 0.25s ease;
 }
 
 .navbar a:hover,
 .navbar a.active {
-  background: rgba(197,191,101,0.1);
+  background: rgba(199,162,76,0.18);
   color: #fff;
 }
 
+/* =====================================================
+   HERO
+   ===================================================== */
 .hero {
-  text-align: center;
-  padding: 120px 20px 60px;
+  padding: 190px 20px 140px;
+  max-width: 920px;
+  margin: auto;
+  position: relative;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 40px;
+  left: 50%;
+  width: 520px;
+  height: 320px;
+  transform: translateX(-50%);
+  background: radial-gradient(
+    ellipse at center,
+    rgba(199,162,76,0.28),
+    transparent 65%
+  );
+  pointer-events: none;
 }
 
 .hero h1 {
-  font-size: 3rem;
-  color: #c5bf65;
+  max-width: 640px;
+  font-size: clamp(2.6rem, 5vw, 3.4rem);
+  color: var(--gold-soft);
+  line-height: 1.08;
+  text-shadow:
+    0 2px 0 rgba(0,0,0,0.6),
+    0 0 34px rgba(199,162,76,0.35);
 }
 
 .hero p {
-  opacity: 0.9;
-}
-
-main {
-  max-width: 900px;
-  margin: auto;
-  padding: 0 20px 120px;
-}
-
-.room {
-  background: rgba(255,255,255,0.04);
-  padding: 32px;
-  border-radius: 18px;
-  margin-bottom: 40px;
-  opacity: 0;
-  transform: translateY(40px);
-  transition: 0.6s ease;
-}
-
-.room.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-.quote {
+  max-width: 420px;
+  margin-top: 18px;
+  color: var(--text-muted);
   font-style: italic;
-  font-size: 1.2rem;
-  text-align: center;
 }
 
-.highlight {
-  margin-top: 12px;
-  font-weight: 600;
-  color: #c5bf65;
-}
-
-.list-simple {
-  list-style: none;
-  padding-left: 0;
-}
-
-.list-simple li {
-  margin: 10px 0;
-}
-
-.card-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(180px,1fr));
-  gap: 20px;
-}
-
-.card {
-  background: rgba(0,0,0,0.5);
-  padding: 20px;
-  border-radius: 14px;
-  text-align: center;
-}
-
-.card h3 {
-  color: #c5bf65;
-}
-
-.locked {
-  filter: blur(2px);
-  opacity: 0.5;
-}
-
-.cta {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 12px 28px;
-  border-radius: 14px;
-  background: linear-gradient(135deg,#c5bf65,#9f994c);
-  color: #1a140f;
-  font-weight: 600;
-  text-decoration: none;
-}
-
-.cta.disabled {
-  pointer-events: none;
-  opacity: 0.5;
-}
+/* =====================================================
+   MAIN
+   ===================================================== */
 .learning {
-  max-width: 900px;
+  max-width: 920px;
   margin: auto;
+  padding: 0 20px 160px;
 }
 
+/* =====================================================
+   PROGRESS
+   ===================================================== */
 .progress {
-  height: 6px;
-  background: rgba(255,255,255,0.1);
-  border-radius: 999px;
-  margin: 20px 0;
+  height: 4px;
+  background: rgba(255,255,255,0.12);
+  margin: 60px 0 90px;
+  overflow: hidden;
 }
 
 .progress-bar {
   height: 100%;
   width: 0%;
-  background: linear-gradient(90deg,#c5bf65,#ffdf70);
-  transition: 0.4s;
+  background: linear-gradient(
+    90deg,
+    var(--red-main),
+    var(--gold-main)
+  );
+  transition: width 0.4s ease;
 }
 
+/* =====================================================
+   VISIBILITY CONTROL – CỐT LÕI
+   ===================================================== */
+.hidden {
+  display: none !important;
+}
+
+/* =====================================================
+   CARD – NHẸ LẠI NHƯNG SÂU
+   ===================================================== */
+.slide,
+.tab-content,
+.compare,
+.unlock,
+.flip-card div {
+  background: linear-gradient(
+    180deg,
+    rgba(110,31,31,0.95),
+    rgba(74,20,20,0.97)
+  );
+  border: 1px solid var(--border-soft);
+  border-radius: 18px;
+  padding: 26px 28px;
+  box-shadow: 0 20px 42px rgba(0,0,0,0.6);
+  position: relative;
+}
+
+/* =====================================================
+   SLIDES
+   ===================================================== */
 .slides {
-  text-align: center;
+  margin-top: 40px;
 }
 
 .slide {
   display: none;
+  margin-bottom: 70px;
 }
 
 .slide.active {
   display: block;
 }
 
+.slide:nth-child(1) { max-width: 460px; }
+.slide:nth-child(2) { max-width: 620px; margin-left: auto; }
+.slide:nth-child(3) { max-width: 520px; margin-top: 80px; }
+
 #nextSlide {
-  margin-top: 20px;
+  margin-top: 18px;
+  padding: 9px 28px;
   background: none;
-  border: 1px solid #c5bf65;
-  color: #c5bf65;
-  padding: 10px 24px;
+  border: 1px solid var(--gold-main);
+  color: var(--gold-main);
   border-radius: 999px;
   cursor: pointer;
+  transition: 0.3s ease;
 }
 
+#nextSlide:hover {
+  background: var(--gold-main);
+  color: #1a0e0e;
+}
+
+/* =====================================================
+   TABS
+   ===================================================== */
 .tabs {
-  margin-top: 60px;
+  margin-top: 100px;
 }
 
 .tab-buttons {
   display: flex;
-  gap: 12px;
+  gap: 14px;
+  flex-wrap: wrap;
 }
 
 .tab-buttons button {
-  background: rgba(255,255,255,0.05);
-  border: none;
-  color: #c5bf65;
-  padding: 10px 16px;
-  border-radius: 12px;
+  background: rgba(15,7,7,0.85);
+  border: 1px solid var(--border-soft);
+  color: var(--gold-soft);
+  padding: 9px 18px;
+  border-radius: 999px;
   cursor: pointer;
+}
+
+.tab-buttons button:hover,
+.tab-buttons button.active {
+  background: var(--red-main);
+  color: #fff;
 }
 
 .tab-content {
   display: none;
-  margin-top: 20px;
+  margin-top: 28px;
 }
 
 .tab-content.active {
   display: block;
 }
 
+/* =====================================================
+   SO SÁNH
+   ===================================================== */
+.compare {
+  margin-top: 120px;
+}
+
 .compare-grid {
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
-  gap: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 46px;
+  margin-top: 40px;
 }
 
 .flip-card {
-  perspective: 800px;
+  position: relative;
+  perspective: 1000px;
 }
 
+.flip-card:nth-child(1) { max-width: 460px; }
+.flip-card:nth-child(2) { max-width: 620px; margin-left: 80px; }
+.flip-card:nth-child(3) { max-width: 520px; margin-left: 20px; }
+
 .flip-card div {
-  padding: 40px;
-  border-radius: 16px;
-  background: rgba(0,0,0,0.6);
-  transition: transform 0.6s;
+  min-height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 600;
   backface-visibility: hidden;
-  text-align: center;
+  transition: transform 0.6s ease;
 }
 
 .flip-card .back {
-  transform: rotateY(180deg);
   position: absolute;
-  top: 0;
+  inset: 0;
+  transform: rotateY(180deg);
 }
 
 .flip-card:hover .front {
@@ -235,6 +297,60 @@ main {
   transform: rotateY(0);
 }
 
-.hidden {
-  display: none;
+/* =====================================================
+   UNLOCK
+   ===================================================== */
+.unlock {
+  margin-top: 140px;
+  text-align: center;
+}
+
+.unlock h2 {
+  margin-bottom: 30px;
+  color: var(--gold-soft);
+}
+
+.cta {
+  display: inline-block;
+  padding: 12px 36px;
+  border-radius: 999px;
+  border: 1px solid var(--gold-main);
+  color: var(--gold-main);
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.cta:hover {
+  background: var(--red-main);
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+/* =====================================================
+   MOBILE
+   ===================================================== */
+@media (max-width: 768px) {
+  body {
+    background-attachment: scroll;
+  }
+
+  .hero {
+    padding: 150px 16px 120px;
+  }
+
+  .hero h1 {
+    font-size: 2.3rem;
+  }
+
+  .slide,
+  .tab-content,
+  .compare,
+  .unlock {
+    padding: 22px;
+  }
+
+  .slide:nth-child(2),
+  .flip-card:nth-child(2) {
+    margin-left: 0;
+  }
 }
