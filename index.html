@@ -68,8 +68,8 @@
         <h3>Triển Lãm</h3>
         <p>Hành trình lịch sử cải lương.</p>
       </a>
-      <a class="card" href="namaiphunghoang.html">
-        <h3>Nam Ai & Phụng Hoàng</h3>
+      <a class="card" href="nhacly.html">
+        <h3>Phòng Nhạc Lý </h3> 
         <p>Hiểu bài bản trước khi bước vào trò chơi.</p>
       </a>
       <a class="card" href="trochoi.html">
@@ -78,5 +78,47 @@
       </a>
     </section>
   </main>
+ <footer class="foot">
+    <div class="foot-content container">
+
+      <div class="foot-section">
+        <h4>Liên hệ</h4>
+        <p>Email: doanc3thpthoangdieu@gmail.com</p>
+        <p>Hotline: 0989 328 404</p>
+      </div>
+
+      <div class="foot-section">
+        <h4>Địa chỉ</h4>
+        <p>126 Ngô Quyền, phường Long Khánh</p>
+        <p>Đồng Nai, Việt Nam</p>
+      </div>
+
+      <div class="foot-section">
+        <h4>Hỗ trợ</h4>
+        <p>FAQ</p>
+        <p>Liên hệ</p>
+        <p>Chính sách bảo mật</p>
+      </div>
+
+    </div>
+    <div class="copyright">
+      © 2025 — Hồn Xưa • Sắc Mới
+    </div>
+  </footer>
+
+  <section class="comment-box">
+    <h3>💬 Góp ý trải nghiệm</h3>
+    <input id="cmtName" placeholder="Tên của bạn" />
+    <textarea id="cmtText" placeholder="Nội dung góp ý..." rows="4"></textarea>
+    <button onclick="sendComment()">Gửi góp ý</button>
+    <p id="cmtStatus"></p>
+    <div class="comment-list" id="commentList"></div>
+  </section>
+
+  <script src="supabase.js"></script>
+  <script src="main.js"></script>
+  <script src="music.js"></script>
+
 </body>
 </html>
+
