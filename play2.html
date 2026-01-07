@@ -10,15 +10,66 @@
 <body>
 
 <a href="bieudien.html" class="back">← Quay lại</a>
-
 <div class="video-box">
-  <video src="assets/tiengtrongmelinh.mp4" controls></video>
+<div class="yt-frame">
+  <iframe
+    id="ytPlayer"
+    src="https://www.youtube.com/embed/QCxrNuiJkcs?start=1&rel=0&modestbranding=1"
+    allow="autoplay; encrypted-media"
+    allowfullscreen>
+  </iframe>
+</div>
 
   <p class="video-note">
     ⏱ Vở diễn mang màu sắc lịch sử – phần tóm tắt bên dưới giúp bạn nắm rõ diễn biến cuộc khởi nghĩa.
   </p>
+
+  <!-- HIGHLIGHT TRÍCH ĐOẠN -->
+  <section class="highlight-section">
+
+    <!-- HEADER CLICK -->
+    <div class="highlight-toggle" onclick="toggleHighlights()">
+      <span class="icon">⏱</span>
+      Trích đoạn tiêu biểu – TIẾNG TRỐNG MÊ LINH
+      <span class="hint">(nhấn để mở)</span>
+    </div>
+
+    <!-- DANH SÁCH HIGHLIGHTS -->
+    <div class="video-highlights collapsed" id="hlBox">
+
+      <div class="hl" onclick="playAt(934)">
+        <span class="time">00:15:34</span>
+        <span class="label">Cuộc đối đầu tại Đền Hùng</span>
+      </div>
+
+      <div class="hl highlight" onclick="playAt(2294)">
+        <span class="time">00:38:14</span>
+        <span class="label">Chia tay dưới trăng của Thi Sách - Trưng Trắc</span>
+      </div>
+
+      <div class="hl" onclick="playAt(4123)">
+        <span class="time">01:08:43</span>
+        <span class="label">Màn "Đấu trí" và "Bắn cung"</span>
+      </div>
+
+      <div class="hl highlight" onclick="playAt(7898)">
+        <span class="time">02:11:38</span>
+        <span class="label">Lời nhắn nhủ cuối cùng của Thi Sách</span>
+      </div>
+
+      <div class="hl highlight" onclick="playAt(8470)">
+        <span class="time">02:21:10</span>
+        <span class="label">Lễ tế chồng & Tiếng trống xuất quân</span>
+      </div>
+
+    </div>
+
+  </section>
 </div>
 
+<!-- =========================
+     SUMMARY
+========================= -->
 <section class="summary-room">
 
   <div class="summary-intro">
@@ -47,7 +98,7 @@
       <h3>II. Chí lớn âm thầm</h3>
       <div class="content">
         <p>
-          Trưng Trắc và chồng là Thi Sách nuôi chí lớn cứu nước,
+          Trưng Trắc và Thi Sách nuôi chí lớn cứu nước,
           bí mật chiêu mộ hào kiệt,
           khơi dậy tinh thần phản kháng trong nhân dân.
         </p>
@@ -110,10 +161,16 @@
 
 </section>
 
+<!-- =========================
+     TRANSITION LINE
+========================= -->
 <div class="transition-line">
   <span>⬇︎ Từ lịch sử đến cảm nhận của bạn ⬇︎</span>
 </div>
 
+<!-- =========================
+     QUIZ
+========================= -->
 <div class="quiz-container">
   <h2>🎯 Bạn cảm nhận được gì sau Tiếng Trống Mê Linh?</h2>
 

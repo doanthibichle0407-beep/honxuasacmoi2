@@ -15,7 +15,11 @@ nextBtn.onclick = () => {
     progress.style.width = ((slideIndex + 1) / slides.length * 30) + '%';
   } else {
     document.querySelector('.slides').style.display = 'none';
-    document.querySelector('.tabs').classList.remove('hidden');
+
+    const tabs = document.querySelector('.tabs');
+    tabs.classList.remove('hidden');
+    tabs.classList.add('show');
+
     progress.style.width = '35%';
   }
 };
@@ -48,9 +52,10 @@ tabButtons.forEach(btn => {
 
     progress.style.width = (35 + tabsViewed * 10) + '%';
 
-    // CHỈ KHI XEM TAB CUỐI → hiện Nam
+    // Khi xem tab "Cảm xúc" → hiện so sánh
     if (btn.dataset.tab === 'cam-xuc') {
       compareSection.classList.remove('hidden');
+      compareSection.classList.add('show');
       progress.style.width = '75%';
     }
   };
@@ -73,6 +78,7 @@ cards.forEach(card => {
 
     if (cardHovered >= cards.length) {
       unlock.classList.remove('hidden');
+      unlock.classList.add('show');
       progress.style.width = '100%';
     }
   });

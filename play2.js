@@ -152,3 +152,11 @@ const questions2 = [
 ];
 
 loadQuiz(questions2);
+function playAt(sec) {
+  const yt = document.getElementById("ytPlayer");
+  const videoID = "QCxrNuiJkcs"; // ID video Tiếng Trống Mê Linh
+  yt.src = `https://www.youtube.com/embed/${videoID}?start=${sec}&autoplay=1&rel=0&modestbranding=1`;
+}
+function toggleHighlights() {
+  document.getElementById("hlBox").classList.toggle("collapsed");
+}

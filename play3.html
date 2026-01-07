@@ -12,13 +12,92 @@
 <a href="bieudien.html" class="back">← Quay lại</a>
 
 <div class="video-box">
-  <video src="assets/doicoluu.mp4" controls></video>
-  
-  <p class="video-note">
-    ⏱ Vở diễn dài – phần tóm tắt bên dưới giúp bạn nắm mạch bi kịch nhanh hơn.
-    Trích dẫn: YOUTUBE - KÊNH GIA BẢO OFFICAL
-  </p>
+<div class="yt-frame">
+  <iframe
+    id="ytPlayer"
+src="https://www.youtube.com/embed/14dAFf4MOBk?start=1&rel=0&modestbranding=1"
+    allow="autoplay; encrypted-media"
+    allowfullscreen>
+  </iframe>
 </div>
+  <p class="video-note">
+    ⏱ Vở diễn mang màu sắc lịch sử – phần tóm tắt bên dưới giúp bạn nắm rõ diễn biến cuộc khởi nghĩa.
+  </p>
+<!-- =========================
+     HIGHLIGHT TRÍCH ĐOẠN
+========================= -->
+<section class="highlight-section">
+
+  <!-- HEADER CLICK -->
+<div class="highlight-toggle" onclick="toggleHighlights()">
+  <span class="icon">⏱</span>
+  Trích đoạn tiêu biểu – ĐỜI CÔ LỰU
+  <span class="hint">(nhấn để mở)</span>
+</div>
+
+  <!-- HIGHLIGHT LIST -->
+  <div class="video-highlights collapsed" id="hlBox">
+
+    <div class="hl" onclick="playAt(248)">
+      <span class="time">00:04:08</span>
+      <span class="label">Gia đình hạnh phúc – mầm bi kịch</span>
+    </div>
+
+    <div class="hl highlight" onclick="playAt(2021)">
+      <span class="time">00:33:41</span>
+      <span class="label">Cao trào: Võ Minh Thành bị bắt</span>
+    </div>
+
+    <div class="hl" onclick="playAt(2855)">
+      <span class="time">00:47:35</span>
+      <span class="label">Minh Thành trở về sau 19 năm</span>
+    </div>
+
+    <div class="hl highlight" onclick="playAt(3218)">
+      <span class="time">00:53:38</span>
+      <span class="label">Cha con gặp nhau trong vô thức</span>
+    </div>
+
+    <div class="hl" onclick="playAt(4443)">
+      <span class="time">01:14:03</span>
+      <span class="label">Cô Lựu đọc thư – giằng xé nội tâm</span>
+    </div>
+
+    <div class="hl" onclick="playAt(6134)">
+      <span class="time">01:42:14</span>
+      <span class="label">Đấu trí Hội đồng Thăng (châm biếm)</span>
+    </div>
+
+    <div class="hl highlight" onclick="playAt(7830)">
+      <span class="time">02:10:30</span>
+      <span class="label">Nhận con trong im lặng – trích đoạn kinh điển</span>
+    </div>
+
+    <div class="hl" onclick="playAt(10024)">
+      <span class="time">02:47:04</span>
+      <span class="label">Vợ chồng gặp lại – giải bày oan khuất</span>
+    </div>
+
+    <div class="hl" onclick="playAt(10899)">
+      <span class="time">03:01:39</span>
+      <span class="label">Hội đồng Thăng: “Pháp luật là ta”</span>
+    </div>
+
+    <div class="hl highlight" onclick="playAt(11107)">
+      <span class="time">03:05:07</span>
+      <span class="label">Đỉnh điểm: Minh Luân giết Hội đồng Thăng</span>
+    </div>
+
+    <div class="hl" onclick="playAt(11265)">
+      <span class="time">03:07:45</span>
+      <span class="label">Kết cục bi thảm – gia đình tan nát</span>
+    </div>
+
+  </div>
+
+</section>
+
+
 
 <section class="summary-room">
 

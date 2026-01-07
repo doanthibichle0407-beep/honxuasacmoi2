@@ -150,5 +150,16 @@ const questions3 = [
     answer: 1
   }
 ];
-
 loadQuiz(questions3);
+
+
+function playAt(sec){
+  const yt = document.getElementById("ytPlayer");
+  yt.src =
+    "https://www.youtube.com/embed/14dAFf4MOBk?start=" +
+    sec + "&autoplay=1&rel=0&modestbranding=1";
+}
+function toggleHighlights() {
+  document.getElementById("hlBox").classList.toggle("collapsed");
+}
+

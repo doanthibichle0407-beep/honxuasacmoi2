@@ -153,8 +153,20 @@ body {
 /* =====================================================
    VISIBILITY CONTROL – CỐT LÕI
    ===================================================== */
+/* =====================================================
+   VISIBILITY CONTROL – FIX CHUẨN
+   ===================================================== */
 .hidden {
-  display: none !important;
+  opacity: 0;
+  transform: translateY(40px);
+  pointer-events: none;
+}
+
+.hidden.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+  transition: 0.7s ease;
 }
 
 /* =====================================================
