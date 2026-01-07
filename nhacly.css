@@ -190,32 +190,47 @@ body {
 }
 
 /* =====================================================
-   SLIDES
+   PHÒNG NHẠC LÝ – FULL POLISH CSS (FINAL)
+   ĐỎ – VÀNG SÂN KHẤU | GEN Z | KHÔNG GLASS
    ===================================================== */
+
+/* ---------- SLIDES ---------- */
 .slides {
-  margin-top: 40px;
+  margin-top: 60px;
 }
 
 .slide {
   display: none;
-  margin-bottom: 70px;
+  margin-bottom: 90px;
+  line-height: 1.6;
 }
 
 .slide.active {
   display: block;
+  animation: fadeUp 0.8s ease;
 }
 
-.slide:nth-child(1) { max-width: 460px; }
-.slide:nth-child(2) { max-width: 620px; margin-left: auto; }
-.slide:nth-child(3) { max-width: 520px; margin-top: 80px; }
+.slide h2 {
+  color: var(--gold-soft);
+  font-size: 1.7rem;
+  margin-bottom: 12px;
+}
 
+.slide p {
+  color: var(--text-muted);
+  max-width: 420px;
+}
+
+/* nút tiếp */
 #nextSlide {
-  margin-top: 18px;
-  padding: 9px 28px;
-  background: none;
-  border: 1px solid var(--gold-main);
-  color: var(--gold-main);
+  margin-top: 26px;
+  padding: 10px 34px;
   border-radius: 999px;
+  border: 1px solid var(--gold-main);
+  background: transparent;
+  color: var(--gold-main);
+  font-weight: 600;
+  letter-spacing: 0.4px;
   cursor: pointer;
   transition: 0.3s ease;
 }
@@ -223,18 +238,18 @@ body {
 #nextSlide:hover {
   background: var(--gold-main);
   color: #1a0e0e;
+  transform: translateY(-2px);
 }
 
-/* =====================================================
-   TABS
-   ===================================================== */
+/* ---------- TABS ---------- */
 .tabs {
-  margin-top: 100px;
+  margin-top: 120px;
 }
 
 .tab-buttons {
   display: flex;
   gap: 14px;
+  margin-bottom: 28px;
   flex-wrap: wrap;
 }
 
@@ -242,9 +257,10 @@ body {
   background: rgba(15,7,7,0.85);
   border: 1px solid var(--border-soft);
   color: var(--gold-soft);
-  padding: 9px 18px;
+  padding: 9px 20px;
   border-radius: 999px;
   cursor: pointer;
+  transition: 0.25s ease;
 }
 
 .tab-buttons button:hover,
@@ -255,18 +271,103 @@ body {
 
 .tab-content {
   display: none;
-  margin-top: 28px;
+  max-width: 520px;
+  line-height: 1.6;
 }
 
 .tab-content.active {
   display: block;
+  animation: fadeUp 0.6s ease;
 }
 
-/* =====================================================
-   SO SÁNH
-   ===================================================== */
+/* ---------- EMOTION MAP ---------- */
+.emotion-map {
+  margin-top: 140px;
+}
+
+.emotion-map h2 {
+  text-align: center;
+  color: var(--gold-soft);
+  margin-bottom: 60px;
+  font-size: 1.8rem;
+  text-shadow:
+    0 2px 0 rgba(0,0,0,0.6),
+    0 0 22px rgba(199,162,76,0.35);
+}
+
+.emotion-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 32px;
+}
+
+.emotion-card {
+  background: linear-gradient(
+    180deg,
+    rgba(110,31,31,0.92),
+    rgba(60,18,18,0.96)
+  );
+  border: 1px solid var(--border-soft);
+  border-radius: 20px;
+  padding: 26px 24px;
+  box-shadow: 0 18px 38px rgba(0,0,0,0.55);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.emotion-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 26px 54px rgba(0,0,0,0.7);
+}
+
+.emotion-card h3 {
+  margin-top: 0;
+  margin-bottom: 14px;
+  font-size: 1.15rem;
+  color: var(--gold-main);
+}
+
+.emotion-card p {
+  margin: 0 0 10px;
+  line-height: 1.55;
+}
+
+.emotion-card .note {
+  margin-top: 14px;
+  font-size: 0.95rem;
+  font-style: italic;
+  color: var(--text-muted);
+  border-left: 3px solid rgba(199,162,76,0.45);
+  padding-left: 12px;
+}
+
+/* viền tinh theo cảm xúc */
+.emotion-card.sad {
+  box-shadow: inset 0 0 0 1px rgba(120,60,60,0.25),
+              0 18px 38px rgba(0,0,0,0.55);
+}
+
+.emotion-card.remember {
+  box-shadow: inset 0 0 0 1px rgba(160,130,80,0.25),
+              0 18px 38px rgba(0,0,0,0.55);
+}
+
+.emotion-card.happy {
+  box-shadow: inset 0 0 0 1px rgba(199,162,76,0.35),
+              0 18px 38px rgba(0,0,0,0.55);
+}
+
+.emotion-card.tense {
+  box-shadow: inset 0 0 0 1px rgba(180,70,50,0.35),
+              0 18px 38px rgba(0,0,0,0.55);
+}
+
+/* ---------- SO SÁNH ---------- */
 .compare {
-  margin-top: 120px;
+  margin-top: 140px;
+}
+
+.compare h2 {
+  color: var(--gold-soft);
 }
 
 .compare-grid {
@@ -277,13 +378,8 @@ body {
 }
 
 .flip-card {
-  position: relative;
   perspective: 1000px;
 }
-
-.flip-card:nth-child(1) { max-width: 460px; }
-.flip-card:nth-child(2) { max-width: 620px; margin-left: 80px; }
-.flip-card:nth-child(3) { max-width: 520px; margin-left: 20px; }
 
 .flip-card div {
   min-height: 140px;
@@ -309,17 +405,27 @@ body {
   transform: rotateY(0);
 }
 
-/* =====================================================
-   UNLOCK
-   ===================================================== */
+/* ---------- UNLOCK ---------- */
 .unlock {
-  margin-top: 140px;
+  margin-top: 160px;
   text-align: center;
 }
 
 .unlock h2 {
-  margin-bottom: 30px;
+  margin-bottom: 28px;
   color: var(--gold-soft);
+}
+
+/* ---------- ANIMATION ---------- */
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .cta {
@@ -365,4 +471,50 @@ body {
   .flip-card:nth-child(2) {
     margin-left: 0;
   }
+}
+.emotion-map {
+  margin-top: 120px;
+}
+
+/* =====================================================
+   BỔ SUNG ĐỂ PHÒNG ĐỠ TRỐNG – CÓ NHỊP – KHÔNG GLASS
+   ===================================================== */
+
+/* ---- CÂU DẪN CHUYỂN NHỊP ---- */
+.transition-text {
+  margin: 100px auto 120px;
+  max-width: 520px;
+  text-align: center;
+  font-style: italic;
+  color: var(--text-muted);
+  line-height: 1.7;
+  opacity: 0.9;
+}
+
+/* ---- NHỊP NỀN CHO SECTION (KHÔNG ĐỔI BACKGROUND) ---- */
+.tabs,
+.emotion-map,
+.compare,
+.unlock {
+  position: relative;
+}
+
+.tabs::before,
+.emotion-map::before,
+.compare::before {
+  content: "";
+  position: absolute;
+  inset: -40px;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(199,162,76,0.08),
+    transparent 70%
+  );
+  pointer-events: none;
+}
+
+/* ---- FLIP CARD CÓ TRỌNG LƯỢNG HƠN ---- */
+.flip-card:hover .front,
+.flip-card:hover .back {
+  box-shadow: 0 28px 60px rgba(0,0,0,0.75);
 }

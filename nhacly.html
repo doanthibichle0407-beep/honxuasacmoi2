@@ -2,65 +2,89 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Phòng Nhạc Lý Cải Lương</title>
   <link rel="stylesheet" href="nhacly.css" />
 </head>
 
 <body>
 
+<!-- ================= NAV ================= -->
 <nav class="navbar">
-  <div class="nav-toggle">☰</div>
   <ul>
     <li><a href="index.html">TRANG CHỦ</a></li>
     <li><a href="bieudien.html">PHÒNG BIỂU DIỄN</a></li>
     <li><a href="trungbay.html">PHÒNG TRƯNG BÀY</a></li>
-     <li><a class="active" href="nhacly.html">PHÒNG NHẠC LÝ</a></li>
+    <li><a class="active" href="nhacly.html">PHÒNG NHẠC LÝ</a></li>
     <li><a href="trienlam.html">LỊCH SỬ</a></li>
     <li><a href="trochoi.html">TRÒ CHƠI</a></li>
   </ul>
 </nav>
 
+<!-- ================= HERO ================= -->
 <header class="hero">
   <h1>Phòng Nhạc Lý Cải Lương</h1>
-  <p>Nghe cho đúng – rồi mới hiểu vì sao đau</p>
+  <p>
+    Nghe cho đúng – rồi mới hiểu vì sao đau.  
+    Không học nhạc, chỉ học cách nghe.
+  </p>
 </header>
 
 <main class="learning">
 
-  <!-- PROGRESS -->
+  <!-- ================= PROGRESS ================= -->
   <div class="progress">
     <div class="progress-bar" id="progressBar"></div>
   </div>
 
-  <!-- INTRO SLIDES -->
+  <!-- ================= SLIDES ================= -->
   <section class="slides">
+
     <div class="slide active">
       <h2>Cải lương là gì?</h2>
-      <p>Không phải sân khấu sinh ra cải lương.</p>
+      <p>
+        Không phải sân khấu sinh ra cải lương.  
+        Mà là đời sống cần một cách nói chậm hơn.
+      </p>
     </div>
+
     <div class="slide">
       <h2>Nó bắt đầu từ đâu?</h2>
-      <p>Nhạc cung đình → Ca Huế → Tài tử → Cải lương</p>
+      <p>
+        Nhạc cung đình → Ca Huế → Đờn ca tài tử → Cải lương.  
+        Mỗi đời, nhạc đi chậm thêm một chút.
+      </p>
     </div>
+
     <div class="slide">
       <h2>Vì sao nghe buồn?</h2>
-      <p>Vì nhạc lý Việt Nam không đi thẳng – nó đi vòng.</p>
+      <p>
+        Vì nhạc lý Việt Nam không đi thẳng.  
+        Nó đi vòng – để người nghe kịp nghĩ.
+      </p>
     </div>
+
     <button id="nextSlide">Chạm để tiếp</button>
   </section>
 
-  <!-- TAB NHẠC LÝ -->
+  <!-- ================= DÒNG CHUYỂN ================= -->
+  <p class="transition-text">
+    Khi đã quen nhịp, ta mới bắt đầu nói chuyện về nhạc.
+  </p>
+
+  <!-- ================= TABS ================= -->
   <section class="tabs hidden">
+
     <div class="tab-buttons">
-      <button data-tab="ngu-cung">Ngũ cung</button>
+      <button class="active" data-tab="ngu-cung">Ngũ cung</button>
       <button data-tab="hoi-xu">Hò – Xự – Xàng</button>
       <button data-tab="cam-xuc">Cảm xúc</button>
     </div>
 
     <div class="tab-content active" id="ngu-cung">
       <p>
-        Cải lương không dùng Do Re Mi.  
-        Nó dùng hệ ngũ cung của người Việt.
+        Cải lương không dùng Do – Re – Mi.  
+        Nó dùng ngũ cung Việt: Hò – Xự – Xang – Xê – Cống.
       </p>
     </div>
 
@@ -68,82 +92,87 @@
       <p>
         Xàng là kể.  
         Xê là đẩy.  
-        Cống là rơi.
+        Cống là rơi – và ở lại.
       </p>
     </div>
 
     <div class="tab-content" id="cam-xuc">
       <p>
-        Mỗi nghệ nhân đờn cùng một chữ,  
-        nhưng không ai buồn giống ai.
+        Cùng một chữ, mỗi người ca một nỗi.  
+        Nhạc giống nhau – nhưng lòng thì không.
       </p>
+    </div>
+
+  </section>
+
+  <!-- ================= EMOTION MAP ================= -->
+  <section class="emotion-map hidden">
+    <h2>🎭 Khi nhân vật đổi cảm xúc – nhạc đổi ra sao?</h2>
+
+    <div class="emotion-grid">
+
+      <div class="emotion-card sad">
+        <h3>Buồn sâu – mất mát</h3>
+        <p>
+          Nam Ai hoặc vọng cổ nhịp chậm.
+        </p>
+        <p class="note">
+          Nhịp rơi thấp, câu dài –  
+          nghe là thấy nỗi đau chưa nói hết.
+        </p>
+      </div>
+
+      <div class="emotion-card remember">
+        <h3>Nhớ – tâm sự</h3>
+        <p>
+          Vọng cổ nhịp 8 hoặc 16.
+        </p>
+        <p class="note">
+          Nhân vật nói với chính mình.  
+          Không khóc, nhưng buồn rất lâu.
+        </p>
+      </div>
+
+      <div class="emotion-card happy">
+        <h3>Vui – sinh hoạt</h3>
+        <p>
+          Bắc – Xuân – Lưu Thủy.
+        </p>
+        <p class="note">
+          Nhịp nhanh, sáng –  
+          nghe là thấy đời còn nhẹ.
+        </p>
+      </div>
+
+      <div class="emotion-card tense">
+        <h3>Căng – cao trào</h3>
+        <p>
+          Oán hoặc vọng cổ nhịp lớn.
+        </p>
+        <p class="note">
+          Nhạc kéo dài để giữ người xem  
+          ở lại khoảnh khắc quyết định.
+        </p>
+      </div>
+
     </div>
   </section>
-<!-- CẢM XÚC & LÀN ĐIỆU -->
-<section class="emotion-map hidden">
-  <h2>🎭 Khi nhân vật buồn – vui – nhớ thì hát gì?</h2>
 
-  <div class="emotion-grid">
-
-    <div class="emotion-card sad">
-      <h3>😢 Buồn sâu – mất mát</h3>
-      <p>
-        Dùng <strong>Nam Ai</strong> hoặc <strong>vọng cổ nhịp chậm</strong>.
-      </p>
-      <p class="note">
-        Nhịp chậm, câu dài, chữ rơi xuống thấp –  
-        nghe là thấy nỗi đau không nói thành lời.
-      </p>
-    </div>
-
-    <div class="emotion-card remember">
-      <h3>😔 Nhớ – tâm sự</h3>
-      <p>
-        Dùng <strong>vọng cổ nhịp 8 hoặc 16</strong>.
-      </p>
-      <p class="note">
-        Nhân vật nói với chính mình.  
-        Không khóc lớn, nhưng buồn rất lâu.
-      </p>
-    </div>
-
-    <div class="emotion-card happy">
-      <h3>😊 Vui – sinh hoạt – gặp gỡ</h3>
-      <p>
-        Dùng <strong>Bắc</strong>, <strong>Xuân</strong>, <strong>Lưu Thủy</strong>.
-      </p>
-      <p class="note">
-        Nhịp nhanh, giai điệu sáng.  
-        Nghe là thấy đời còn nhẹ.
-      </p>
-    </div>
-
-    <div class="emotion-card tense">
-      <h3>🔥 Căng thẳng – cao trào</h3>
-      <p>
-        Dùng <strong>Oán</strong> hoặc vọng cổ nhịp lớn (32–64).
-      </p>
-      <p class="note">
-        Nhạc kéo rất dài để giữ người xem  
-        ở lại với khoảnh khắc quyết định.
-      </p>
-    </div>
-
-  </div>
-</section>
-
+  <!-- ================= SO SÁNH ================= -->
   <section class="compare hidden">
-    <h2>Ba bản Nam – cùng gốc, khác cảm</h2>
+    <h2>Ba bản Nam – cùng gốc, khác lòng</h2>
 
     <div class="compare-grid">
       <div class="flip-card">
         <div class="front">Nam Xuân</div>
         <div class="back">Buồn nhẹ – còn hy vọng</div>
       </div>
+
       <div class="flip-card">
         <div class="front">Nam Ai</div>
         <div class="back">Buồn sâu – không lối thoát</div>
       </div>
+
       <div class="flip-card">
         <div class="front">Nam Đảo</div>
         <div class="back">Dồn – nghẹt – căng</div>
@@ -151,15 +180,19 @@
     </div>
   </section>
 
+  <!-- ================= UNLOCK ================= -->
   <section class="unlock hidden" id="unlockRoom">
-    <h2> Đã hiểu nhạc – mới nghe được Nam Ai</h2>
-    <a href="namaiphunghoang.html" class="cta">Vào phòng Nam Ai – Phụng Hoàng</a>
+    <h2>
+      Khi đã hiểu nhạc,<br>
+      mới nghe được Nam Ai.
+    </h2>
+    <a href="namaiphunghoang.html" class="cta">
+      Vào phòng Nam Ai – Phụng Hoàng
+    </a>
   </section>
 
 </main>
 
 <script src="nhacly.js"></script>
-<script src="music.js"></script>
 </body>
 </html>
-
