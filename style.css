@@ -334,3 +334,77 @@ body {
   font-family: "MyCustomFont";
   src: url("font/font1.ttf") format("truetype");
 }
+/* ===============================
+   EXHIBIT START OVERLAY
+================================ */
+
+#exhibitStart {
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(circle at center, rgba(199,167,108,0.08), transparent 60%),
+    linear-gradient(180deg, #0b0806, #070504);
+  z-index: 99999;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-family: 'Be Vietnam Pro', sans-serif;
+  color: #e8dfd6;
+}
+
+/* Khu chạm */
+.tap-zone {
+  text-align: center;
+  cursor: pointer;
+}
+
+/* Vòng gợn */
+.tap-zone .ring {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(199,167,108,0.5);
+  animation: ripple 1.8s infinite;
+}
+
+/* Tay chạm */
+.tap-zone .hand {
+  position: relative;
+  top: -110px;
+  font-size: 2.6rem;
+  animation: tap 1.2s infinite;
+}
+
+/* Text */
+.tap-zone p {
+  margin-top: -60px;
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+}
+
+.tap-zone span {
+  font-size: 0.9rem;
+  color: #c7a76c;
+}
+
+/* Animations */
+@keyframes ripple {
+  0% { transform: scale(0.95); opacity: 0.4; }
+  50% { transform: scale(1.15); opacity: 1; }
+  100% { transform: scale(0.95); opacity: 0.4; }
+}
+
+@keyframes tap {
+  0% { transform: translateY(0); opacity: 0.6; }
+  50% { transform: translateY(-10px); opacity: 1; }
+  100% { transform: translateY(0); opacity: 0.6; }
+}
+
+/* Khi mở không gian */
+#exhibitStart.opened {
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.6s ease;
+}

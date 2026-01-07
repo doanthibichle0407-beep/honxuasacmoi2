@@ -124,4 +124,27 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+document.addEventListener("DOMContentLoaded", () => {
+  const overlay = document.getElementById("exhibitStart");
+  if (!overlay) return;
 
+  const startExperience = () => {
+    overlay.classList.add("opened");
+
+    if (typeof changeMusic === "function") {
+      changeMusic("main");
+    }
+
+    setTimeout(() => overlay.remove(), 600);
+
+    // gỡ listener sau khi đã chạm
+    document.removeEventListener("click", startExperience);
+    document.removeEventListener("touchstart", startExperience);
+  };
+
+  // Desktop
+  document.addEventListener("click", startExperience);
+
+  // Mobile
+  document.addEventListener("touchstart", startExperience);
+});
