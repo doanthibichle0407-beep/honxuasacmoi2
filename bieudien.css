@@ -18,8 +18,8 @@
 body {
   font-family: var(--font-main);
   background:
-    linear-gradient(180deg, rgba(0,0,0,0.5), rgba(0,0,0,0.7)),
-    url("img/nen3.jpg") center/cover no-repeat fixed;
+    linear-gradient(180deg, rgb(0 0 0 / 19%), rgba(0, 0, 0, 0.226)),
+    url("img/nen15.jpg") center/cover no-repeat fixed;
   color: var(--muted);
   line-height: 1.5;
   min-height: 100vh;
@@ -30,40 +30,37 @@ body {
 
 .navbar {
   position: fixed;
-  top: 18px;
+  top: 0;
   left: 0;
   width: 100%;
+  height: var(--nav-h);
   z-index: 200;
   display: flex;
+  align-items: center;
   justify-content: center;
-  padding: 8px 0;
+  margin : 20px;
 }
 
 .navbar ul {
   display: flex;
-  gap: 28px;
-  padding: 10px 20px;
+  gap: 26px;
   list-style: none;
-
-  background: transparent; 
 }
 
 .navbar a {
   color: var(--accent);
   text-decoration: none;
   font-weight: 600;
-  font-size: 20px;
-  padding: 8px 12px;
+  font-size: 18px;
+  padding: 6px 10px;
   border-radius: 8px;
-  transition: 0.25s ease;
 }
 
 .navbar a:hover,
 .navbar a.active {
-  background: rgba(197,191,101,0.1);
+  background: rgba(197,191,101,0.12);
   color: #fff;
 }
-
 @media(max-width:600px){
   .navbar ul { flex-direction: column; gap: 12px; }
   .navbar a { font-size: 16px; padding: 8px 12px; }
@@ -71,14 +68,14 @@ body {
 
 h1.title {
   font-family: "MyCustomFont";
-  margin: 120px 0 30px;
+  margin: 80px 0 30px;
   font-size: 100px;
   font-weight: 800;
   color: var(--accent);
   letter-spacing: 1px;
   text-shadow: 
     2px 2px 8px rgba(0,0,0,0.8),
-    0 0 18px rgba(255,215,0,0.6);
+    0 0 18px rgb(255 215 0 / 73%);
   line-height: 1.1;
   z-index: 5;
   position: relative;

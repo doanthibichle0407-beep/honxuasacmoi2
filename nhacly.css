@@ -30,8 +30,8 @@ body {
   color: var(--text-main);
 
   background:
-    linear-gradient(rgba(26,14,14,0.92), rgba(15,7,7,0.96)),
-    url("img/nen13.jpg") center top / cover no-repeat;
+    linear-gradient(rgb(47 12 12 / 44%), rgb(33 15 15 / 96%)),
+    url("img/nen16.jpeg") center top / cover no-repeat;
 
   background-attachment: fixed;
   overflow-x: hidden;
@@ -43,45 +43,41 @@ body {
    ===================================================== */
 .navbar {
   position: fixed;
-  top: 18px;
+  top: 0;
   left: 0;
   width: 100%;
-  z-index: 300;
+  height: var(--nav-h);
+  z-index: 200;
   display: flex;
+  align-items: center;
   justify-content: center;
 }
 
 .navbar ul {
   display: flex;
   gap: 26px;
-  padding: 10px 22px;
   list-style: none;
-  background: rgba(15,7,7,0.7);
-  border: 1px solid var(--border-soft);
-  border-radius: 999px;
 }
 
 .navbar a {
-  color: var(--gold-main);
+  color: var(--accent);
   text-decoration: none;
   font-weight: 600;
   font-size: 18px;
   padding: 6px 10px;
-  border-radius: 999px;
-  transition: 0.25s ease;
+  border-radius: 8px;
 }
 
 .navbar a:hover,
 .navbar a.active {
-  background: rgba(199,162,76,0.18);
+  background: rgba(197,191,101,0.12);
   color: #fff;
 }
-
 /* =====================================================
    HERO
    ===================================================== */
 .hero {
-  padding: 190px 20px 140px;
+  padding: 120px 30px 60px;
   max-width: 920px;
   margin: auto;
   position: relative;
@@ -135,7 +131,6 @@ body {
 .progress {
   height: 4px;
   background: rgba(255,255,255,0.12);
-  margin: 60px 0 90px;
   overflow: hidden;
 }
 
@@ -179,8 +174,8 @@ body {
 .flip-card div {
   background: linear-gradient(
     180deg,
-    rgba(110,31,31,0.95),
-    rgba(74,20,20,0.97)
+    rgb(167 45 45 / 0%),
+    rgb(43 13 13 / 54%)
   );
   border: 1px solid var(--border-soft);
   border-radius: 18px;
@@ -223,7 +218,6 @@ body {
 
 /* nút tiếp */
 #nextSlide {
-  margin-top: 26px;
   padding: 10px 34px;
   border-radius: 999px;
   border: 1px solid var(--gold-main);
@@ -304,8 +298,8 @@ body {
 .emotion-card {
   background: linear-gradient(
     180deg,
-    rgba(110,31,31,0.92),
-    rgba(60,18,18,0.96)
+    rgb(74 36 36 / 20%),
+    rgb(55 17 17 / 60%)
   );
   border: 1px solid var(--border-soft);
   border-radius: 20px;

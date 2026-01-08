@@ -1,4 +1,6 @@
-/* ===== RESET & ROOT ===== */
+/* ===============================
+   RESET & ROOT
+================================ */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -6,135 +8,153 @@
 }
 
 :root {
-  --bg: #0b0806;
-  --accent: #C5BF65;
-  --accent-dark: #b21e1e;
-  --muted: #e6d9b0;
-  --glass: rgba(255,255,255,0.04);
-  --radius: 14px;
+  --bg-main: #140e0a;          /* nền sân khấu */
+  --bg-gradient: #1a0f0b;
+  --accent: #C5BF65;           /* vàng nhạt */
+  --accent-soft: #e6d9b0;
+  --accent-dark: #8b1a1a;      /* đỏ nhung */
+  --text-main: #f1eadf;
+  --glass: rgba(255,255,255,0.05);
+  --radius: 16px;
 }
 
-/* ===== BODY ===== */
+/* ===============================
+   BODY
+================================ */
 body {
   font-family: "Be Vietnam Pro", sans-serif;
-  background: var(--bg);
-  color: var(--muted);
-  line-height: 1.6;
+ background: linear-gradient(rgba(20,14,10,0.6), rgba(20,14,10,0.6)), 
+              url('img/nen16.jpeg') center/cover no-repeat fixed;
+  color: var(--text-main);
+  line-height: 1.7;
   padding-top: 64px;
 }
 
-.navbar {
+.back-btn {
   position: fixed;
-  top: 18px;
-  left: 0;
-  width: 100%;
-  z-index: 200;
-  display: flex;
-  justify-content: center;
-  padding: 8px 0;
-}
-
-.navbar ul {
-  display: flex;
-  gap: 28px;
-  padding: 10px 20px;
-  list-style: none;
-
-  background: transparent; 
-}
-
-.navbar a {
-  color: var(--accent);
+  bottom: 20px;
+  left: 20px;
+  padding: 14px 24px;
+  background: #800000;
+  color: #ffd966;
+  border-radius: 16px;
+  font-weight: 700;
   text-decoration: none;
-  font-weight: 600;
-  font-size: 20px;
-  padding: 8px 12px;
-  border-radius: 8px;
-  transition: 0.25s ease;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+  transition: transform 0.2s, box-shadow 0.2s;
+  z-index: 300;
 }
-
-.navbar a:hover,
-.navbar a.active {
-  background: rgba(197,191,101,0.1);
-  color: #fff;
+.back-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 26px rgba(0,0,0,0.7);
 }
-
-/* ===== HEADER ===== */
+/* ===============================
+   HEADER
+================================ */
 header {
   text-align: center;
-  padding: 60px 20px;
-  background: linear-gradient(135deg, #1a1a1a, #0b0806);
-}
+  padding: 100px 20px 80px;
+   border-bottom: 1px solid rgba(197,191,101,0.25);
+} 
+ 
 
 header h1 {
   font-family: "MyCustomFont", serif;
-  font-size: 3rem;
+  font-size: 60px;
   color: var(--accent);
-  margin-bottom: 10px;
+  letter-spacing: 2px;
+  text-shadow: 0 0 14px rgb(197 191 101 / 62%);
 }
 
 header p {
-  font-size: 1.2rem;
-  color: var(--muted);
+  margin-top: 16px;
+  font-size: 1.15rem;
+  font-style: italic;
+  color: rgba(230,217,176,0.85);
 }
 
-/* ===== MAIN ROOM ===== */
+/* ===============================
+   MAIN
+================================ */
 main {
   max-width: 900px;
-  margin: 40px auto;
+  margin: 60px auto;
   padding: 0 20px;
 }
 
-/* ===== ROOM CARD ===== */
+/* ===============================
+   ROOM CARD
+================================ */
 .room {
-  background: var(--glass);
-  border: 1px solid rgba(197,191,101,0.25);
+  background: rgb(197 191 101 / 0%); /* vàng nhẹ + glass mờ */
+  border: 1px solid rgba(197,191,101,0.2);
   border-radius: var(--radius);
-  padding: 24px 28px;
-  margin-bottom: 40px;
-  transition: transform 0.3s, box-shadow 0.3s;
+  padding: 32px 36px;
+  margin-bottom: 50px;
+  box-shadow:
+    inset 0 0 40px rgba(0,0,0,0.4),
+    0 12px 28px rgba(0,0,0,0.5);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
 .room:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 20px rgba(197,191,101,0.25);
+  transform: translateY(-6px);
+  box-shadow:
+    inset 0 0 40px rgba(0,0,0,0.4),
+    0 18px 34px rgba(197,191,101,0.25);
 }
 
 .room h2 {
-  font-size: 1.8rem;
+  font-size: 1.9rem;
   color: var(--accent);
-  margin-bottom: 16px;
+  margin-bottom: 18px;
+  padding-left: 14px;
+  border-left: 4px solid var(--accent-dark);
+  text-shadow: 0 0 8px rgb(197 191 101 / 49%);
+  font-style : italic; 
 }
 
-/* ===== QUOTE ===== */
+/* ===============================
+   TEXT BLOCKS
+================================ */
+.interactive {
+  margin: 16px 0;
+  color: rgba(230,217,176,0.9);
+}
+
 .quote {
   font-style: italic;
   color: rgba(197,191,101,0.85);
-  margin-bottom: 16px;
+  border-left: 3px solid rgba(197,191,101,0.5);
+  padding-left: 14px;
+  margin: 14px 0;
 }
 
-/* ===== HIGHLIGHT ===== */
+/* ===============================
+   HIGHLIGHT
+================================ */
 .highlight {
+  display: inline-block;
   font-weight: 700;
   color: var(--accent);
-  background: rgba(197,191,101,0.08);
-  padding: 6px 10px;
-  border-radius: var(--radius);
-  display: inline-block;
-  margin: 10px 0;
+  background: rgb(237 144 144 / 7%);
+  padding: 8px 14px;
+  border-radius: 999px;
+  margin: 12px 0 18px;
 }
 
-/* ===== LIST ===== */
+/* ===============================
+   LIST
+================================ */
 .list-simple {
   list-style: none;
-  padding-left: 0;
-  margin: 12px 0;
+  margin: 16px 0;
 }
 
 .list-simple li {
-  margin: 8px 0;
+  margin: 10px 0;
+  padding-left: 22px;
   position: relative;
-  padding-left: 20px;
 }
 
 .list-simple li::before {
@@ -142,25 +162,30 @@ main {
   position: absolute;
   left: 0;
   color: var(--accent);
-  font-size: 1.2rem;
+  font-size: 1.4rem;
 }
 
-/* ===== AUDIO ===== */
+/* ===============================
+   AUDIO
+================================ */
 audio {
   width: 100%;
-  margin-top: 14px;
+  margin-top: 18px;
   border-radius: var(--radius);
+  filter: sepia(0.35) saturate(1.2);
 }
 
-/* ===== GAME BUTTON ===== */
+/* ===============================
+   GAME BUTTON
+================================ */
 #play-btn {
-  padding: 12px 28px;
-  margin-top: 16px;
-  border-radius: var(--radius);
+  padding: 14px 36px;
+  margin-top: 20px;
+  border-radius: 999px;
   border: none;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 1rem;
-  background: var(--accent);
+  background: rgba(197,191,101,0.35);
   color: #0b0806;
   cursor: not-allowed;
   transition: 0.25s ease;
@@ -168,19 +193,22 @@ audio {
 
 #play-btn:enabled {
   cursor: pointer;
-  background: linear-gradient(90deg, #C5BF65, #f9d76c);
-  box-shadow: 0 6px 16px rgba(197,191,101,0.4);
+  background: linear-gradient(90deg, #C5BF65, #d8d28a);
+  box-shadow: 0 8px 18px rgba(197,191,101,0.45);
+  color: #0b0806;
 }
 
-/* LOCKED ROOM EFFECT */
+/* ===============================
+   LOCKED ROOM
+================================ */
 .room.locked {
-  filter: blur(2px);
-  opacity: 0.6;
+  opacity: 0.55;
+  filter: grayscale(0.3) blur(1.5px);
   pointer-events: none;
 }
 
 #lock-text {
   font-style: italic;
-  margin-bottom: 12px;
-  color: rgba(197,191,101,0.7);
+  color: rgba(197,191,101,0.75);
 }
+

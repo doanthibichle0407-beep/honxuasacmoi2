@@ -1,3 +1,8 @@
+:root {
+  --bg: #0b0806;
+  --accent: #C5BF65;      
+  --font-main: "Be Vietnam Pro", sans-serif;
+}
 body {
     margin: 0;
     padding: 0;
@@ -8,7 +13,7 @@ body {
     align-items: center;
     justify-content: flex-start;
 
-    background-image: url('img/nen1.jpg');
+    background-image: url('img/nen17.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -30,7 +35,7 @@ body::after {
     margin-top: 140px;
     text-align: center;
     padding: 100px 50px;     
-    background: rgba(0,0,0,0.7); 
+    background: rgb(111 24 24 / 42%); 
     border-radius: 25px;
     max-width: 700px;        
     width: 95%;
@@ -43,6 +48,7 @@ body::after {
 .container h1 {
     font-size: 2.5rem;
     margin-bottom: 20px;
+    color : var(--accent);
 }
 
 .container p {
@@ -72,13 +78,39 @@ body::after {
 }
 
 
-.navbar{position:fixed;top:18px;left:0;width:100%;z-index:200;display:flex;justify-content:center}
-.navbar ul{display:flex;gap:28px;padding:10px 20px;background:transparent;list-style:none}
-.navbar a{color:var(--accent);text-decoration:none;font-weight:600;font-size:20px;padding:8px 10px;border-radius:8px}
-.navbar a.active, 
-.navbar a:hover{background:rgba(197,191,101,0.08);color:#fff}
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--nav-h);
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin : 20px;
+}
 
+.navbar ul {
+  display: flex;
+  gap: 26px;
+  list-style: none;
+}
 
+.navbar a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 6px 10px;
+  border-radius: 8px;
+}
+
+.navbar a:hover,
+.navbar a.active {
+  background: rgba(197,191,101,0.12);
+  color: #fff;
+}
 
 .back-btn {
     display: inline-block;

@@ -68,40 +68,37 @@ body::after {
 ========================= */
 .navbar {
   position: fixed;
-  top: 18px;
+  top: 0;
   left: 0;
   width: 100%;
+  height: var(--nav-h);
   z-index: 200;
   display: flex;
+  align-items: center;
   justify-content: center;
+  margin : 20px;
 }
 
 .navbar ul {
   display: flex;
-  gap: 28px;
-  padding: 10px 20px;
-  background: transparent;
+  gap: 26px;
   list-style: none;
 }
 
 .navbar a {
-  font-family: "Be Vietnam Pro", sans-serif;
-  font-size: 20px;
-  font-weight: 600;
-  line-height: 1;
-  padding: 10px 10px;
   color: var(--accent);
   text-decoration: none;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 6px 10px;
   border-radius: 8px;
 }
 
-
-.navbar a.active,
-.navbar a:hover {
-  background: rgba(197,191,101,0.08);
+.navbar a:hover,
+.navbar a.active {
+  background: rgba(197,191,101,0.12);
   color: #fff;
 }
-
 /* =========================
    HERO VIDEO
 ========================= */
