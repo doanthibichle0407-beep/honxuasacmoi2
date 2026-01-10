@@ -1,0 +1,209 @@
+/* ===== Global ===== */
+body {
+  font-family: 'Be Vietnam Pro', sans-serif;
+  margin: 0;
+  min-height: 100vh;
+  color: #fff;
+  position: relative;
+  overflow-x: hidden;
+
+  /* Background sân khấu cinematic */
+  background-image: url('img/nen16.jpeg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/* Overlay cinematic */
+body::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 20%, rgba(23,23,22,0.4), transparent 70%);
+  filter: blur(60px);
+  pointer-events: none;
+  animation: spotlightMove 15s ease-in-out infinite alternate;
+}
+body::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 40%, rgba(255,215,102,0.15), rgba(0,0,0,0.7) 80%);
+  mix-blend-mode: overlay;
+  filter: blur(80px);
+  pointer-events: none;
+  animation: spotlightMove 20s ease-in-out infinite alternate-reverse;
+}
+@keyframes spotlightMove {
+  0% { background-position: 40% 20%; }
+  100% { background-position: 60% 25%; }
+}
+
+/* ===== Container ===== */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+  position: relative;
+  z-index: 1;
+  padding-bottom: 3rem;
+}
+
+/* ===== Header ===== */
+header.hero {
+  text-align: center;
+  padding: 3rem 1rem;
+  background: linear-gradient(to bottom, rgba(30,15,15,0.8), rgba(60,20,20,0.6));
+  border-bottom-left-radius: 50% 20%;
+  border-bottom-right-radius: 50% 20%;
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 1;
+  backdrop-filter: blur(4px);
+}
+
+header h1 {
+  font-size: 3rem;
+  font-weight: 900;
+  margin: 0;
+  color: #ffd27f;
+  text-shadow: 0 0 12px rgba(255,215,102,0.7);
+}
+
+header p {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-top: 0.5rem;
+  color: #ffeebc;
+  opacity: 0.95;
+}
+
+/* ===== Intro Cards Grid ===== */
+.intro-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 32px;
+  margin: 0 24px;
+}
+
+/* ===== Card ===== */
+.card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  background: rgba(20,10,10,0.85); /* nền tối cinematic */
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: #fff;
+  min-height: 320px;
+  transition: transform 0.4s, background 0.4s;
+}
+
+/* Hover card */
+.card:hover {
+  transform: translateY(-8px);
+  background: rgba(30,15,15,0.95);
+}
+
+/* Card Image */
+.card-img {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.card-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s, filter 0.5s;
+}
+
+/* Gradient overlay trên ảnh */
+.card-img::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.6), rgba(0,0,0,0.05));
+  pointer-events: none;
+  transition: background 0.4s;
+}
+
+.card:hover .card-img img {
+  transform: scale(1.08);
+  filter: brightness(1.1) contrast(1.05);
+}
+.card:hover .card-img::after {
+  background: linear-gradient(to top, rgba(0,0,0,0.3), rgba(0,0,0,0));
+}
+
+/* Card Title */
+.card h3 {
+  margin: 0.5rem 1rem 0.25rem 1rem;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #ffd27f;
+  transition: color 0.4s, text-shadow 0.4s;
+}
+
+.card:hover h3 {
+  color: #fff2b8;
+  text-shadow: 0 0 10px #ffd27f, 0 0 20px #ffb84d;
+}
+
+/* Card Text */
+.card p {
+  margin: 0 1rem 1rem 1rem;
+  font-size: 1rem;
+  line-height: 1.4;
+  color: #ffeebc;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 600px) {
+  .card { min-height: 280px; }
+  .card-img { height: 160px; }
+  .card h3 { font-size: 1.15rem; }
+  .card p { font-size: 0.9rem; }
+  header h1 { font-size: 2rem; }
+  header p { font-size: 1rem; }
+}
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--nav-h);
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin : 20px;
+}
+
+.navbar ul {
+  display: flex;
+  gap: 26px;
+  list-style: none;
+}
+
+.navbar a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 6px 10px;
+  border-radius: 8px;
+}
+
+.navbar a:hover,
+.navbar a.active {
+  background: rgba(197,191,101,0.12);
+  color: #fff;
+}
