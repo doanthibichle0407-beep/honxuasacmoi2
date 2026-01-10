@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Karaoke AI – Phòng 4.0</title>
+  <link rel="stylesheet" href="cailuong-ai.css">
+</head>
+<body>
+
+<div class="karaoke-room">
+
+  <!-- KHU TRÁI -->
+  <aside class="listen-zone">
+    <h2>🎼 Vọng cổ – Cải lương</h2>
+    <ul id="songList"></ul>
+  </aside>
+
+  <!-- KHU GIỮA -->
+  <section class="sing-zone">
+
+    <h1>🎤 Karaoke Cải Lương AI</h1>
+
+    <audio id="songPlayer" controls></audio>
+
+    <div id="lyricsBox">
+      <p class="hint">🎭 Chọn bài bên trái để bắt đầu</p>
+    </div>
+
+    <div class="controls hidden" id="recordZone">
+      <button id="recordBtn">🎙️ Hát</button>
+      <button id="sendBtn" disabled>📤 AI chấm điểm</button>
+    </div>
+
+    <audio id="player" controls></audio>
+
+    <p id="status"></p>
+    <h2 id="result"></h2>
+
+  </section>
+
+</div>
+
+<script src="song.js"></script>
+<script src="cailuong-ai.js"></script>
+</body>
+</html>
