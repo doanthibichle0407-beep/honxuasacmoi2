@@ -16,27 +16,23 @@ document.addEventListener("DOMContentLoaded", () => {
   const status     = document.getElementById("status");
   const result     = document.getElementById("result");
 
-  if (!songList || !songPlayer || !lyricsBox || !recordZone || !recordBtn || !sendBtn || !retryBtn || !player || !status || !result) {
-    console.error("❌ Một hoặc nhiều element trong HTML chưa tồn tại hoặc ID sai!");
-    return;
+  // ===== LOAD SONG LIST =====
+  if (songList && Array.isArray(songs)) {
+    songs.forEach(song => {
+      const li = document.createElement("li");
+      li.textContent = song.title;
+      li.onclick = () => selectSong(song);
+      songList.appendChild(li);
+    });
   }
 
-  songs.forEach(song => {
-    const li = document.createElement("li");
-    li.textContent = song.title;
-    li.classList.add("song-item");
-    li.onclick = () => selectSong(song, li);
-    songList.appendChild(li);
-  });
-
-  function selectSong(song, li) {
+  function selectSong(song) {
     selectedSong = song;
 
-    document.querySelectorAll(".song-item").forEach(item => item.classList.remove("active"));
-    li.classList.add("active");
-
-    songPlayer.src = song.audio;
-    songPlayer.load();
+    if (songPlayer) {
+      songPlayer.src = song.audio;
+      songPlayer.load();
+    }
 
     lyricsBox.innerHTML = `
       <p class="prev"></p>
@@ -67,54 +63,46 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
 
-    const prev = lyrics[idx - 1]?.text || "";
-    const curr = lyrics[idx]?.text || "";
-    const next = lyrics[idx + 1]?.text || "";
-
     const [pPrev, pCurr, pNext] = lyricsBox.children;
-    pPrev.textContent = prev;
-    pCurr.textContent = curr;
-    pNext.textContent = next;
+    pPrev.textContent = lyrics[idx - 1]?.text || "";
+    pCurr.textContent = lyrics[idx]?.text || "";
+    pNext.textContent = lyrics[idx + 1]?.text || "";
 
     pPrev.className = "prev";
     pCurr.className = "current";
     pNext.className = "next";
   };
 
+  // ===== RECORD =====
   recordBtn.onclick = async () => {
     if (!selectedSong) {
       alert("🎭 Chọn bài trước khi hát");
       return;
     }
 
-    try {
-      if (!mediaRecorder || mediaRecorder.state === "inactive") {
-        const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
-        mediaRecorder = new MediaRecorder(stream);
+    if (!mediaRecorder || mediaRecorder.state === "inactive") {
+      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      mediaRecorder = new MediaRecorder(stream);
+      audioChunks = [];
 
-        audioChunks = [];
-        mediaRecorder.ondataavailable = e => audioChunks.push(e.data);
+      mediaRecorder.ondataavailable = e => audioChunks.push(e.data);
+      mediaRecorder.onstop = () => {
+        audioBlob = new Blob(audioChunks, { type: "audio/webm" });
+        player.src = URL.createObjectURL(audioBlob);
+        sendBtn.disabled = false;
+      };
 
-        mediaRecorder.onstop = () => {
-          audioBlob = new Blob(audioChunks, { type: "audio/webm" });
-          player.src = URL.createObjectURL(audioBlob);
-          sendBtn.disabled = false;
-        };
-
-        mediaRecorder.start();
-        recordBtn.innerText = "⏹️ Dừng";
-        status.innerText = "🎙️ Đang hát...";
-      } else {
-        mediaRecorder.stop();
-        recordBtn.innerText = "🎙️ Hát";
-        status.innerText = "⏹️ Đã dừng";
-      }
-    } catch (err) {
-      console.error("❌ Không thể truy cập micro:", err);
-      alert("❌ Vui lòng cho phép quyền micro");
+      mediaRecorder.start();
+      recordBtn.innerText = "⏹️ Dừng";
+      status.innerText = "🎙️ Đang hát...";
+    } else {
+      mediaRecorder.stop();
+      recordBtn.innerText = "🎙️ Hát";
+      status.innerText = "⏹️ Đã dừng";
     }
   };
 
+  // ===== SEND AUDIO =====
   sendBtn.onclick = async () => {
     if (!audioBlob) return;
 
@@ -125,30 +113,27 @@ document.addEventListener("DOMContentLoaded", () => {
     fd.append("audio", audioBlob);
 
     try {
-      const res = await fetch("/upload", {  
+      const res = await fetch("/upload", {
         method: "POST",
         body: fd
       });
 
-      if (!res.ok) throw new Error("Network response was not ok");
-
       const data = await res.json();
       result.innerText = `🎯 Điểm AI: ${data.score}/100`;
       retryBtn.classList.remove("hidden");
-      status.innerText = "🎭 Hoàn tất phần trình diễn";
+      status.innerText = "🎭 Hoàn tất";
     } catch (err) {
-      console.error("❌ Lỗi gửi audio:", err);
-      result.innerText = "❌ Lỗi gửi audio lên AI";
+      console.error(err);
+      result.innerText = "❌ Không kết nối được server AI";
       sendBtn.disabled = false;
     }
   };
 
   retryBtn.onclick = () => {
     audioBlob = null;
-    player.src = "";
     sendBtn.disabled = true;
     retryBtn.classList.add("hidden");
-    status.innerText = "▶️ Bật nhạc rồi hát theo";
+    status.innerText = "🎙️ Sẵn sàng hát lại";
     result.innerText = "";
   };
 
