@@ -1,6 +1,4 @@
-/* =====================================================
-   ROOT – ĐỎ VÀNG SÂN KHẤU (GEN Z, KHÔNG SẾN)
-   ===================================================== */
+
 :root {
   --bg-main: #1a0e0e;
   --bg-deep: #0f0707;
@@ -15,11 +13,11 @@
   --text-muted: #c9bfb3;
 
   --border-soft: rgba(199,162,76,0.28);
+      --nav-h: 64px;
+
 }
 
-/* =====================================================
-   RESET + BODY
-   ===================================================== */
+
 * {
   box-sizing: border-box;
 }
@@ -35,12 +33,8 @@ body {
 
   background-attachment: fixed;
   overflow-x: hidden;
-  letter-spacing: 0.2px;
 }
 
-/* =====================================================
-   NAVBAR
-   ===================================================== */
 .navbar {
   position: fixed;
   top: 0;
@@ -73,9 +67,7 @@ body {
   background: rgba(197,191,101,0.12);
   color: #fff;
 }
-/* =====================================================
-   HERO
-   ===================================================== */
+
 .hero {
   padding: 120px 30px 60px;
   max-width: 920px;
@@ -116,18 +108,12 @@ body {
   font-style: italic;
 }
 
-/* =====================================================
-   MAIN
-   ===================================================== */
 .learning {
   max-width: 920px;
   margin: auto;
   padding: 0 20px 160px;
 }
 
-/* =====================================================
-   PROGRESS
-   ===================================================== */
 .progress {
   height: 4px;
   background: rgba(255,255,255,0.12);
@@ -145,12 +131,6 @@ body {
   transition: width 0.4s ease;
 }
 
-/* =====================================================
-   VISIBILITY CONTROL – CỐT LÕI
-   ===================================================== */
-/* =====================================================
-   VISIBILITY CONTROL – FIX CHUẨN
-   ===================================================== */
 .hidden {
   opacity: 0;
   transform: translateY(40px);
@@ -164,9 +144,6 @@ body {
   transition: 0.7s ease;
 }
 
-/* =====================================================
-   CARD – NHẸ LẠI NHƯNG SÂU
-   ===================================================== */
 .slide,
 .tab-content,
 .compare,
@@ -184,12 +161,7 @@ body {
   position: relative;
 }
 
-/* =====================================================
-   PHÒNG NHẠC LÝ – FULL POLISH CSS (FINAL)
-   ĐỎ – VÀNG SÂN KHẤU | GEN Z | KHÔNG GLASS
-   ===================================================== */
 
-/* ---------- SLIDES ---------- */
 .slides {
   margin-top: 60px;
 }
@@ -235,7 +207,6 @@ body {
   transform: translateY(-2px);
 }
 
-/* ---------- TABS ---------- */
 .tabs {
   margin-top: 120px;
 }
@@ -274,7 +245,6 @@ body {
   animation: fadeUp 0.6s ease;
 }
 
-/* ---------- EMOTION MAP ---------- */
 .emotion-map {
   margin-top: 140px;
 }
@@ -334,7 +304,6 @@ body {
   padding-left: 12px;
 }
 
-/* viền tinh theo cảm xúc */
 .emotion-card.sad {
   box-shadow: inset 0 0 0 1px rgba(120,60,60,0.25),
               0 18px 38px rgba(0,0,0,0.55);
@@ -355,7 +324,6 @@ body {
               0 18px 38px rgba(0,0,0,0.55);
 }
 
-/* ---------- SO SÁNH ---------- */
 .compare {
   margin-top: 140px;
 }
@@ -399,7 +367,6 @@ body {
   transform: rotateY(0);
 }
 
-/* ---------- UNLOCK ---------- */
 .unlock {
   margin-top: 160px;
   text-align: center;
@@ -410,7 +377,6 @@ body {
   color: var(--gold-soft);
 }
 
-/* ---------- ANIMATION ---------- */
 @keyframes fadeUp {
   from {
     opacity: 0;
@@ -438,9 +404,6 @@ body {
   transform: translateY(-3px);
 }
 
-/* =====================================================
-   MOBILE
-   ===================================================== */
 @media (max-width: 768px) {
   body {
     background-attachment: scroll;
@@ -470,11 +433,6 @@ body {
   margin-top: 120px;
 }
 
-/* =====================================================
-   BỔ SUNG ĐỂ PHÒNG ĐỠ TRỐNG – CÓ NHỊP – KHÔNG GLASS
-   ===================================================== */
-
-/* ---- CÂU DẪN CHUYỂN NHỊP ---- */
 .transition-text {
   margin: 100px auto 120px;
   max-width: 520px;
@@ -485,7 +443,6 @@ body {
   opacity: 0.9;
 }
 
-/* ---- NHỊP NỀN CHO SECTION (KHÔNG ĐỔI BACKGROUND) ---- */
 .tabs,
 .emotion-map,
 .compare,
@@ -507,7 +464,6 @@ body {
   pointer-events: none;
 }
 
-/* ---- FLIP CARD CÓ TRỌNG LƯỢNG HƠN ---- */
 .flip-card:hover .front,
 .flip-card:hover .back {
   box-shadow: 0 28px 60px rgba(0,0,0,0.75);

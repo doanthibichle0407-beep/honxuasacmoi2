@@ -1,8 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-  /* ======================
-     KHAI BÁO
-  ====================== */
+ 
   let slideIndex = 0;
 
   const slides = document.querySelectorAll('.slide');
@@ -20,9 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const unlock = document.getElementById('unlockRoom');
   const cards = document.querySelectorAll('.flip-card');
 
-  /* ======================
-     KHỞI TẠO
-  ====================== */
+ 
   progress.style.width = '8%';
 
   tabs.classList.add('hidden');
@@ -30,9 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
   compareSection.classList.add('hidden');
   unlock.classList.add('hidden');
 
-  /* ======================
-     SLIDES INTRO
-  ====================== */
+
   nextBtn.onclick = () => {
 
     slides[slideIndex].classList.remove('active');
@@ -43,7 +37,6 @@ document.addEventListener("DOMContentLoaded", () => {
       progress.style.width = (10 + slideIndex * 7) + '%';
     } 
     else {
-      // Kết thúc intro
       slidesWrap.style.display = 'none';
 
       setTimeout(() => {
@@ -55,23 +48,18 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
-  /* ======================
-     TABS NHẠC LÝ
-  ====================== */
+
   let tabsViewed = 0;
 
   tabButtons.forEach(btn => {
     btn.addEventListener('click', () => {
 
-      // reset
       tabButtons.forEach(b => b.classList.remove('active'));
       tabContents.forEach(c => c.classList.remove('active'));
 
-      // active
       btn.classList.add('active');
       document.getElementById(btn.dataset.tab).classList.add('active');
 
-      // đếm tab đã xem
       if (!btn.dataset.viewed) {
         btn.dataset.viewed = "true";
         tabsViewed++;
@@ -79,7 +67,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
       progress.style.width = (35 + tabsViewed * 8) + '%';
 
-      // MỞ PHẦN CẢM XÚC
       if (btn.dataset.tab === 'cam-xuc') {
 
         setTimeout(() => {
@@ -97,9 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  /* ======================
-     FLIP CARD – MỞ PHÒNG
-  ====================== */
+ 
   let cardHovered = 0;
 
   cards.forEach(card => {

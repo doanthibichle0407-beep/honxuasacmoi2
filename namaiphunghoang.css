@@ -1,6 +1,4 @@
-/* ===============================
-   RESET & ROOT
-================================ */
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -8,19 +6,17 @@
 }
 
 :root {
-  --bg-main: #140e0a;          /* nền sân khấu */
+  --bg-main: #140e0a;          
   --bg-gradient: #1a0f0b;
-  --accent: #C5BF65;           /* vàng nhạt */
+  --accent: #C5BF65;           
   --accent-soft: #e6d9b0;
-  --accent-dark: #8b1a1a;      /* đỏ nhung */
+  --accent-dark: #8b1a1a;      
   --text-main: #f1eadf;
   --glass: rgba(255,255,255,0.05);
   --radius: 16px;
 }
 
-/* ===============================
-   BODY
-================================ */
+
 body {
   font-family: "Be Vietnam Pro", sans-serif;
  background: linear-gradient(rgba(20,14,10,0.6), rgba(20,14,10,0.6)), 
@@ -48,9 +44,7 @@ body {
   transform: translateY(-2px);
   box-shadow: 0 8px 26px rgba(0,0,0,0.7);
 }
-/* ===============================
-   HEADER
-================================ */
+
 header {
   text-align: center;
   padding: 100px 20px 80px;
@@ -73,20 +67,16 @@ header p {
   color: rgba(230,217,176,0.85);
 }
 
-/* ===============================
-   MAIN
-================================ */
+
 main {
   max-width: 900px;
   margin: 60px auto;
   padding: 0 20px;
 }
 
-/* ===============================
-   ROOM CARD
-================================ */
+
 .room {
-  background: rgb(197 191 101 / 0%); /* vàng nhẹ + glass mờ */
+  background: rgb(197 191 101 / 0%); 
   border: 1px solid rgba(197,191,101,0.2);
   border-radius: var(--radius);
   padding: 32px 36px;
@@ -114,9 +104,7 @@ main {
   font-style : italic; 
 }
 
-/* ===============================
-   TEXT BLOCKS
-================================ */
+
 .interactive {
   margin: 16px 0;
   color: rgba(230,217,176,0.9);
@@ -130,9 +118,7 @@ main {
   margin: 14px 0;
 }
 
-/* ===============================
-   HIGHLIGHT
-================================ */
+
 .highlight {
   display: inline-block;
   font-weight: 700;
@@ -143,9 +129,7 @@ main {
   margin: 12px 0 18px;
 }
 
-/* ===============================
-   LIST
-================================ */
+
 .list-simple {
   list-style: none;
   margin: 16px 0;
@@ -165,9 +149,6 @@ main {
   font-size: 1.4rem;
 }
 
-/* ===============================
-   AUDIO
-================================ */
 audio {
   width: 100%;
   margin-top: 18px;
@@ -175,9 +156,6 @@ audio {
   filter: sepia(0.35) saturate(1.2);
 }
 
-/* ===============================
-   GAME BUTTON
-================================ */
 #play-btn {
   padding: 14px 36px;
   margin-top: 20px;
@@ -198,9 +176,6 @@ audio {
   color: #0b0806;
 }
 
-/* ===============================
-   LOCKED ROOM
-================================ */
 .room.locked {
   opacity: 0.55;
   filter: grayscale(0.3) blur(1.5px);

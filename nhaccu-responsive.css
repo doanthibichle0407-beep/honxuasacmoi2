@@ -1,13 +1,10 @@
-/* ===== Mobile responsive (<900px) ===== */
 @media (max-width: 900px) {
-  /* Gallery grid: 1 cột */
   .gallery-grid {
     grid-template-columns: 1fr;
     gap: 12px;
     padding: 12px;
   }
 
-  /* Card size cho mobile */
   .card.instrument, .card.costume {
     height: 180px;
     padding: 8px;
@@ -22,7 +19,6 @@
     font-size: 1rem;
   }
 
-  /* Popup tối ưu mobile, vừa màn hình, không scroll dài */
   #info-popup {
     width: 90%;
     max-height: 50vh;
@@ -32,7 +28,6 @@
     overflow-y: auto;
   }
 
-  /* Header hero nhỏ hơn cho mobile */
   .section-hero.small h1 {
     font-size: 48px;
   }
@@ -41,7 +36,6 @@
     font-size: 16px;
   }
 
-  /* Back button cho mobile */
   .back-btn {
     padding: 8px 16px;
     bottom: 16px;

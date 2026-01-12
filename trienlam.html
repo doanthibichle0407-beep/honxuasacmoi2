@@ -6,10 +6,14 @@
   <title>Triển lãm Cải Lương</title> 
   <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700&display=swap" rel="stylesheet"> 
   <link rel="stylesheet" href="trienlam.css"> 
+    <link rel="stylesheet" href="trienlam-responsive.css"> 
+
 </head>
 
 <body>
   <nav class="navbar">
+      <div class="nav-toggle">☰</div>
+
     <ul>
       <li><a href="index.html">TRANG CHỦ</a></li>
       <li><a href="bieudien.html">PHÒNG BIỂU DIỄN</a></li>
@@ -17,19 +21,22 @@
       <li><a href="nhacly.html">PHÒNG NHẠC LÝ</a></li>
       <li><a class="active" href="trienlam.html">LỊCH SỬ</a></li>
       <li><a href="trochoi.html">TRÒ CHƠI</a></li>
-              <li><a href="phong40.html">PHÒNG 4.0</a></li>
+          <li><a href="phong40.html">PHÒNG 4.0</a></li>
 
     </ul>
   </nav>
 
-  <!-- HERO VIDEO -->
   <div class="video-wrap">
     <video id="introVideo" autoplay muted loop playsinline>
-      <source src="assets/banner1.mp4" type="video/mp4">
+      <source src="assets/banner.mp4" type="video/mp4">
     </video>
     <div class="video-overlay" id="videoOverlay">
       <button id="playSoundBtn">BẬT ÂM THANH</button>
     </div>
+    <button id="muteToggle" class="mute-btn" style="display:none">
+  🔊
+</button>
+
     <div class="hero-content">
       <h1>TA LÀ CẢI LƯƠNG</h1>
       <p>Ta từng rực rỡ. Ta cũng từng im lặng.<br>Nhưng ta chưa bao giờ biến mất.</p>
@@ -37,42 +44,23 @@
     <div class="note">Xem video để hiểu rõ hơn về cải lương</div>
   </div>
 
-  <!-- STORY CARDS -->
-  <div class="story-container">
-    <div class="story-card">
-      <h2>2.1. Thời kỳ hình thành</h2>
-      <p>Cải lương ban đầu được biểu diễn trên sân khấu giản đơn, mang đậm tính giao lưu dân gian. Các nghệ sĩ xuất thân từ chèo, tuồng, hát bội đã góp phần định hình phong cách diễn xuất và âm nhạc của loại hình nghệ thuật mới.</p>
-    </div>
-    <div class="story-card">
-      <h2>2.2. Thời kỳ phát triển rực rỡ</h2>
-      <p>Giai đoạn bùng nổ các gánh hát như Phước Cương, Trần Đắc, với ba dòng tuồng chính: tích Trung Quốc, tuồng xã hội và tuồng phóng tác. Cải lương lan rộng ra miền Bắc, tạo nên đội ngũ nghệ sĩ, soạn giả tài năng và một đời sống sân khấu sôi động.</p>
-    </div>
-    <div class="story-card">
-      <h2>2.3. Thời kỳ thịnh hành</h2>
-      <p>Cải lương bước vào giai đoạn hoàng kim, trở thành loại hình giải trí hàng đầu ở miền Nam, với hệ thống rạp hát phát triển và khán giả đông đảo. Nghệ thuật biểu diễn, nội dung kịch bản ngày càng đổi mới, phản ánh các vấn đề xã hội và tâm lý con người.</p>
-    </div>
-    <div class="story-card">
-      <h2>2.4. Thời kỳ khủng hoảng</h2>
-      <p>Đất nước thống nhất, các gánh hát tư nhân bị giải thể và sân khấu chuyển sang mô hình đoàn nghệ thuật nhà nước. Nguồn lực hạn chế, hoạt động sân khấu suy giảm, nhưng nền tảng đào tạo tối thiểu vẫn được duy trì.</p>
-    </div>
-    <div class="story-card">
-      <h2>2.5. Thời kỳ đổi mới và thích nghi</h2>
-      <p>Từ 1980 đến nay, cải lương nỗ lực kết hợp yếu tố hiện đại với giá trị truyền thống. Dù không còn ở thời kỳ hoàng kim, cải lương vẫn là di sản văn hóa quan trọng, mang bản sắc riêng của sân khấu Nam Bộ.</p>
-    </div>
-  </div>
-<!-- CHUYỂN -->
+  <div class="story-video">
+  <video autoplay muted loop playsinline controls>
+    <source src="assets/banner1.mp4" type="video/mp4">
+    Trình duyệt của bạn không hỗ trợ video.
+  </video>
+</div>
+
 <section class="transition">
   <p>
     Ta không thể tồn tại nếu thiếu những con người<br>
     đã sống trọn đời mình trên sân khấu.
   </p>
 </section>
-  <!-- ARTIST GALLERY -->
   <section class="artists-section">
     <h2 class="artists-title">Nghệ Sĩ Gạo Cội</h2>
     <div class="artists-scroll">
-      <!-- ví dụ 10 nghệ sĩ -->
-      <div class="artist-card" data-name="Nghệ sĩ Năm Châu" data-info="
+      <div class="artist-card" data-name="NSND Năm Châu" data-info="
 Tên thật: Nguyễn Thành Châu
 
 Năm sinh – mất: 1906 – 1977
@@ -100,9 +88,9 @@ Di sản :
 •	Góp phần tạo dựng kho tàng tác phẩm kinh điển của cải lương.
 •	Tên tuổi và phong cách nghệ thuật của ông được xem như một “cột mốc” trong lịch sử sân khấu Việt Nam.
 " 
-      data-img="img/namchau.jpg"> <img src="img/namchau.jpg" alt=""> <span>Nghệ sĩ Năm Châu</span> </div> 
+      data-img="img/namchau.jpg"> <img src="img/namchau.jpg" alt=""> <span>NSND Năm Châu</span> </div> 
 <div class="artist-card" 
-     data-name="Nghệ sĩ Phùng Há" 
+     data-name="NSND Phùng Há" 
      data-info="Tên thật: Trương Phụng Hảo
 Nghệ danh: Phùng Há
 Sinh: 30/04/1911, làng Điều Hòa, huyện Châu Thành, tỉnh Mỹ Tho, Việt Nam
@@ -134,7 +122,7 @@ Góp phần xây dựng nền cải lương kinh điển, độc đáo.
 Cuộc đời cống hiến trọn vẹn cho nghệ thuật và cộng đồng, gần 100 năm sống với ý nghĩa và tình thương."
      data-img="img/phungha.jpg"> 
   <img src="img/phungha.jpg" alt=""> 
-  <span>Nghệ sĩ Phùng Há</span> 
+  <span>NSND Phùng Há</span> 
 </div>
 
       <div class="artist-card" data-name="Nghệ sĩ Năm Phỉ" data-info="
@@ -174,7 +162,7 @@ Di sản
       data-img="img/namphi.jpg"> 
       <img src="img/namphi.jpg" alt=""> <span>Nghệ sĩ Năm Phỉ</span> </div> 
 
-      <div class="artist-card" data-name="Nghệ sĩ Ngọc Giàu" data-info="
+      <div class="artist-card" data-name="NSND Ngọc Giàu" data-info="
 Tên thật : Phong Thị Ngọc Giàu
 
 Năm sinh : sinh ngày 13/12/1945
@@ -229,9 +217,9 @@ Di sản – đóng góp :
 •	Được xem là biểu tượng sống của nghệ thuật cải lương.
 " 
       data-img="img/ngocgiau.jpg"> 
-      <img src="img/ngocgiau.jpg" alt=""> <span>Nghệ sĩ Ngọc Giàu</span> </div> 
+      <img src="img/ngocgiau.jpg" alt=""> <span>NSND Ngọc Giàu</span> </div> 
 
-      <div class="artist-card" data-name="Nghệ sĩ Bạch Tuyết" data-info="
+      <div class="artist-card" data-name="NSND Bạch Tuyết" data-info="
 Tên thật : Nguyễn Thị Bạch Tuyết
 
 Năm sinh : sinh ngày 24/12/1945
@@ -286,9 +274,9 @@ Tác phẩm nghệ thuật
 •	Góp phần đưa cải lương tiếp cận công chúng qua nền tảng số (YouTube, TikTok…)
 
 " 
-      data-img="img/bachtuyet.jpg"> <img src="img/bachtuyet.jpg" alt=""> <span>Nghệ sĩ Bạch Tuyết</span> </div> 
+      data-img="img/bachtuyet.jpg"> <img src="img/bachtuyet.jpg" alt=""> <span>NSND Bạch Tuyết</span> </div> 
 
-      <div class="artist-card" data-name="Nghệ sĩ Thanh Nga" data-info="
+      <div class="artist-card" data-name="NSƯT Thanh Nga" data-info="
 Tên thật: Juliette Nguyễn Thị Nga
 Năm sinh – mất: 31/7/1942 – 26/11/1978
 Quê quán: Tây Ninh
@@ -315,7 +303,7 @@ Di sản
 •	Hằng năm vẫn được giới nghệ sĩ và khán giả tưởng niệm như một tượng đài của cải lương Việt Nam.
  
 " 
-      data-img="img/thanhnga.jpg"> <img src="img/thanhnga.jpg" alt=""> <span>Nghệ sĩ Thanh Nga</span> </div>
+      data-img="img/thanhnga.jpg"> <img src="img/thanhnga.jpg" alt=""> <span>NSƯT Thanh Nga</span> </div>
 
       <div class="artist-card" data-name="Nghệ sĩ Hùng Cường" data-info="
 Tên thật: Trần Kim Cường
@@ -349,7 +337,7 @@ Di sản
 " 
       data-img="img/hungcuong.jpg"> <img src="img/hungcuong.jpg" alt=""> <span>Nghệ sĩ Hùng Cường</span> </div>
 
-      <div class="artist-card" data-name="Nghệ sĩ Kim Tử Long" data-info="
+      <div class="artist-card" data-name="NSƯT Kim Tử Long" data-info="
 Tên thật: Hoàng Kim Long
 
 Năm sinh : Sinh ngày 17/10/1966 
@@ -404,9 +392,9 @@ Di sản – Đóng góp :
 •	Dấu ấn hơn 40 năm cống hiến với hàng loạt vai diễn kinh điển và nhiều chương trình nghệ thuật cộng đồng.
 
 " 
-      data-img="img/kimtulong.jpg"> <img src="img/kimtulong.jpg" alt=""> <span>Nghệ sĩ Kim Tử Long</span> </div> 
+      data-img="img/kimtulong.jpg"> <img src="img/kimtulong.jpg" alt=""> <span>NSƯT Kim Tử Long</span> </div> 
 
-      <div class="artist-card" data-name="Nghệ sĩ Vũ Linh" data-info="
+      <div class="artist-card" data-name="NSƯT Vũ Linh" data-info="
 Tên thật: Võ Văn Ngoan
 
 Năm sinh – mất: 10/12/1958 – 05/03/2023
@@ -447,9 +435,9 @@ Di sản để lại :
 •	Trong lòng công chúng, ông là một trong những kép chính xuất sắc nhất của cải lương Việt Nam.
 
 " 
-      data-img="img/vuling.jpg"> <img src="img/vulinh.jpg" alt=""> <span>Nghệ sĩ Vũ Linh</span> </div> 
+      data-img="img/vuling.jpg"> <img src="img/vulinh.jpg" alt=""> <span>NSƯT Vũ Linh</span> </div> 
 
-      <div class="artist-card" data-name="Nghệ sĩ Ngọc Huyền" data-info="
+      <div class="artist-card" data-name="NSƯT Ngọc Huyền" data-info="
 Tên thật : Vũ Hà Ngọc Huyền
 
 Năm sinh : sinh ngày 28/6/1970
@@ -489,7 +477,7 @@ Di sản – Đóng góp :
 •	Sở hữu hàng trăm sản phẩm ghi hình, trong đó nhiều vở kinh điển trở thành dấu ấn của cải lương thập niên 90–2000.
 •	Là nghệ sĩ hải ngoại hiếm hoi vẫn gắn bó và có ảnh hưởng lớn đến cải lương Việt Nam đương đại.
 " 
-      data-img="img/ngochuyen.jpg"> <img src="img/ngochuyen.jpg" alt=""> <span>Nghệ sĩ Ngọc Huyền</span> </div>
+      data-img="img/ngochuyen.jpg"> <img src="img/ngochuyen.jpg" alt=""> <span>NSƯT Ngọc Huyền</span> </div>
 
     </div>
   </section>
@@ -520,5 +508,4 @@ Di sản – Đóng góp :
 
 </body>
 </html>
-
 

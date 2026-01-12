@@ -21,14 +21,18 @@ const modal = document.getElementById("modal");
 const modalImg = document.getElementById("modal-img");
 const modalTitle = document.getElementById("modal-title");
 const closeModal = document.getElementById("closeModal");
+const modalDesc = document.getElementById("modal-desc");
+
 
 cards.forEach(card => {
   card.addEventListener("click", () => {
     modalImg.src = card.dataset.img;
     modalTitle.innerText = card.dataset.name;
+    modalDesc.innerText = card.dataset.description;
     modal.classList.remove("hidden");
   });
 });
+
 
 closeModal.onclick = () => modal.classList.add("hidden");
 modal.onclick = e => { if(e.target===modal) modal.classList.add("hidden"); }

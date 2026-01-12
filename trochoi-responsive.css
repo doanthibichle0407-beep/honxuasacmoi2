@@ -1,11 +1,60 @@
+:root {
+  --accent: #c5bf65;
+  --nav-h: 64px;
+}
 
+/* ================= RESET ================= */
+.navbar ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* ================= DESKTOP ================= */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--nav-h);
+  z-index: 200;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar ul {
+  display: flex;
+  gap: 26px;
+}
+
+.navbar a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 18px;
+
+  padding: 6px 12px;
+  border-radius: 8px;
+}
+
+.navbar a:hover,
+.navbar a.active {
+  background: rgba(197,191,101,0.15);
+  color: #fff;
+}
+
+/* ================= TOGGLE ================= */
 .nav-toggle {
   display: none;
 }
 
+/* ================= MOBILE ================= */
 @media (max-width: 768px) {
+
   .navbar {
-    margin: 0;
+    justify-content: flex-start;
     padding: 0;
     background: transparent;
     border: none;
@@ -15,13 +64,16 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
     position: fixed;
     top: 12px;
     left: 12px;
+
     width: 44px;
     height: 44px;
     font-size: 26px;
-    color: var(--accent, #c5bf65);
+
+    color: var(--accent);
     cursor: pointer;
     z-index: 3000;
   }
@@ -30,17 +82,22 @@
     position: fixed;
     top: 0;
     left: 0;
+
     width: 220px;
     height: 100vh;
-    padding-top: 64px;
+
+    padding-top: var(--nav-h);
+
     display: flex;
     flex-direction: column;
+
     background: rgb(25 12 0 / 91%);
     backdrop-filter: blur(12px);
+
     transform: translateX(-100%);
     transition: transform 0.35s ease;
-    z-index: 2500;
 
+    z-index: 2500;
   }
 
   .navbar ul.show {
@@ -54,80 +111,44 @@
   .navbar a {
     display: flex;
     align-items: center;
-    height: 50px;
-    padding: 18px 20px;
+
+    height: 48px;
+    padding: 0 20px;
+
     font-size: 15px;
     border-bottom: 1px solid rgba(197,191,101,0.15);
-    margin: 0px;
+    border-radius: 0;
   }
 
-  .navbar a.active,
-  .navbar a:hover {
+  .navbar a:hover,
+  .navbar a.active {
     background: rgba(197,191,101,0.15);
     color: #fff;
   }
 }
+
+/* ================= SMALL MOBILE ================= */
 @media (max-width: 420px) {
   .navbar ul {
     width: 180px;
   }
 
   .navbar a {
-    height: 38px;
+    height: 44px;
     font-size: 14px;
     padding: 0 16px;
   }
 }
 
+/* ================= SAFE AREA (IPHONE) ================= */
 @supports (padding-top: env(safe-area-inset-top)) {
   @media (max-width: 768px) {
     .navbar ul {
-      padding-top: calc(64px + env(safe-area-inset-top));
+      padding-top: calc(var(--nav-h) + env(safe-area-inset-top));
     }
 
     .nav-toggle {
       top: calc(12px + env(safe-area-inset-top));
     }
   }
-}
-
-
-@media (max-width: 768px) {
-
-  
-
-  h1.title {
-    font-size: 48px;
-    margin: 80px 0 30px;
-    line-height: 1.2;
-  }
-
-  .rooms {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
-    padding: 20px 4%;
-  }
-
-  .room-card {
-    min-height: auto;
-  }
-  .room-card img {
-    height: 220px;
-  }
-  .room-card h3 {
-    font-size: 1.3rem;
-    padding: 12px 0;
-  }
-
-  .room-card:hover {
-    transform: translateY(-3px) scale(1.03);
-    box-shadow: 0 8px 26px rgba(0,0,0,0.5);
-  }
-
-  body {
-    font-size: 15px;
-    line-height: 1.5;
-  }
-
 }

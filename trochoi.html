@@ -6,13 +6,15 @@
     <title>Phòng Trò Chơi</title>
 
     <link rel="stylesheet" href="trochoi.css">
-    <link rel="stylesheet" href="mobile.css">
+    <link rel="stylesheet" href="trochoi-responsive.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body class="fade" onload="changeMusic('game')">
 
   <nav class="navbar">
+      <div class="nav-toggle">☰</div>
+
     <ul>
       <li><a href="index.html">TRANG CHỦ</a></li>
       <li><a href="bieudien.html">PHÒNG BIỂU DIỄN</a></li>
@@ -20,7 +22,7 @@
     <li><a href="nhacly.html">PHÒNG NHẠC LÝ</a></li>
       <li><a href="trienlam.html">LỊCH SỬ</a></li>
       <li><a class="active" href="trochoi.html">TRÒ CHƠI</a></li>
-        <li><a href="phong40.html">PHÒNG 4.0</a></li>
+          <li><a href="phong40.html">PHÒNG 4.0</a></li>
 
     </ul>
   </nav>
@@ -36,18 +38,14 @@
   <a href="ghepam.html" class="game-btn">
     <span class="icon">🎻</span> Ghép Âm Nhạc Cụ
   </a>
-
-  <a id="namaiGameBtn" href="gamenamai.html" class="game-btn locked">
-    <span class="icon">🎭</span> Nhập vai nhân vật
-  </a>
 </div>
 
 
   <audio id="game" loop></audio>
 
   <script src="music.js"></script>
+    <script src="phong40.js"></script>
+
 
 </body>
 </html>
-
-

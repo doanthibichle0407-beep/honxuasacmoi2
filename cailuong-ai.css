@@ -1,7 +1,5 @@
-/* ================== FONT ================== */
 @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;800;900&family=Noto+Serif:wght@600;800&display=swap');
 
-/* ================== RESET ================== */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -18,7 +16,6 @@ body {
   overflow-x: hidden;
 }
 
-/* ================== ÁNH ĐÈN SÂN KHẤU ================== */
 body::before {
   content: "";
   position: fixed;
@@ -35,7 +32,6 @@ body::before {
   to   { background-position: 55% 18%; }
 }
 
-/* ================== LAYOUT ================== */
 .karaoke-room {
   position: relative;
   z-index: 1;
@@ -45,7 +41,6 @@ body::before {
   padding: 40px;
 }
 
-/* ================== KHU TRÁI – NGHE NHẠC ================== */
 .listen-zone {
   background: rgba(0,0,0,0.6);
   border-radius: 26px;
@@ -82,7 +77,6 @@ body::before {
   transform: translateX(6px);
 }
 
-/* ================== KHU GIỮA – SÂN KHẤU ================== */
 .sing-zone {
   position: relative;
   background: rgba(0,0,0,0.65);
@@ -94,7 +88,6 @@ body::before {
     inset 0 0 60px rgba(255,215,120,0.2);
 }
 
-/* viền sân khấu */
 .sing-zone::before {
   content: "";
   position: absolute;
@@ -108,7 +101,6 @@ body::before {
   pointer-events: none;
 }
 
-/* ================== TITLE ================== */
 .sing-zone h1 {
   text-align: center;
   font-family: 'Noto Serif', serif;
@@ -121,7 +113,6 @@ body::before {
     0 6px 22px rgba(0,0,0,0.8);
 }
 
-/* ================== AUDIO ================== */
 audio {
   width: 100%;
   margin-bottom: 14px;
@@ -130,7 +121,6 @@ audio {
 }
 
 
-/* ================== CONTROLS ================== */
 .controls {
   display: flex;
   gap: 16px;
@@ -163,7 +153,6 @@ button:disabled {
   cursor: not-allowed;
 }
 
-/* ================== STATUS + RESULT ================== */
 #status {
   margin-top: 14px;
   text-align: center;
@@ -182,12 +171,10 @@ button:disabled {
   text-shadow: 0 0 24px rgba(255,215,120,0.9);
 }
 
-/* ================== ẨN ================== */
 .hidden {
   display: none;
 }
 
-/* ================== MOBILE ================== */
 @media (max-width: 768px) {
   .karaoke-room {
     grid-template-columns: 1fr;
@@ -216,13 +203,12 @@ button:disabled {
   font-size: 20px;
   color: #fff7c8;
   text-shadow: 0 2px 10px rgba(0,0,0,0.7);
-  opacity: 0.3;            /* mặc định mờ */
+  opacity: 0.3;            
   transform: translateY(0) scale(0.95);
   transition: all 0.35s ease;
 }
 
-/* Dòng vừa hát / trước / sau */
-#lyricsBox .prev,
+\#lyricsBox .prev,
 #lyricsBox .next {
   opacity: 0.3;
   font-size: 20px;
@@ -231,11 +217,30 @@ button:disabled {
 }
 
 #lyricsBox .current {
-  opacity: 1 !important;  /* chắc chắn sáng rõ */
+  opacity: 1 !important;  
   font-size: 30px;
   color: #ffe7a3;
   text-shadow:
     0 0 22px rgba(255,215,120,0.9),
     0 0 40px rgba(255,140,0,0.6);
   transform: scale(1.15);
+}
+.back{
+    display:inline-block;
+  margin:20px;
+  padding:12px 22px;
+  background:#b88647;
+  color:#fff;
+  text-decoration:none;
+  border-radius:14px;
+  font-weight:bold;
+  font-size:17px;
+  box-shadow:0 4px 10px rgba(0,0,0,.4);
+  transition:.25s;
+}
+
+.back:hover{
+  background:#d3a561;
+  transform:translateX(-4px);
+  box-shadow:0 6px 14px rgba(0,0,0,.5);
 }

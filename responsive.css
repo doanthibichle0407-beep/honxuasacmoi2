@@ -1,82 +1,72 @@
-/* =========================
-   TRANG CHỦ – MOBILE RESPONSIVE FINAL (PRO)
-   ========================= */
 
-/* ===== MOBILE ≤ 768px ===== */
+
+.nav-toggle {
+  display: none;
+}
+
 @media (max-width: 768px) {
-
-  /* ===== BODY & HTML ===== */
-  html, body {
-    width: 100vw;
-    overflow-x: hidden;
-    overflow-y: auto;
+  .navbar {
     margin: 0;
     padding: 0;
-    background: linear-gradient(180deg, #0b0806 0%, #1c150f 60%, #2a1f12 100%);
-    font-family: 'Be Vietnam Pro', sans-serif;
-    scroll-behavior: smooth;
-  }
-
-  /* ===== NAVBAR ===== */
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 60px;
-    padding: 0 12px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 500;
-    background: rgba(11,8,6,0.85);
-    backdrop-filter: blur(6px);
-    border-bottom: 1px solid rgba(197,191,101,0.3);
+    background: transparent;
+    border: none;
   }
 
   .nav-toggle {
-    font-size: 28px;
-    color: var(--accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 12px;
+    left: 12px;
+    width: 44px;
+    height: 44px;
+    font-size: 26px;
+    color: var(--accent, #c5bf65);
     cursor: pointer;
-    z-index: 600;
+    z-index: 3000;
   }
 
   .navbar ul {
-    flex-direction: column;
     position: fixed;
-    top: 60px;
+    top: 0;
     left: 0;
     width: 220px;
-    height: calc(100vh - 60px);
-    background: rgba(11,8,6,0.95);
-    padding-top: 20px;
-    gap: 0;
-    border-right: 1px solid rgba(197,191,101,0.3);
-    overflow-y: auto;
+    height: 100vh;
+    padding-top: 64px;
+    display: flex;
+    flex-direction: column;
+    background: rgb(25 12 0 / 91%);
+    backdrop-filter: blur(12px);
     transform: translateX(-100%);
-    transition: transform 0.3s ease;
-    z-index: 550;
+    transition: transform 0.35s ease;
+    z-index: 2500;
+
   }
 
-  .navbar ul.show { transform: translateX(0); }
+  .navbar ul.show {
+    transform: translateX(0);
+  }
+
+  .navbar li {
+    width: 100%;
+  }
 
   .navbar a {
-    display: block;
-    font-size: 16px;
-    padding: 12px 20px;
-    color: var(--accent);
+    display: flex;
+    align-items: center;
+    height: 50px;
+    padding: 18px 20px;
+    font-size: 15px;
     border-bottom: 1px solid rgba(197,191,101,0.15);
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
+    margin: 0px;
   }
 
-  .navbar a:hover,
-  .navbar a.active {
+  .navbar a.active,
+  .navbar a:hover {
     background: rgba(197,191,101,0.15);
     color: #fff;
   }
-
-  /* ===== HERO ===== */
   .hero {
     display: flex;
     flex-direction: column;
@@ -84,7 +74,7 @@
     align-items: center;
     text-align: center;
     width: 100%;
-    padding: 100px 5% 10px; /* top để navbar, bottom gọn */
+    padding: 100px 5% 10px; 
     gap: 12px;
     background: linear-gradient(180deg, rgba(11,8,6,0.85) 0%, rgba(28,21,15,0.65) 80%);
   }
@@ -129,7 +119,6 @@
     color: #000;
   }
 
-  /* ===== HERO ART FULL WIDTH ===== */
   .trangchu {
     width: 100%;
     display: flex;
@@ -146,13 +135,12 @@
     display: block;
   }
 
-  /* ===== INTRO CARDS ===== */
   .intro-cards {
     display: grid;
     grid-template-columns: 1fr;
     gap: 10px;
     padding: 8px 5%;
-    margin: 0; /* loại margin dưới */
+    margin: 0; 
   }
 
   .card {
@@ -172,10 +160,9 @@
   .card h3 { font-size: 1.1rem; margin-bottom: 4px; }
   .card p { font-size: 0.9rem; opacity: 0.85; }
 
-  /* ===== COMMENT BOX ===== */
   .comment-box {
     width: 100%;
-    margin: 12px 0; /* khoảng cách vừa đủ */
+    margin: 12px 0; 
     padding: 14px;
     border-radius: 16px;
     background: rgba(20,16,12,0.6);
@@ -186,7 +173,6 @@
   .comment-box textarea { font-size: 0.9rem; padding: 8px 10px; }
   .comment-box button { font-size: 0.95rem; padding: 8px 14px; }
 
-  /* ===== FOOTER ===== */
   .foot-content { 
     flex-direction: column; 
     gap: 14px; 
@@ -203,7 +189,6 @@
     padding: 8px 0 10px; 
   }
 
-  /* ===== VISIT BOX ===== */
   .visit-box {
     position: fixed;
     bottom: 12px;
@@ -216,13 +201,12 @@
   }
 }
 
-/* ===== SMALL MOBILE ≤420px ===== */
 @media (max-width: 420px) {
   .hero-left h1 { font-size: 26px; }
   .hero-left h1 span { font-size: 28px; }
   .hero-left p { font-size: 14px; }
   .cta { font-size: 15px; padding: 8px 20px; }
-  .trangchu img { max-height: 260px; } /* giữ tỉ lệ đẹp */
+  .trangchu img { max-height: 260px; } 
   .intro-cards { gap: 8px; padding: 6px 5%; }
   .card h3 { font-size: 1rem; }
   .card p { font-size: 0.85rem; }
@@ -242,14 +226,12 @@
     height: auto ;
   }
 }
-/* =========================
-   EXHIBIT START – MOBILE FIT
-   ========================= */
+
 
 @media (max-width: 768px) {
 
   #exhibitStart {
-    padding-top: 60px; /* né navbar fixed */
+    padding-top: 60px; 
     background:
       radial-gradient(circle at center, rgba(197,191,101,0.06), transparent 65%),
       linear-gradient(180deg, #0b0806 0%, #1c150f 70%, #2a1f12 100%);
@@ -302,3 +284,27 @@
   -webkit-tap-highlight-color: transparent;
   touch-action: manipulation;
 }
+@media (max-width: 420px) {
+  .navbar ul {
+    width: 180px;
+  }
+
+  .navbar a {
+    height: 38px;
+    font-size: 14px;
+    padding: 0 16px;
+  }
+}
+
+@supports (padding-top: env(safe-area-inset-top)) {
+  @media (max-width: 768px) {
+    .navbar ul {
+      padding-top: calc(64px + env(safe-area-inset-top));
+    }
+
+    .nav-toggle {
+      top: calc(12px + env(safe-area-inset-top));
+    }
+  }
+}
+

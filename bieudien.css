@@ -13,6 +13,8 @@
   --radius: 12px;
   --gap: 24px;
   --font-main: "Be Vietnam Pro", sans-serif;
+    --nav-h: 64px;
+
 }
 
 body {

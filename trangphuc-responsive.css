@@ -1,13 +1,10 @@
-/* =========================
-   MOBILE COSTUME – FINAL FIX
-   ========================= */
+
 @media (max-width: 900px) {
 
   html, body {
     min-height: 100svh;
     overflow-x: hidden;
   }
-/* ===== GAME STYLE CARD ===== */
 .card {
   background:
     radial-gradient(circle at top, rgba(255,220,160,0.15), transparent 60%),
@@ -17,7 +14,6 @@
     inset 0 0 18px rgba(255,200,120,0.08),
     0 8px 18px rgba(0,0,0,0.7);
 }
-/* ===== TAP FEEL (HAPTIC CSS) ===== */
 .card {
   transition:
     transform 0.15s ease,
@@ -37,7 +33,6 @@
     background-attachment: scroll;
   }
 
-  /* ===== HERO ===== */
   .hero {
     padding: 32px 16px 18px;
   }
@@ -52,7 +47,6 @@
     margin-top: 6px;
   }
 
-  /* ===== FILTER BAR ===== */
   .filter-bar {
     display: flex;
     gap: 10px;
@@ -73,15 +67,13 @@
     border-radius: 999px;
   }
 
-  /* ===== GALLERY ===== */
   .gallery {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 12px;
-    padding: 12px 14px 72px; /* chừa chỗ cho back-btn */
+    padding: 12px 14px 72px; 
   }
 
-  /* ===== CARD ===== */
   .card {
     padding: 10px;
     border-radius: 14px;
@@ -100,12 +92,10 @@
     line-height: 1.25;
   }
 
-  /* ===== CARD BỊ ẨN (FILTER) ===== */
   .card[style*="display: none"] {
     display: none !important;
   }
 
-  /* ===== BACK BUTTON (FLOAT UI – KHÔNG PHÁ LAYOUT) ===== */
   .back-btn {
     position: fixed;
     bottom: 16px;

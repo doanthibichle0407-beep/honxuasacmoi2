@@ -2,24 +2,29 @@
   --bg: #0b0806;
   --accent: #C5BF65;      
   --font-main: "Be Vietnam Pro", sans-serif;
+      --nav-h: 64px;
+
 }
 body {
     margin: 0;
     padding: 0;
-    font-family:  sans-serif;
+
+    font-family: sans-serif;
+    color: #fff;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
+    align-items: center;    
+    justify-content: flex-start; 
 
     background-image: url('img/nen1.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    color: #fff;
+    background-size: cover;        
+    background-position: center;  
+    background-repeat: no-repeat;  
+
     position: relative;
 }
+
 
 body::after {
     content: "";
@@ -48,7 +53,6 @@ body::after {
 .container h1 {
     font-size: 2.5rem;
     margin-bottom: 20px;
-    color : var(--accent);
 }
 
 .container p {
@@ -88,7 +92,7 @@ body::after {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin : 20px;
+  margin : 10px;
 }
 
 .navbar ul {
@@ -157,5 +161,4 @@ body::after {
 @keyframes shine {
     100% { left: 100%; }
 }
-
 

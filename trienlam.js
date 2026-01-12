@@ -1,6 +1,4 @@
-// =========================
-// ARTIST POPUP
-// =========================
+
 const artistCards = document.querySelectorAll('.artist-card');
 const popup = document.getElementById('artistPopup');
 const popupImg = document.getElementById('popupImg');
@@ -30,9 +28,7 @@ if (artistCards && popup && popupImg && popupName && popupInfo) {
   });
 }
 
-// =========================
-// FADE-IN ON SCROLL
-// =========================
+
 const revealItems = document.querySelectorAll('.story, .transition, .artists-title, .end');
 
 function revealOnScroll() {
@@ -46,23 +42,29 @@ function revealOnScroll() {
 window.addEventListener('scroll', revealOnScroll);
 window.addEventListener('load', revealOnScroll);
 
-// =========================
-// VIDEO PLAY BUTTON
-// =========================
+
 const video = document.getElementById('introVideo');
 const overlay = document.getElementById('videoOverlay');
 const btn = document.getElementById('playSoundBtn');
+const muteBtn = document.getElementById('muteToggle');
 
-if (video && overlay && btn) {
+if (video && overlay && btn && muteBtn) {
+
   btn.addEventListener('click', () => {
-    video.muted = false;      // bật âm thanh
-    video.play().catch(() => {});  // tránh lỗi nếu video chưa load
-    overlay.style.display = 'none'; // ẩn overlay
+    video.muted = false;
+    video.play().catch(() => {});
+    overlay.style.display = 'none';
+
+    muteBtn.style.display = 'block';
+    muteBtn.textContent = '🔊';
+  });
+
+  muteBtn.addEventListener('click', () => {
+    video.muted = !video.muted;
+    muteBtn.textContent = video.muted ? '🔇' : '🔊';
   });
 }
-// =========================
-// SCROLL ANIMATION
-// =========================
+
 document.addEventListener('DOMContentLoaded', () => {
   const storyCards = document.querySelectorAll('.story-card');
   const transition = document.querySelector('.transition');
@@ -78,15 +80,38 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   };
 
-  // For story cards
   window.addEventListener('scroll', () => {
     fadeInOnScroll(storyCards, 100);
     fadeInOnScroll([transition], 100);
     fadeInOnScroll([endSection], 100);
   });
 
-  // Trigger animation if already in view on load
   fadeInOnScroll(storyCards, 100);
   fadeInOnScroll([transition], 100);
   fadeInOnScroll([endSection], 100);
+});
+const storyVideo = document.querySelector('.story-video');
+
+function revealVideo() {
+  if (!storyVideo) return;
+  const top = storyVideo.getBoundingClientRect().top;
+  if (top < window.innerHeight * 0.85) {
+    storyVideo.classList.add('show');
+  }
+}
+
+window.addEventListener('scroll', revealVideo);
+window.addEventListener('load', revealVideo);
+const navToggle = document.querySelector('.nav-toggle');
+const navMenu = document.querySelector('.navbar ul');
+
+navToggle.addEventListener('click', () => {
+  navMenu.classList.toggle('show');
+});
+const muteMobileBtn = document.getElementById('muteMobileBtn');
+const introVideo = document.getElementById('introVideo');
+
+muteMobileBtn.addEventListener('click', () => {
+  introVideo.muted = !introVideo.muted;
+  muteMobileBtn.textContent = introVideo.muted ? "🔇" : "🔊";
 });

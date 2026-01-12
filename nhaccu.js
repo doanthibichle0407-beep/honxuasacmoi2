@@ -199,7 +199,6 @@ popup.addEventListener("mouseleave", () => {
     popupName.textContent = name;
     popupDesc.textContent = `Bạn đang nghe nhạc cụ: ${name}. Nhấn play để nghe thử.`
 
-    // Bật audio
     const player = document.getElementById('sample-player');
     player.src = audioSrc;
     player.play();
@@ -208,7 +207,6 @@ popup.addEventListener("mouseleave", () => {
   });
 
 
-// Close popup khi click ra ngoài
 popup.addEventListener('click', (e) => {
   if(e.target === popup) {
     popup.classList.remove('show');

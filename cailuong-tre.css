@@ -1,4 +1,3 @@
-/* ===== Global ===== */
 body {
   font-family: 'Be Vietnam Pro', sans-serif;
   margin: 0;
@@ -7,7 +6,6 @@ body {
   position: relative;
   overflow-x: hidden;
 
-  /* Background sân khấu */
   background-image: url('img/nen16.jpeg');
   background-size: cover;
   background-position: center;
@@ -15,7 +13,6 @@ body {
   background-attachment: fixed;
 }
 
-/* Cinematic overlay */
 body::before {
   content: '';
   position: absolute;
@@ -42,7 +39,6 @@ body::after {
   100% { background-position: 60% 25%; }
 }
 
-/* ===== Container ===== */
 .container {
   width: 90%;
   max-width: 1200px;
@@ -51,7 +47,6 @@ body::after {
   z-index: 1;
 }
 
-/* ===== Header ===== */
 header.hero {
   text-align: center;
   padding: 3rem 1rem;
@@ -64,7 +59,6 @@ header.hero {
   backdrop-filter: blur(4px);
 }
 
-/* Tiêu đề chính */
 header h1 {
   font-size: 3rem;
   font-weight: 900;
@@ -75,7 +69,6 @@ header h1 {
 }
 
 
-/* Subtitle */
 header p {
   font-style : italic; 
   font-size: 1.2rem;
@@ -85,7 +78,6 @@ header p {
   text-shadow: 0 2px 8px rgba(0,0,0,0.6);
 }
 
-/* Glow animation cho tiêu đề */
 @keyframes glowPulse {
   0% {
     text-shadow:
@@ -107,7 +99,6 @@ header p {
   }
 }
 
-/* ===== Main Grid ===== */
 .music-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -117,7 +108,6 @@ header p {
   position: relative;
 }
 
-/* ===== Artist Card ===== */
 .artist-card {
   position: relative;
   overflow: hidden;
@@ -139,7 +129,6 @@ header p {
   background: rgba(255,235,180,0.3);
 }
 
-/* ===== Artist Image ===== */
 .artist-card img {
   width: 100%;
   height: 220px;
@@ -153,7 +142,6 @@ header p {
   filter: brightness(1.12) contrast(1.08);
 }
 
-/* ===== Artist Name ===== */
 .artist-card h3 {
   margin: 0.5rem 1rem 0.25rem 1rem;
   font-size: 1.5rem;
@@ -161,7 +149,6 @@ header p {
   text-shadow: 0 2px 12px rgba(0,0,0,0.7);
 }
 
-/* ===== Audio Player ===== */
 .artist-card audio {
   width: calc(100% - 2rem);
   margin: 0.5rem 1rem 1rem 1rem;
@@ -170,7 +157,6 @@ header p {
   box-shadow: 0 2px 8px rgba(0,0,0,0.3);
 }
 
-/* ===== Responsive ===== */
 @media (max-width: 600px) {
   header h1 { font-size: 2rem; }
   header p { font-size: 1rem; }
@@ -209,4 +195,23 @@ header p {
 .navbar a.active {
   background: rgba(197,191,101,0.12);
   color: #fff;
+}
+.back{
+    display:inline-block;
+  margin:20px;
+  padding:12px 22px;
+  background:#b88647;
+  color:#fff;
+  text-decoration:none;
+  border-radius:14px;
+  font-weight:bold;
+  font-size:17px;
+  box-shadow:0 4px 10px rgba(0,0,0,.4);
+  transition:.25s;
+}
+
+.back:hover{
+  background:#d3a561;
+  transform:translateX(-4px);
+  box-shadow:0 6px 14px rgba(0,0,0,.5);
 }

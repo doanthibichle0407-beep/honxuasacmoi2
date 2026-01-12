@@ -1,4 +1,7 @@
-/* ===== Global ===== */
+:root {
+  --accent: #C5BF65;  
+    --nav-h: 64px;
+    }
 body {
   font-family: 'Be Vietnam Pro', sans-serif;
   margin: 0;
@@ -7,7 +10,6 @@ body {
   position: relative;
   overflow-x: hidden;
 
-  /* Background sân khấu cinematic */
   background-image: url('img/nen16.jpeg');
   background-size: cover;
   background-position: center;
@@ -15,7 +17,6 @@ body {
   background-attachment: fixed;
 }
 
-/* Overlay cinematic */
 body::before {
   content: '';
   position: absolute;
@@ -40,7 +41,6 @@ body::after {
   100% { background-position: 60% 25%; }
 }
 
-/* ===== Container ===== */
 .container {
   width: 90%;
   max-width: 1200px;
@@ -50,7 +50,6 @@ body::after {
   padding-bottom: 3rem;
 }
 
-/* ===== Header ===== */
 header.hero {
   text-align: center;
   padding: 3rem 1rem;
@@ -69,6 +68,8 @@ header h1 {
   margin: 0;
   color: #ffd27f;
   text-shadow: 0 0 12px rgba(255,215,102,0.7);
+    margin : 20px;
+
 }
 
 header p {
@@ -79,7 +80,6 @@ header p {
   opacity: 0.95;
 }
 
-/* ===== Intro Cards Grid ===== */
 .intro-cards {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -87,12 +87,11 @@ header p {
   margin: 0 24px;
 }
 
-/* ===== Card ===== */
 .card {
   position: relative;
   overflow: hidden;
   border-radius: 20px;
-  background: rgba(20,10,10,0.85); /* nền tối cinematic */
+  background: rgba(20,10,10,0.85); 
   display: flex;
   flex-direction: column;
   text-decoration: none;
@@ -101,13 +100,11 @@ header p {
   transition: transform 0.4s, background 0.4s;
 }
 
-/* Hover card */
 .card:hover {
   transform: translateY(-8px);
   background: rgba(30,15,15,0.95);
 }
 
-/* Card Image */
 .card-img {
   position: relative;
   width: 100%;
@@ -125,7 +122,6 @@ header p {
   transition: transform 0.5s, filter 0.5s;
 }
 
-/* Gradient overlay trên ảnh */
 .card-img::after {
   content: '';
   position: absolute;
@@ -143,7 +139,6 @@ header p {
   background: linear-gradient(to top, rgba(0,0,0,0.3), rgba(0,0,0,0));
 }
 
-/* Card Title */
 .card h3 {
   margin: 0.5rem 1rem 0.25rem 1rem;
   font-size: 1.3rem;
@@ -157,7 +152,6 @@ header p {
   text-shadow: 0 0 10px #ffd27f, 0 0 20px #ffb84d;
 }
 
-/* Card Text */
 .card p {
   margin: 0 1rem 1rem 1rem;
   font-size: 1rem;
@@ -165,7 +159,6 @@ header p {
   color: #ffeebc;
 }
 
-/* ===== Responsive ===== */
 @media (max-width: 600px) {
   .card { min-height: 280px; }
   .card-img { height: 160px; }
@@ -174,6 +167,7 @@ header p {
   header h1 { font-size: 2rem; }
   header p { font-size: 1rem; }
 }
+
 .navbar {
   position: fixed;
   top: 0;
@@ -184,7 +178,6 @@ header p {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin : 20px;
 }
 
 .navbar ul {

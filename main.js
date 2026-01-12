@@ -99,7 +99,6 @@ async function loadComments() {
   });
 }
 
-// Khi DOM đã load
 document.addEventListener("DOMContentLoaded", () => {
   updateVisitCount();
   loadComments();
@@ -110,14 +109,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const menu = document.querySelector('.navbar ul');
 
   if (toggle && menu) {
-    // Toggle menu khi click nút hamburger
     toggle.addEventListener('click', (e) => {
-      e.stopPropagation(); // ngăn click bubble ra document
+      e.stopPropagation(); 
       menu.classList.toggle('show');
     });
 
-    // Click ngoài menu sẽ đóng menu
-    document.addEventListener('click', (e) => {
+  document.addEventListener('click', (e) => {
       if (!menu.contains(e.target) && !toggle.contains(e.target)) {
         menu.classList.remove('show');
       }
@@ -137,14 +134,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     setTimeout(() => overlay.remove(), 600);
 
-    // gỡ listener sau khi đã chạm
     document.removeEventListener("click", startExperience);
     document.removeEventListener("touchstart", startExperience);
   };
 
-  // Desktop
   document.addEventListener("click", startExperience);
 
-  // Mobile
   document.addEventListener("touchstart", startExperience);
 });

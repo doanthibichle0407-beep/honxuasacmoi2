@@ -1,6 +1,4 @@
-/* =========================
-   ROOT – MÀU SẮC & FONT
-========================= */
+
 :root {
   --bg: #0b0806;
   --panel: #1a1410;
@@ -11,11 +9,11 @@
   --transition: 0.4s;
   --card-shadow: 0 20px 40px rgba(0,0,0,0.3);
   --border-radius: 16px;
+      --nav-h: 64px;
+
 }
 
-/* =========================
-   RESET & GLOBAL
-========================= */
+
 * {
   margin: 0;
   padding: 0;
@@ -31,9 +29,7 @@ body {
   position: relative;
 }
 
-/* =========================
-   BACKGROUND CINEMATIC + PARTICLES + OVERLAY
-========================= */
+
 body::before {
   content: "";
   position: fixed;
@@ -63,9 +59,7 @@ body::after {
   z-index: 0;
 }
 
-/* =========================
-   NAVBAR
-========================= */
+
 .navbar {
   position: fixed;
   top: 0;
@@ -99,9 +93,7 @@ body::after {
   background: rgba(197,191,101,0.12);
   color: #fff;
 }
-/* =========================
-   HERO VIDEO
-========================= */
+
 .video-wrap {
   position: relative;
   height: 100vh;
@@ -174,46 +166,31 @@ body::after {
   opacity: 0.8;
 }
 
-/* =========================
-   STORY CARDS
-========================= */
-.story-container {
-  max-width: 800px;
-  margin: 140px auto 60px;
-  display: flex;
-  flex-direction: column;
-  gap: 28px;
+
+.story-video {
+  width: 100%;
+  max-width: 1100px;
+  margin: 80px auto;
   padding: 0 20px;
 }
 
-.story-card {
-  background: rgba(255,255,255,0.03);
-  border-left: 4px solid var(--accent);
-  padding: 24px 20px;
-  border-radius: var(--border-radius);
-  color: var(--text);
-  font-size: 16px;
-  line-height: 1.6;
+.story-video video {
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+}
+.story-video {
   opacity: 0;
-  transform: translateY(30px);
-  transition: all 0.8s ease-out;
-  backdrop-filter: blur(6px);
+  transform: translateY(40px);
+  transition: 0.8s ease;
 }
 
-.story-card h2 {
-  margin-bottom: 12px;
-  color: var(--accent);
-  font-size: 20px;
+.story-video.show {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-.story-card:hover {
-  transform: translateY(-5px) scale(1.02);
-  box-shadow: 0 12px 28px rgba(255,215,180,0.3);
-}
 
-/* =========================
-   TRANSITION
-========================= */
 .transition {
   max-width: 600px;
   margin: 120px auto;
@@ -226,9 +203,6 @@ body::after {
   transition: all 0.8s ease-out;
 }
 
-/* =========================
-   ARTIST GALLERY
-========================= */
 
 .artists-title {
   text-align: center;
@@ -281,9 +255,7 @@ body::after {
   }
 }
 
-/* =========================
-   ARTIST POPUP
-========================= */
+
 .artist-popup {
   position: fixed;
   top: 50%;
@@ -306,7 +278,7 @@ body::after {
 }
 
 .popup-content {
-  background: rgba(30,25,18,0.85); /* tối nhưng vàng xuyên qua */
+  background: rgba(30,25,18,0.85); 
   border: 1px solid rgba(199,167,108,0.4);
   backdrop-filter: blur(6px);
   color: var(--text-light);
@@ -366,9 +338,7 @@ body::after {
   transform: scale(1.2);
 }
 
-/* =========================
-   END SECTION
-========================= */
+
 .end {
   text-align: center;
   font-size: 14px;
@@ -379,17 +349,13 @@ body::after {
   transition: all 0.8s ease-out;
 }
 
-/* =========================
-   SHOW ANIMATIONS
-========================= */
+
 .story-card.show, .transition.show, .end.show {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* =========================
-   MOBILE RESPONSIVE
-========================= */
+
 @media (max-width: 768px) {
   .hero-content {
     left: 5vw;
@@ -405,7 +371,25 @@ body::after {
   .artist-card img { height: 180px; }
   .popup-body { flex-direction: column; align-items: center; }
   .popup-img img { width: 90%; height: auto; }
-  body::before, body::after { display: none; } /* nhẹ mobile */
+  body::before, body::after { display: none; } 
   .artist-card:hover { transform: translateY(-5px) scale(1.03); }
   .story-card:hover { transform: translateY(-3px) scale(1.01); }
+}
+.mute-btn {
+  position: absolute;
+  bottom: 24px;
+  right: 24px;
+  z-index: 5;
+  background: rgba(0,0,0,0.6);
+  border: none;
+  color: #fff;
+  font-size: 22px;
+  padding: 10px 14px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.mute-btn:hover {
+  background: rgba(0,0,0,0.85);
 }

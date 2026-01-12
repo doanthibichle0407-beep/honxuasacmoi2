@@ -1,22 +1,18 @@
-/* =========================
-   MOBILE RESPONSIVE – GEN Z STYLE
-   ========================= */
+
 @media (max-width: 768px) {
 
   body {
-    font-size: 14px; /* nhỏ hơn trên desktop nhưng vẫn readable */
+    font-size: 14px; 
   }
 
-  /* ===== BACK BUTTON ===== */
-  .back {
+\  .back {
     bottom: 16px;
     left: 16px;
     padding: 12px 20px;
     font-size: 14px;
   }
 
-  /* ===== VIDEO BOX ===== */
-  .video-box {
+\  .video-box {
     max-width: 95%;
     margin: 30px auto 20px;
   }
@@ -30,7 +26,6 @@
     font-size: 0.85rem;
   }
 
-  /* ===== SUMMARY ROOM ===== */
   .summary-room {
     padding: 40px 20px;
     margin: 40px 10px;
@@ -53,7 +48,6 @@
     margin: 0 auto 20px auto;
   }
 
-  /* ===== SUMMARY GRID ===== */
   .summary-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -75,7 +69,6 @@
     padding-top: 20px;
   }
 
-  /* ===== TRANSITION LINE ===== */
   .transition-line {
     margin: 40px auto 30px;
     font-size: 0.9rem;
@@ -85,7 +78,6 @@
     padding: 6px 14px;
   }
 
-  /* ===== QUIZ ===== */
   .quiz-container {
     max-width: 95%;
     padding: 30px 20px;
@@ -118,7 +110,6 @@
   }
 
 }
-/* Chỉ áp dụng cho mobile */
 @media (max-width: 768px) {
 
   .summary-box .content {
@@ -134,7 +125,6 @@
     align-items: center;
   }
 
-  /* icon + style modern */
   .summary-box.collapsible h3::after {
     content: '+';
     font-size: 1.2rem;

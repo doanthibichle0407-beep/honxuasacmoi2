@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Playfair Display', serif;
+  color: #f6e9cc;
+  background:
+    radial-gradient(ellipse at top, rgba(255,180,120,0.15), transparent 60%),
+    linear-gradient(to bottom, #1a0505, #070202);
+}
+
+header {
+  padding: 40px 15px 25px;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2.4rem;
+  margin: 0;
+  letter-spacing: 1.5px;
+  color: #ffe0a3;
+  text-shadow:
+    0 0 8px rgba(255,200,120,0.6),
+    0 0 20px rgba(120,40,20,0.8);
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.room {
+  position: relative;
+  max-width: 560px;
+  width: 100%;
+  padding: 35px 30px;
+  border-radius: 18px;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(90,20,20,0.92),
+      rgba(25,5,5,0.95)
+    );
+
+  box-shadow:
+    0 20px 50px rgba(0,0,0,0.9),
+    inset 0 0 30px rgba(255,180,120,0.08);
+
+  border: 1px solid rgba(255,200,120,0.25);
+  text-align: center;
+}
+
+.room::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: 20px;
+  background: linear-gradient(
+    45deg,
+    rgba(255,200,120,0.5),
+    rgba(120,40,20,0.2),
+    rgba(255,200,120,0.5)
+  );
+  z-index: -1;
+  filter: blur(10px);
+}
+
+.room h2 {
+  font-size: 1.7rem;
+  margin-bottom: 14px;
+  color: #ffd27d;
+  text-shadow: 0 0 6px rgba(255,190,120,0.5);
+}
+
+.room p {
+  font-size: 1.08rem;
+  line-height: 1.8;
+  margin: 0 0 22px;
+  color: #f3e2bf;
+}
+
+button {
+  font-family: inherit;
+  font-size: 1.05rem;
+  padding: 12px 22px;
+  margin: 8px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+
+  color: #3a0c0c;
+  background:
+    linear-gradient(to bottom, #ffd98a, #e0a94f);
+
+  box-shadow:
+    0 6px 14px rgba(0,0,0,0.6),
+    inset 0 1px 2px rgba(255,255,255,0.6);
+
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 10px 20px rgba(0,0,0,0.8),
+    inset 0 1px 2px rgba(255,255,255,0.8);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+button:disabled {
+  opacity: 0.45;
+  cursor: default;
+  box-shadow: none;
+}
+
+#result {
+  font-size: 1.1rem;
+  margin-top: 18px;
+  min-height: 1.6em;
+}
+
+#explain {
+  margin-top: 14px;
+  font-style: italic;
+  font-size: 0.98rem;
+  color: #e8cfa2;
+  border-top: 1px dashed rgba(255,200,120,0.3);
+  padding-top: 10px;
+}
+
+@media (max-width: 480px) {
+  header h1 {
+    font-size: 1.9rem;
+  }
+
+  .room {
+    padding: 28px 20px;
+  }
+
+  button {
+    width: 100%;
+    margin: 6px 0;
+  }
+}
+.back {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  padding: 12px 20px;
+  background: #800000;
+  color: #ffd966;
+  border-radius: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.6);
+  z-index: 300;
+}
