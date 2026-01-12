@@ -6,7 +6,14 @@ const path = require("path");
 const fs = require("fs");
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: [
+    "https://honxuasacmoi.com",
+    "http://localhost:5500",
+    "http://127.0.0.1:5500"
+  ],
+  methods: ["POST"],
+}));
 
 const upload = multer({ dest: "uploads/" });
 
@@ -36,3 +43,4 @@ const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log("🚀 AI server running on port", PORT);
 });
+
