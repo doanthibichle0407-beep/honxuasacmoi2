@@ -113,10 +113,14 @@ document.addEventListener("DOMContentLoaded", () => {
     fd.append("audio", audioBlob);
 
     try {
-      const res = await fetch("/upload", {
-        method: "POST",
-        body: fd
-      });
+   const res = await fetch(
+  "https://honxuasacmoi2-production.up.railway.app/upload",
+  {
+    method: "POST",
+    body: fd
+  }
+);
+
 
       const data = await res.json();
       result.innerText = `🎯 Điểm AI: ${data.score}/100`;
@@ -138,3 +142,4 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
 });
+
